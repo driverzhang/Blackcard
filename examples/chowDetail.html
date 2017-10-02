@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../shop_iconfont/iconfont.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<link href="../css/style.css" rel="stylesheet" />
+		<style>
+			.area {
+				margin: 20px auto 0px auto;
+			}
+			
+			.mui-input-group:first-child {
+				margin-top: 20px;
+			}
+			
+			.mui-input-group label {
+				width: 32%;
+			}
+			
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 68%;
+			}
+			
+			.mui-checkbox input[type=checkbox],
+			.mui-radio input[type=radio] {
+				top: 6px;
+			}
+			
+			.mui-content-padded {
+				margin-top: 25px;
+			}
+			
+			.mui-btn {
+				padding: 10px;
+			}
+			
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				margin-top: 1px;
+			}
+			
+			a,
+			img {
+				border: 0;
+			}
+			
+			body {
+				font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+			}
+			
+			.demo {
+				width: 300px;
+				margin: 60px auto 10px auto
+			}
+			
+			@media only screen and (min-width: 420px) {
+				.demo {
+					width: 500px;
+					margin: 60px auto 10px auto
+				}
+			}
+			
+			.demo p {
+				line-height: 36px
+			}
+			
+			.button {
+				display: inline-block;
+				cursor: pointer;
+				outline: none;
+				text-align: center;
+				text-decoration: none;
+				padding: .5em 2em .55em;
+				-webkit-border-radius: .5em;
+				-moz-border-radius: .5em;
+				border-radius: .5em;
+				color: #606060;
+				border: solid 1px #b7b7b7;
+				background: #ededed;
+			}
+			
+			.button:hover {
+				text-decoration: none;
+				background: #fff;
+			}
+			
+			.button:active {
+				position: relative;
+				top: 1px;
+				color: #999;
+			}
+			
+			.centerInfo {
+				width: 90%;
+				margin: auto;
+				height: 40px;
+				margin-top: 25px;
+				color: #B5B5B5;
+			}
+			
+			.floatleft {
+				float: left;
+				width: 32%;
+				margin: auto;
+				text-align: center;
+			}
+			
+			.xqgm {
+				width: 100%;
+				height: auto;
+				margin-top: 10px;
+				background-color: white;
+				height: 40px;
+			}
+			
+			.xqgm .active {
+				border-bottom: 2px orange solid;
+			}
+			
+			.xqgm .ordg {
+				float: left;
+				width: 50%;
+				text-align: center;
+				height: 40px;
+				background-color: white;
+				line-height: 40px;
+			}
+		</style>
+	</head>
+
+	<body style="background:#f2f2f2;">
+		<header class="mui-bar mui-bar-nav" style="background-color: black;color: white;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<h1 class="mui-title" style="color: white;">积分众筹</h1>
+		</header>
+		<div class="mui-content" style="background-color: white;">
+			<section id="banner">
+				<img id="img" src="" width="100%">
+			</section>
+			<div style="width: 90%;margin: auto;font-size: 20px;font-weight: 600;padding-top: 14px;" id="name"></div>
+			<div class="centerInfo">
+				<div class="floatleft">
+					<div>众筹目标</div>
+					<div style="color:#cfa972"><span class="icon iconfont">&#xe60b;</span> <span id="totleInter"></span></div>
+				</div>
+				<div style="height: 100%;margin: auto;width: 1px;background-color: #B5B5B5;float: left;"></div>
+				<div class="floatleft">
+					<div>起购积分</div>
+					<div style="color:#cfa972"><span class="icon iconfont">&#xe60b;</span> <span id="BUYIntergal"></span></div>
+				</div>
+				<div style="height: 100%;width: 1px;background-color: #B5B5B5;float: left;"></div>
+
+				<div class="floatleft">
+					<div>剩余份数</div>
+					<div style="color:#cfa972" id="sy">6</div>
+				</div>
+			</div>
+			<div style="margin-top: 10px;padding-bottom: 30px;width: 100%;">
+				<div class="progress" style="width: 90%;height: 10px;margin: auto;">
+					<div class="progress-bar" id="progress-bar" style="width: 0%;line-height: 10px;background-color: #d3835b;">
+						<span></span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="xqgm">
+			<div id="ordgo" class="ordg active">商品详情</div>
+			<div id="ordgm" class="ordg">购买须知</div>
+		</div>
+		<div style="width: 100%;background-color: white;">
+			<div style="width: 90%;margin: auto;" id="detail">
+
+			</div>
+		</div>
+		<div id="payEnd" style="width: 100%;height: 100%;position: fixed;top:0;display: none;">
+			<div style="width:100%;height:100%;position: absolute; opacity: 0.4; filter: alpha(opacity=40);background-color:#070707;"></div>
+			<div style="top:17.5%;position: absolute;left:17.5%;width: 65%;height: 55%;margin:auto;background: url(../jggimg/payStatu1.png);background-size:100% 100%;">
+				<div style="width: 80%;height: 100%;margin: auto;" id="rebalck">
+					<div style="width: 100%;height: 20%;"></div>
+					<div style="margin-top: 25%;width: 45%;margin: auto;"><img src="../jggimg/payStatu2.png" width="100%"></div>
+					<div style="margin-top: 8%;text-align: center;font-size:26px;">支付成功</div>
+					<div style="margin-top: 14%;width: 100%;">
+						<div style="float:left;width: 45%;margin: auto;margin-right: 5%;" onclick="GoOrderInfor()"><img src="../jggimg/payStatu3.png" width="100%"></div>
+						<div style="float:left;width: 45%;margin: auto;" onclick="GoIndex()"><img src="../jggimg/payStatu4.png" width="100%"></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<nav class="mui-bar mui-bar-tab indexcssHC" style="font-size: 12px;color:white;height: 50px;">
+			<span id="index" class="mui-tab-item  tab-item" style="text-align: left;width: 70%;height: 100%;">
+
+            <div class="mui-tab-label tab-label" style="float: left;font-size:10px;height: 100%;padding-top: 5px;"><img src="../img/syimg.png" height="40"></div>
+            <div style="float: left;line-height: 50px;text-align: center;color:#cfa972;font-size: 16px;" id="djs"></div>
+        </span>
+			<a id="integral" href="javascript:void(0);" class="mui-tab-item tab-item" style="background: #808080;width: 30%;color:white;text-align: center;font-size: 10px;" disabled="true">
+				立即抢购
+			</a>
+
+		</nav>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/MD5S.js"></script>
+		<script src="../js/TravelTailorSafeInterface.js"></script>
+		<script type="text/javascript">
+			var CompanyImgsrc = httppp + "/Images/ExpertImg/admin/CompanyImg/";
+			var Uintegral = 0;
+			var jfpaydisabled = false;
+			var ItemUserId = localStorage.getItem("UserId");
+			var ChowID = "";
+			if(ItemUserId == null) {
+				mui.openWindow({
+					url: "examples/login.html",
+					id: "login",
+
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+
+					},
+					waiting: {
+
+					}
+				})
+			}
+
+			function chowclick() {
+				var btnArray = ['否', '是'];
+				mui.confirm('是否使用' + Uintegral + '积分参与一次众筹？', '黑卡生活', btnArray, function(e) {
+					if(e.index == 1) {
+						if(!jfpaydisabled) {
+							jfpaydisabled = true;
+							var ar = new Array();
+
+							ar.ChowID = ChowID;
+							ar.ChowUserId = ItemUserId;
+							ar.InterfaceAddress = "api/PartackChow";
+							aes(ar, "endchowclick");
+						} else {
+							mui.alert("正在处理众筹订单请稍后", "黑卡生活");
+						}
+					} else {
+						jfpaydisabled = false;
+					}
+				})
+
+			}
+
+			function GoOrderInfor() {
+				document.getElementById("payEnd").style.display = "none";
+
+				mui.openWindow({
+					url: "order_search.html",
+					id: "order_search",
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+
+					},
+					waiting: {
+
+					}
+				})
+			}
+
+			function GoIndex() {
+				document.getElementById("payEnd").style.display = "none";
+
+				mui.openWindow({
+					url: "../index.html",
+					id: "index",
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+
+					},
+					waiting: {
+
+					}
+				})
+			}
+
+			function endchowclick(rs) {
+				var TData = eval("(" + rs + ")");
+				if(TData == undefined) {
+
+				} else {
+					if(TData.suc)
+						document.getElementById("payEnd").style.display = "block";
+					else
+						mui.alert(TData.msg, "黑卡生活");
+
+				}
+				BindProData();
+				jfpaydisabled = false;
+			}
+
+			var GetChow = document.getElementById("integral");
+
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+			var RealID = getQueryString("id");
+
+			function BindProData() {
+				setTimeout(function() {
+					var ar = new Array();
+					var ph = {
+						Collection: [{
+							F: "Id",
+							O: "%",
+							P: "@@Id",
+							V: RealID
+						}, ]
+					};
+					ar.Condition = ph;
+					ar.InterfaceAddress = "api/ShopInfo";
+					ar.Name = "Yl_chowInter";
+					ar.OrderBy = "CreationDate desc";
+					ar.Index = 0;
+					ar.Size = 1;
+					ar.Handshake_Time = CurentTime('-', true);
+					aes(ar, "endBindPro");
+				}, 50);
+			}
+			setTimeout(function() {
+				BindProData();
+			}, 100)
+
+			function endBindPro(rd) {
+				var GetChow = document.getElementById("integral");
+
+				var TData = eval("(" + rd + ")");
+				if(TData == undefined || TData.length == undefined || TData.length == 0) {} else {
+					var currer = CurentTime('-', true);
+					var chownum = parseInt(TData[0].ChowdNum);
+					var chowPeople = parseInt(TData[0].ChowPeople);
+					var Surplu = parseInt(TData[0].Surplus);
+					document.getElementById("img").src = CompanyImgsrc + TData[0].ChowProImgId + '_750x360.jpg';
+					document.getElementById("name").innerText = TData[0].ChowName;
+					document.getElementById("sy").innerText = chowPeople - Surplu;
+					document.getElementById("detail").innerText = TData[0].remark;
+					document.getElementById("totleInter").innerText = chownum * chowPeople;
+					document.getElementById("BUYIntergal").innerText = chownum;
+					if(Surplu == 0) {
+						document.getElementById("progress-bar").style.width = "0%";
+					} else
+						document.getElementById("progress-bar").style.width = ((chowPeople - Surplu) <= chowPeople ? Surplu / chowPeople * 100 : 100) + "%";
+					Uintegral = chownum;
+					ChowID = TData[0].Id;
+					var deedata = CurentTimeBydata("-", eval('new ' + eval(TData[0].ChowStartDatetime).source), true);
+					var deeEnddata = CurentTimeBydata("-", eval('new ' + eval(TData[0].ChowEndDatetime).source), true);
+					if(deedata > currer) { //开始时间大于当前时间.众筹未开始
+						GetChow.style.background = "#808080";
+						document.getElementById("integral").innerText = "众筹未开始";
+						setDjs(deedata, 0);
+						GetChow.removeEventListener("tap", chowclick);
+
+					} else if(CurentTimeBydata("-", eval('new ' + eval(TData[0].ChowEndDatetime).source), true) >= currer) {
+
+						setDjs(deeEnddata, 1);
+						if(TData[0].Surplus >= TData[0].ChowPeople) { //参与人数大于达标人数，活动结束
+							GetChow.style.background = "#808080";
+							document.getElementById("integral").innerText = "等待开奖";
+							GetChow.removeEventListener("tap", chowclick);
+							GetChow.disabled = true;
+
+						} else {
+							GetChow.style.background = "#cfa972";
+							GetChow.addEventListener("tap", chowclick);
+
+						}
+					} else {
+						document.getElementById("djs").innerText = "众筹完毕";
+						document.getElementById("integral").innerText = "众筹完毕";
+						GetChow.style.background = "#808080";
+						GetChow.removeEventListener("tap", chowclick);
+					}
+
+				}
+
+				$('#ordgo').click(function() {
+					$("#ordgm").removeClass("active");
+					$("#ordgo").addClass("active");
+				})
+				$('#ordgm').click(function() {
+					$("#ordgo").removeClass("active");
+					$("#ordgm").addClass("active");
+				})
+
+				function checkTime(i) { //将0-9的数字前面加上0，例1变为01
+					if(i < 10) {
+						i = "0" + i;
+					} else if(i <= 0) {
+						i = 0;
+					}
+					return i;
+				}
+				//从服务器获取数据
+				//业务数据获取完毕，并已插入当前页面DOM；
+				//注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；
+				mui.plusReady(function() {
+					plus.nativeUI.closeWaiting();
+				});
+			}
+
+			function setDjs(data, i) {
+				if(i == 0) {
+					setInterval(function() {
+
+						document.getElementById("djs").innerText = leftTimer(data);
+					}, 1000);
+				} else {
+					setInterval(function() {
+
+						document.getElementById("djs").innerText = rightTimer(data);
+
+					}, 1000);
+				}
+
+			}
+
+			function leftTimer(ddate) {
+				var data = getDate(ddate);
+				var leftTime = (new Date().getTime()) - data.getTime(); //计算剩余的毫秒数
+				var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
+				var hours = parseInt(leftTime / 1000 / 60 / 60 % 24, 10); //计算剩余的小时
+				var minutes = parseInt(leftTime / 1000 / 60 % 60, 10); //计算剩余的分钟
+				var seconds = parseInt(leftTime / 1000 % 60, 10); //计算剩余的秒数
+				days = checkTime(days);
+				hours = checkTime(hours);
+				minutes = checkTime(minutes);
+				seconds = checkTime(seconds);
+				if(parseInt(days) == 0 && parseInt(hours) == 0 && parseInt(minutes) == 0 && parseInt(seconds) < 1) {
+					location.reload();
+				}
+				return days + "天" + hours + "小时" + minutes + "分" + seconds + "秒";
+
+			}
+
+			function getDate(strDate) {
+				var date = eval('new Date(' + strDate.replace(/\d+(?=-[^-]+$)/,
+					function(a) {
+						return parseInt(a, 10) - 1;
+					}).match(/\d+/g) + ')');
+				return date;
+			}
+
+			function checkTime(i) { //将0-9的数字前面加上0，例1变为01
+				if(i < 10) {
+					i = "0" + i;
+				} else if(i < 0) {
+					i = 0;
+				}
+				return i;
+			}
+
+			function rightTimer(ddate) {
+				var data = getDate(ddate);
+				var leftTime = data.getTime() - (new Date().getTime()); //计算剩余的毫秒数 
+				var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
+				var hours = parseInt(leftTime / 1000 / 60 / 60 % 24, 10); //计算剩余的小时
+				var minutes = parseInt(leftTime / 1000 / 60 % 60, 10); //计算剩余的分钟
+				var seconds = parseInt(leftTime / 1000 % 60, 10); //计算剩余的秒数
+				days = checkTime(days);
+				hours = checkTime(hours);
+				minutes = checkTime(minutes);
+				seconds = checkTime(seconds);
+				if(parseInt(days) == 0 && parseInt(hours) == 0 && parseInt(minutes) == 0 && parseInt(seconds) < 1) {
+					location.reload();
+				}
+				return days + "天" + hours + "小时" + minutes + "分" + seconds + "秒";
+			}
+		</script>
+	</body>
+
+</html>

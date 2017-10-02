@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<script type="text/javascript">
+		</script>
+		<link rel="stylesheet" href="css/online1.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css">
+
+
+		<style type="text/css">
+			
+			
+			body {
+				background-color: white;
+			}
+			
+			.fenpeiaction {
+				color: #cfa972;
+				border-color: #cfa972;
+			}
+			#submitBankCard{
+				width: 95%;
+				border-radius: 8px;
+				height: 40px;
+				font-size: 1.2rem;
+				font-family: '黑体';
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="bankCard" style="height: 100%;">
+			<header class="mui-bar mui-bar-nav" style="background: #212123;color: white;">
+				<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+				<h1 class="mui-title" id="proName" style="color: white;">输入银行卡</h1>
+			</header>
+		</div>
+		
+		
+		<div id="choseNumber" style="margin-bottom: 60px; display: block;" >
+			<div id="top">
+				<div id="online">
+					<span style="float: left;color: white;margin-top: 5px;" class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left"></span>
+					<span id="M-online">在线购卡</span>
+				</div>
+			</div>
+			<div class="b_photo" style="width: 100%;">
+				<div class="photo">
+					<div class="p-1">
+						<div class="img">
+							<img src="img/xuanhao.png" title="选号" width="50px" />
+						</div>
+						<div>
+							<p class="p1">选号</p>
+						</div>
+					</div>
+					<div class="p-1">
+						<div class="img">
+							<img src="img/ziliao2.png" width="50px" />
+						</div>
+						<div>
+							<p class="p1">资料</p>
+						</div>
+					</div>
+					<div class="p-1">
+						<div class="img">
+							<img src="img/dizhi.png" width="50px" />
+						</div>
+						<div>
+							<p class="p1">地址</p>
+						</div>
+					</div>
+					<div class="p-1">
+						<div class="img">
+							<img src="img/zhifu.png" width="50px" />
+						</div>
+						<div>
+							<p class="p1">支付</p>
+						</div>
+					</div>
+
+					<div class="hr">
+						<hr style="width:80%;border:none;border-top:2px solid #e7e7e2;" />
+					</div>
+				</div>
+			</div>
+			
+			<div class="comment-show" id="comment-show" style="margin-top: 58px;" >
+				<p style="margin-left:5% ;font-size: 0.8rem;color: #b8b6b6;font-family: '黑体';">请绑定账户本人的银行卡</p>
+				<div class="bankinfo">
+					<input type="email" name="" id="bankCardId" value="" placeholder="银行卡号" />
+				</div>
+				<div class="bankinfo">
+					<input type="email" name="" id="bankCardName" value="" placeholder="持卡人" />
+				</div>
+				<div id="submitBank" style="text-align: center;margin-top: 150px;">
+					<input type="button" name=""  id="submitBankCard"  value="提交" style="background: #CFA972;color: white;" onclick="subIfoBank()" />
+				</div>
+			</div>
+			
+		</div>
+
+		<div id="personInfor" style="display: none;">
+			<div id="top">
+				<div id="person">
+					<span style="float: left;color: white;margin-top: 5px;" class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left"></span>
+					<span id="M-person">个人资料</span>
+				</div>
+			</div>
+			<div id="b_photo" style="width: 100%;">
+				<div id="photo">
+					<div class="p-1">
+						<div class="img">
+							<img src="img/xuanhao.png" title="选号" width="50px" />
+						</div>
+						<div id="img-p1">
+							<p class="p1">选号</p>
+						</div>
+					</div>
+					<div class="p-1">
+						<div class="img">
+							<img src="img/ziliao.png" width="50px" />
+						</div>
+						<div id="img-p2">
+							<p class="p1">资料</p>
+						</div>
+					</div>
+					<div class="p-1">
+						<div class="img">
+							<img src="img/dizhi.png" width="50px" />
+						</div>
+						<div id="img-p3">
+							<p class="p1">地址</p>
+						</div>
+					</div>
+					<div class="p-1">
+						<div class="img">
+							<img src="img/zhifu.png" width="50px" />
+						</div>
+						<div id="img-p4">
+							<p class="p1">支付</p>
+						</div>
+					</div>
+					<div class="hr">
+						<hr style="width:80%;border:none;border-top:2px solid #e7e7e2;" />
+					</div>
+				</div>
+			</div>
+			<div id="weben">
+				<div class="MSG">
+					<span style="color: #cfa972;">信息确认</span>
+				</div>
+				<div class="Input-text">
+					<input type="text" id="input-name" value="" placeholder="姓名">
+				</div>
+				<div class="Input-text">
+					<input type="text" id="input-phone" value="" placeholder="电话号码">
+				</div>
+				<div class="Input-text">
+					<input type="text" id="input-IDcard" value="" placeholder="身份证">
+				</div>
+				<div class="Input-text">
+					<input type="password" id="input-password" value="" placeholder="设置密码">
+				</div>
+				<div class="Input-text">
+					<input type="password" id="input-password-sure" value="" placeholder="确认密码">
+				</div>
+			</div>
+			<div id="tankuang" style="width: 270px; height: 220px; ">
+				<div id="jianru">
+					<span id="shuru">
+						填写校验码
+					</span>
+				</div>
+				<div class="hengxian">
+					<hr style="border: none; border-top: 1px solid #aeaeae;" />
+				</div>
+				<div id="quebaoanquan">
+					<p id="tishi">
+						为确保您的账户安全,请您输入与黑卡绑定的手机<span id="UserPhone">""</span>收到的校验码
+					</p>
+				</div>
+				<div id="jiaoyanma">
+					<input type="text" value="" placeholder="短信验证码" id="jiaoyan" />
+					<input type="button" value="获取验证码" id="getonce" onclick="javascript:settime(60);" />
+
+				</div>
+				<div class="hengxian">
+					<hr style="border: none; border-top: 1px solid #aeaeae; position: relative; top: -1rem;" />
+				</div>
+				<div id="two-botton">
+					<input type="button" style="height: 35px;" value="取消" id="colse" onclick="javascript:hide()" />
+					<input type="submit" style="height: 35px;" value="确定" id="sure" onclick="javascript:hidePersonInfor()" />
+				</div>
+			</div>
+			<div id="over"></div>
+		</div>
+
+		<div id="choseaddress" style="display: none;">
+			<div class="top">
+				<div id="address">
+					<span style="float: left;color: white;margin-top: 5px;" class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left"></span>
+					<span id="M-address">我的地址</span>
+				</div>
+			</div>
+			<div class="b_photo" style="width: 100%;">
+				<div class="photo">
+					<div class="p-1">
+						<div class="img">
+							<img src="img/xuanhao.png" title="选号" width="50px" />
+						</div>
+						<div class="img-p1">
+							<p class="p1">选号</p>
+						</div>
+					</div>
+					<div class="p-1">
+						<div class="img">
+							<img src="img/ziliao.png" width="50px" />
+						</div>
+						<div class="img-p2">
+							<p class="p1">资料</p>
+						</div>
+					</div>
+					<div class="p-1">
+						<div class="img">
+							<img src="img/dizhi2.png" width="50px" />
+						</div>
+						<div class="img-p3">
+							<p class="p1">地址</p>
+						</div>
+					</div>
+					<div class="p-1">
+						<div class="img">
+							<img src="img/zhifu.png" width="50px" />
+						</div>
+						<div class="img-p4">
+							<p class="p1">支付</p>
+						</div>
+					</div>
+
+					<div class="hr">
+						<hr style="width:80%;border:none;border-top:2px solid #e7e7e2;" />
+					</div>
+				</div>
+			</div>
+			<div class="MSG">
+				<span style="color: #cfa972;">收件信息</span>
+			</div>
+			<div class="jianrumsg">
+				<input id="Inren" style=" border: solid 1px #e7e7e2; border-radius: 5px; height: 30px; width: 90%; color: #e7e7e2;" type="text" placeholder="收件人"></input>
+				<input id="phoneNum" style=" border: solid 1px #e7e7e2; border-radius: 5px; height: 30px; width: 90%; margin-top: 1rem; color: #e7e7e2;" type="text" placeholder="手机号"></input>
+				<input id="email" style=" border: solid 1px #e7e7e2; border-radius: 5px; height: 30px; width: 90%; margin-top: 1rem; color: #e7e7e2;" type="text" placeholder="邮箱(选填)"></input>
+				<input id="xiangxi-address" style=" border: solid 1px #e7e7e2; border-radius: 5px;  width: 90%; height: 80px; margin-top: 1rem;color: #e7e7e2;" type="text" placeholder="详细地址(仅限伊宁市本市地区使用)"></input>
+			</div>
+			<div class="Tips">
+				<p style="color: #aeaeae;margin-top: -0.5rem;">温馨Tips:</p>
+				<p style="color: #aeaeae;margin-top: -0.6rem;">发货时间约付款后3-7个工作日</p>
+				<p style="margin-top: -0.9rem;" color: #aeaeae;">邮费10元，自选号免邮费</p>
+			</div>
+
+		</div>
+		
+		<nav class="mui-bar mui-bar-tab indexcssHC" id="footers" style="background-color: #e7e7e2;font-size: 12px;color:white; display: none;">
+			<span  class="mui-tab-item tab-item"  id="step1" href="javascript:void(0)" onclick="GoBanck()" style="display: none;">
+	           	<span class="mui-tab-label"  style="font-size:9px;color:white;" >
+            	<input type="button"  value="上一步" style="width: 65%;height: 40px; background-color: #cfa972;"/></span>
+			</span>
+			
+			<span class="mui-tab-item tab-item" id="step2" href="javascript:void(0)"  style="display: none;">
+				<span class="mui-tab-label"  style="font-size:9px;color:white;" >
+            	<input type="button"  value="上一步" style="width: 65%;height: 40px; background-color: #cfa972;"/></span>
+			</span>
+			
+			<span class="mui-tab-item tab-item" id="step3" href="javascript:void(0)">
+				<span class="mui-tab-label" style="font-size:9px;color:white;" >
+            	<input type="button"  value="下一步 " style="width: 65%;height: 40px; background-color: #cfa972;" /></span>
+			</span>
+			<span class="mui-tab-item tab-item" id="step4" href="javascript:void(0)"  style="display: none;">
+				<span class="mui-tab-label sub" style="font-size:9px;color:white;" >
+            	<input  type="button"  value="提交订单 " style="width: 65%;height: 40px; background-color: #cfa972;"/></span>
+			</span>
+		</nav>
+		
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/mui.min.js"></script>
+	<script src="js/MD5S.js"></script>
+	<script src="js/TravelTailorSafeInterface.js"></script>
+	<script>
+		
+		function GoBanck(){
+			document.getElementById("choseNumber").style.display = "block";
+			document.getElementById("bankCard").style.display = "block";
+			document.getElementById("footers").style.display = "none";
+			document.getElementById("step1").style.display="none";
+		}
+		
+		
+		
+		function subIfoBank(){
+			var reg = /^\d{19}$/g;
+			var y = document.getElementById("bankCardId").value;
+			if(!reg.test(y)){
+				mui.alert("请输入正确的19位银行卡号！");
+			}else if(document.getElementById("bankCardName").value==""){
+				mui.alert("请输入持卡人信息");
+			}else if(y.substring(0,10)==6216351206){
+				setTimeout(function(){
+				    document.getElementById("bankCard").style.display = "none";
+					document.getElementById("choseNumber").style.display = "block";
+					document.getElementById("footers").style.display = "block";
+				}, 1000);
+			}else{
+				alert("请输入正确的银行卡号！");
+			}
+			getKH();
+			
+		}
+		var step = 1;
+		var login = document.getElementById('tankuang');
+		var over = document.getElementById('over');
+		var footers =  document.getElementById('footers');
+		var choseId="";
+		var checkUrl = httppp + "/api/GetIcByRandom";
+		function toLast(){
+			step--;
+			zkNAV();
+		}
+		var s1=document.getElementById("step1");
+		var s2=document.getElementById("step2");
+		var s3=document.getElementById("step3");
+		var s4=document.getElementById("step4");
+		s2.addEventListener("tap",function(){
+			toLast();
+		})
+		s3.addEventListener("tap",function(){
+			toNext();
+		})
+		s4.addEventListener("tap",function(){
+			sub();
+		})
+		function sub(){
+			if (document.getElementById("jiaoyan").value === localStorage.getItem("phonevaliede")&&document.getElementById("xiangxi-address").value!=''){
+			 		var ar = new Array();
+                        ar.InterfaceAddress = "api/AddUserInfo";
+                        ar.cardID = choseId;
+                        ar.phone = phone;
+                        ar.password = document.getElementById("input-password").value;
+                        ar.address = document.getElementById("xiangxi-address").value;
+                        ar.realName = document.getElementById("input-name").value;
+                        ar.ICard = document.getElementById("input-IDcard").value;
+                        localStorage.setItem("Idcard",$('#input-IDcard').val());
+                        ar.sex= true;
+                        ar.BankIcard=document.getElementById("bankCardId").value;
+                        var re ="";
+                        ar.remark = re;
+                        // ar.appid=plus.device.uuid;
+                        ar.Handshake_Time = CurentTime('-', true);
+                    aes(ar, "endRegision");
+            }
+		}
+		
+		function endRegision (rs){
+			var verData = eval('(' + rs + ')');
+			mui.alert(verData.msg,"黑卡生活");
+			mui.back();
+			mui.openWindow({
+						url: "examples/login.html", //判断点击了那个对应给上一个值 在下级页面获取出来的时候判断执行对应的操作。
+						id: "login",
+						show: {
+							autoShow: true, //页面loaded事件发生后自动显示，默认为true
+
+						},
+						waiting: {
+
+						}
+					})
+			
+		}
+		
+		function getKH() {
+        	
+        	 var ar = new Array();
+                    ar.InterfaceAddress = "api/GetIcByRandom";
+                    ar.userphone ="";
+                    ar.Handshake_Time = CurentTime('-', true);
+                    aes(ar, "endgetKH");
+		   
+        }
+		function endgetKH(rs){
+			    var verData = eval('(' + rs + ')');
+                            if (verData.suc) {
+                                choseId = verData.ReturnData.Id;
+                                mui.alert("您的随机号码已经生成,请开始下一步","黑卡生活");
+                            }
+                            else{
+                            	if(verData.ReturnDataTwo!=undefined&&verData.ReturnDataTwo!=null){
+                            		alert(verData.msg);
+                            }
+		}
+		}
+		
+		
+		
+		function zkNAV(){
+			if(step==1){
+				s1.style.removeProperty("display");
+				s2.style.display="none";
+				s3.style.removeProperty("display");
+				s4.style.display="none";
+				login.style.display = "none";
+				over.style.display = "none";
+				document.getElementById("choseNumber").style.display = "block";
+				document.getElementById("personInfor").style.display = "none";
+			}
+			else if(step==2){
+				login.style.display = "none";
+				over.style.display = "none";
+				s3.style.removeProperty("display");
+				s2.style.removeProperty("display");
+				s1.style.display="none";
+				s4.style.display="none";
+			}
+			else if(step==3){
+				login.style.display = "block";
+				over.style.display = "block";
+				document.getElementById("UserPhone").innerHTML = phone;
+				s1.style.display="none";
+				s2.style.removeProperty("display");
+				s3.style.display="none";
+				s4.style.removeProperty("display");
+			}
+			else if(step==4){
+				//提交
+				s1.style.display="none";
+				s2.style.removeProperty("display");
+				s3.style.display="none";
+				s4.style.removeProperty("display");
+			}
+		}
+		function toNext() {
+				step++;
+			if(step == 2) {
+				if(choseId==""){
+						mui.alert("未获取到您选购的号码","黑卡生活");	step--;
+						return false;
+				}
+				document.getElementById("choseNumber").style.display = "none";
+				document.getElementById("personInfor").style.display = "block";
+				
+			} else if(step==3) {
+				if($("#input-name").val() == "" || $("#input-phone").val() == "" || $("#input-IDcard").val() == "" || $("#input-password").val() == "") {
+					mui.alert("请填写所有基本信息！","黑卡生活");
+					step--;
+					return false;
+				}
+				phone = $('#input-phone').val();
+				var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
+				if(myreg.test(phone)) {
+					if (IdentityCodeValid($('#input-IDcard').val())) {
+						if($("#input-password").val() == $("#input-password-sure").val()) {
+							var ar = new Array();
+			                ar.InterfaceAddress = "api/ChoseIcardNum";
+			                ar.Key=choseId;
+			                ar.value =phone;
+			                ar.Handshake_Time = CurentTime('-', false);
+			                aes(ar, "endChoseIcard");
+
+						} else {
+							phone="";
+							step--;
+							mui.alert("两次密码不一致!","黑卡生活");
+						}
+					}else{
+						step--;
+						
+					}
+				} else {
+					step--;
+					mui.alert('请输入有效的手机号码！',"黑卡生活");
+
+				}
+			}
+			 zkNAV();
+		
+			
+			
+			
+
+		}
+
+		function endChoseIcard(rs){
+			var verData = eval('(' + rs + ')');
+			if(verData!=undefined){
+				if(verData.suc)
+					mui.alert(verData.msg,"黑卡生活");
+				else{
+					mui.alert(verData.msg,"黑卡生活");
+					step=1;	
+					zkNAV();
+				}
+			}
+		}
+
+		function hide() {
+			login.style.display = "none";
+			over.style.display = "none";
+			step--;
+			zkNAV();
+		}
+  		
+		var phone = "";
+        function sendMessage() {
+            phone = $("#input-phone").val();
+            var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+            if (myreg.test(phone)) {
+                var ar = new Array();
+                ar.InterfaceAddress = "api/Message";
+                ar.messageData = 0;
+                ar.phoneNum = phone;
+                ar.Handshake_Time = CurentTime('-', true);
+                aes(ar, "endMessage");
+            } else {
+					mui.alert('请输入有效的手机号码！',"黑卡生活");
+                
+                return false;
+            }
+        }
+        function endMessage(rs) {
+            localStorage.setItem("phonevaliede", rs);
+            
+        }
+        
+        function settime(t) {
+            phone = $("#input-phone").val();
+            var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+            if (myreg.test(phone)) {
+                document.getElementById("getonce").disabled = true;
+                for (i = 1; i <= t; i++) {
+                    if (i == 1) {
+                        sendMessage();
+                    }
+                    window.setTimeout("update_p(" + i + "," + t + ")", i * 1000);
+                }
+            } else {
+                alert('请输入有效的手机号码！');
+                return false;
+            }
+        }
+
+        function update_p(num, t) {
+            if (num == t) {
+                document.getElementById("getonce").value = "重新发送 ";
+                document.getElementById("getonce").disabled = false;
+            }
+            else {
+                printnr = t - num;
+                document.getElementById("getonce").value ="(" + printnr + ")重新发送";
+            }
+        }
+        
+      
+     
+		//隐藏个人信息，显示地址
+		
+		function hidePersonInfor() {
+			if (localStorage.getItem("phonevaliede")!=null&&localStorage.getItem("phonevaliede")!=""&&document.getElementById("jiaoyan").value === localStorage.getItem("phonevaliede")){
+				document.getElementById("personInfor").style.display = "none";
+				document.getElementById("choseaddress").style.display = "block";
+				step++;
+				zkNAV();
+			}else{
+
+					mui.alert('验证码失效或者验证码错误！',"黑卡生活");
+
+			}
+		}
+
+		function showMyaddress(rs){
+			 var verData = eval('(' + rs + ')');
+			document.getElementById("phoneNum").innerHTML = $("#input-phone").val();
+		}
+
+		function searHYP() {
+			Shopindex++;
+			getdata1();
+		}
+		var Shopindex = 0;
+		var isdata = false; //防重
+		var isdata1 = false; //防重
+		getdata();
+		Shopindex++;
+
+		function getdata1() {
+			if(!isdata1) {
+				isdata1 = true;
+				var ar = new Array();
+				var ph = {
+					Collection: [{
+							F: "State",
+							O: "=",
+							P: "@@State",
+							V: 1
+						},
+						{
+							F: "Icnum",
+							O: "%",
+							P: "@@Icnum",
+							V: document.getElementById("shuru-like").value
+						},
+
+					]
+				};
+				ar.Condition = ph;
+				ar.InterfaceAddress = "api/ShopInfo";
+				ar.Name = "YL_ICCard";
+				ar.OrderBy = "CreationDate desc";
+				ar.Index = 0 + Shopindex;
+				ar.Size = 6;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar, "endshop1");
+			}
+		}
+
+		function endshop1(rd) {
+			var TData = eval("(" + rd + ")");
+			var fa = false;
+			if(TData == undefined || TData.length == undefined || TData.length == 0) {
+				fa = true;
+				mui.alert("没有更多结果","黑卡生活");
+				Shopindex = 0;
+			} else {
+				var hhtml = '';
+				for(var i = 0; i < TData.length; i++) {
+					var html = ' 	<span class="number"  tabId="' + TData[i].Id + '">';
+					html += '<div style="padding-top: 5px;">' + TData[i].Icnum + '</div>';
+					html += ' <div style="font-size: 12px;padding-bottom: 5px;">选购费:￥' + TData[i].Icprice + '</div>';
+					html += '</span>';
+					hhtml += html;
+				}
+				document.getElementById("searchText").innerHTML = hhtml;
+				$('.number').click(function() {
+					$('.number').css("border", "1px solid #ccc");
+					$('.number').css("color", "#ccc");
+					choseId=this.getAttribute("tabid");
+					this.style.border = "1px solid #cfa972";
+					this.style.color = "#cfa972";
+				});
+			}
+			isdata1 = false;
+		}
+		
+		function getdata() { //列表查询方法
+			if(!isdata) {
+				isdata = true;
+				var ar = new Array();
+				var ph = {
+					Collection: [ //参数集合，可为空，不为空时，查询结果会按参数集合配置筛选数据
+						{
+							F: "State",
+							O: "=",
+							P: "@@State",
+							V: 1
+						}, //列表查询条件F:参数名称，o：参数算法（＝，％，!=,>,<）,P:参数化字符防sql注入一般给予参数名称一致即可，v：参数的条件值
+
+					]
+				};
+				ar.Condition = ph; //真实赋值
+				ar.InterfaceAddress = "api/ShopInfo"; //真实访问接口
+				ar.Name = "YL_ICCard"; //类名称
+				ar.OrderBy = "NEWID()"; //排序
+				ar.Index = 0; //查询页数
+				ar.Size = 6; //查询条数
+				ar.Handshake_Time = CurentTime('-', false); //当前时间防c
+				aes(ar, "endshop"); //执行查询，并回调endshop function;
+			}
+		}
+
+		function endshop(rd) { //rd服务器返回字符串，正常为返回json字符串，异常返回500 内部错误
+			var TData = eval("(" + rd + ")");
+			var fa = false;
+			if(TData == undefined || TData.length == undefined || TData.length == 0) {
+				fa = true;
+			} else {
+				var hhtml = '';
+				for(var i = 0; i < TData.length; i++) {
+					var html = ' 	<span class="number" tabId="' + TData[i].Id + '" >';
+					html += '<div style="padding-top: 5px;">' + TData[i].Icnum + '</div>';
+					html += ' <div style="font-size: 12px;padding-bottom: 5px;">选购费:￥' + TData[i].Icprice + '</div>';
+					html += '</span>';
+					hhtml += html;
+				}
+				$('.number').click(function() { //选中了一个number号码
+					$('.number').css("border", "1px solid #ccc");
+					$('.number').css("color", "#ccc");
+					choseId=this.getAttribute("tabid");
+					this.style.border = "1px solid #cfa972";
+					this.style.color = "#cfa972";
+
+				})
+			}
+			isdata = false;
+		}
+
+		//GetShopAddress 获取线下办卡商家地址
+		var getshopindex = 0;
+		var isshopdata = false;
+		getShopdata();
+
+		function olclick() { //点击获取线下地址
+			getshopindex++;
+			getShopdata();
+		}
+
+		function getShopdata() { //列表查询方法
+			if(!isshopdata) {
+				isshopdata = true;
+				var ar = new Array();
+				var ph = {
+					Collection: [{
+							F: "status",
+							O: "=",
+							P: "@@status",
+							V: 1
+						}, //列表查询条件F:参数名称，o：参数算法（＝，％，!=,>,<）,P:参数化字符防sql注入一般给予参数名称一致即可，v：参数的条件值
+					]
+				};
+				ar.Condition = ph;
+				ar.InterfaceAddress = "api/ShopInfo";
+				ar.Name = "YL_Stop";
+				ar.OrderBy = "CreationDate desc";
+				ar.Index = 0 + getshopindex;
+				ar.Size = 3;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar, "endgetShopdata"); //执行查询，并回调endshop function;
+			}
+		}
+
+		function endgetShopdata(rd) { //rd服务器返回字符串，正常为返回json字符串，异常返回500 内部错误
+			var TData = eval("(" + rd + ")");
+			var fa = false;
+			if(TData == undefined || TData.length == undefined || TData.length == 0) {
+				alert("没有更多线下办理地址");
+			} else {
+				var hhtml = '';
+				for(var i = 0; i < TData.length; i++) {
+					var olhtml = document.createElement("li");
+					olhtml.innerHTML = TData[i].MerAddress + "（" + TData[i].StopName + ")<br/> 电话：" + TData[i].ShopPhone;
+				}
+			}
+			isshopdata = false;
+		}
+		//线下商家地址获取完毕
+
+		function show(t) {
+			if(t == 1) {
+				document.getElementById("allocation").style.display = "none";
+				document.getElementById("xuanhao").style.border = "1px solid #cfa972";
+				document.getElementById("xuanhao").style.color = "#cfa972";
+
+				document.getElementById("fenpei").style.border = "1px solid #ccc";
+				document.getElementById("fenpei").style.color = "#ccc";
+				document.getElementById("selection").style.display = "block";
+			} else if(t == 2) {
+				document.getElementById("fenpei").style.border = "1px solid #cfa972";
+				document.getElementById("fenpei").style.color = "#cfa972";
+				document.getElementById("serchRuslut").style.display = "none";
+				document.getElementById("xuanhao").style.border = "1px solid #ccc";
+				document.getElementById("xuanhao").style.color = "#ccc";
+				document.getElementById("selection").style.display = "block";
+				document.getElementById("allocation").style.display = "block";
+				document.getElementById("selection").style.display = "none";
+				getKH();
+			} else if(t == 3) {
+				document.getElementById("serchRuslut").style.display = "block";
+				document.getElementById("serchRusluts").style.display = "block";
+				Shopindex = 0;
+				getdata1();
+			}
+
+		}
+
+		function numberOnclick() {
+			var $this = this;
+			$this.style.border = "1px solid #cfa972";
+		}
+	</script>
+
+</html>

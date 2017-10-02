@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../shop_iconfont/iconfont.css" />
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+		<title>活动发起</title>
+		<style type="text/css">
+			.mui-content {
+				height: 0px;
+				margin: 0px;
+				background-color: #efeff4;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			* {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+			}
+			html{
+				font-size: 10px;
+			}
+			input::-webkit-input-placeholder{ /*WebKit browsers*/
+				color: #9a9798;
+			}
+			input::-moz-input-placeholder{ /*Mozilla Firefox*/
+				color: #9a9798;
+			}
+			input::-ms-input-placeholder{ /*Internet Explorer*/ 
+				color: #9a9798;
+			}
+			textarea::-webkit-input-placeholder{ /*WebKit browsers*/
+				color: #9a9798;
+			}
+			textarea::-moz-input-placeholder{ /*Mozilla Firefox*/
+				color: #9a9798;
+			}
+			textarea::-ms-input-placeholder{ /*Internet Explorer*/ 
+				color: #9a9798;
+			}
+			
+			
+			#ClubName{
+				border-radius: 0.8rem;
+			}
+			#Clubpnum{
+				border-radius: 0.8rem;
+				margin-top: 15px;
+			}
+			.activeDetaels{
+				margin-left: 15px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background: #212123;color: white;">
+			<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<h1 class="mui-title" id="proName" style="color: white;">活动发起</h1>
+		</header>
+		
+		<div id="" style="margin:5rem auto; width: 90%;">
+			<p style="font-weight: bolder; font-size: 1.5rem; font-family: '黑体';">活动信息</p>
+			<input type="text" id="ClubName"  placeholder="活动名"/>
+			<div class="huodongleixing" style=" width: 100%; height: 40px; border: solid 1px #9A9798; border-radius: 0.8rem;"onclick="ActivitiLeixing()">
+				<span id ="ClubType" style="position: relative;top: 0.7rem;left: 15px; color: #9a9798;">活动类型</span>
+				<img src="img/xiaxuan.png" style="float: right; height: 40%; margin-top: 1rem;margin-right: 5%;" />
+			</div>
+			<div id="xiala" style=" width: 90%; border: solid 1px #9A9798; border-radius: 0.8rem; display: ; position: fixed;z-index: 3;background: white; display: none;margin-top:-42px">
+					<p class="activeDetaels">观影</p>
+					<p class="activeDetaels">音乐</p>
+					<p class="activeDetaels">真人游戏</p>
+					<p class="activeDetaels">桌游</p>
+					<p class="activeDetaels">户外极限</p>
+					<p class="activeDetaels">旅行</p>
+					<p class="activeDetaels">运动健身</p>
+					<p class="activeDetaels">艺术</p>
+					<p class="activeDetaels">手工</p>
+				</div>
+				<div style="float:left;width: 45%; height: 40px; border: solid 1px #9a9798; border-radius: 0.8rem; margin-top: 15px;" class="btn">
+					<input id= "ClubTime" type="text" class="StartTime" placeholder="活动时间" style="margin-bottom: 0px;width: 100%;height: 100%;float:left; text-align:center;color:#A8A8A8;border:hidden;line-height:0rem;font-size: 13px; padding: 0; margin-left: -5px;">
+				</div>
+				<input type="text" id="Clubpnum" value="" placeholder="活动人数" style="width: 45%; margin-left: 10%;"/>
+			<div class="huodongdidian" style=" width: 100%; height: 40px; border: solid 1px #9A9798; border-radius: 0.8rem;"onclick="ActivitiPoint()">
+				<span id="ClubAddress" style="position: relative;top: 0.7rem;left: 15px; color: #9a9798;">活动地点</span>
+				<img src="img/xiaxuan.png" style="float: right; height: 40%; margin-top: 1rem;margin-right: 5%;" />
+			</div>
+			<div id="xiala2" style=" width: 90%; border: solid 1px #9A9798; border-radius: 0.8rem; display: ; position: fixed;z-index: 3;background: white; display: none;margin-top:-40px">
+					<p class="activeDetaels">捷美小酌</p>
+					<p class="activeDetaels">一阳咖啡</p>
+					<p class="activeDetaels">桌游吧</p>
+					<p class="activeDetaels">战沙狼人CS</p>
+				</div>
+			
+			<textarea id="ClubDetail" style="margin-top: 15px; width: 100%;height:10rem;text-align:left;background-color:#fff;border:1px solid #9a9798;border-radius:0.8rem;padding-top:0.8rem;color: ;font-family: " simhei ";" placeholder="活动详情（简单描述下活动内容）"></textarea>
+			
+			<textarea id="ClubMoneyuse" style="margin-top: 15px; width: 100%;height:7rem;text-align:left;background-color:#fff;border:1px solid #9a9798;border-radius:0.8rem;padding-top:0.8rem;color: ;font-family: " simhei ";" placeholder="收取活动报名者费用以及用途（不收费略过）"></textarea>
+			
+			<input id="ContentPP" type="text" id="ContentPP" value="" disabled="disabled" style="margin-top: 15px;"/>
+		</div>
+		
+		<input type="button" id="tijiao" value="确定提交 " style="width: 90%;height: 40px; background-color: #cfa972; margin-left:5%; bottom: 0rem;position: fixed;border:none;color:white;" /></span>
+	<!--<nav class="mui-bar mui-bar-tab indexcssHC" id="footers" style="background-color: white;font-size: 12px;color:white;">
+				<span class="mui-tab-label" style="font-size:9px;color:white;" >
+            	
+			</span>
+	</nav>-->
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script src="../js/MD5S.js"></script>
+		<script src="../js/TravelTailorSafeInterface.js "></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DQm1huuHqW6SHaYpEnrVMtE4fDmDrxVH"></script>
+		<script type="text/javascript">
+			loginList();
+			function loginList() {
+				var phone = localStorage.getItem("loginPhone");
+			    document.getElementById("ContentPP").value = phone;
+        		if(localStorage.getItem("UserId")==null || phone==null){      		 
+				mui.openWindow({
+					url:"login.html",
+					id:"login",
+					
+					show:{
+						autoShow:true,//页面loaded事件发生后自动显示，默认为true
+					
+					},
+					waiting:{
+					
+					}
+				})
+				}
+        	getPeoplePosition();
+        	}
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			function ActivitiPoint(){
+				$('#xiala2').toggle(500);
+			}
+			function ActivitiLeixing(){
+				$('#xiala').toggle(500);
+			}
+			$(document).ready(function(){
+				$("#xiala p").click(function(){
+					var ptext = $(this).text();
+					$(".huodongleixing span").text(ptext);
+					$('#xiala').toggle(500);
+				})
+				
+				$("#xiala2 p").click(function(){
+					var ptext = $(this).text();
+					$(".huodongdidian span").text(ptext);
+					$('#xiala2').toggle(500);
+				})
+			});
+			
+			(function($) {
+				$.init();
+				var btns = $('.btn');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = '{"type":"datetime"}';
+						var options = JSON.parse(optionsJson);
+						var now = new Date();
+						options.beginYear = now.getFullYear();
+						options.beginMonth = now.getMonth() + 1;
+						options.beginDay = now.getDate();
+						options.beginHours = now.getHours() + 1;
+						options.beginMinutes = now.getMinutes();
+						var id = this.getAttribute('id');
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+
+							document.getElementsByClassName("StartTime")[i].value = rs.text;
+							picker.dispose();
+						});
+					}, false);
+				});
+			})(mui);
+		var lng ="";
+		var lat ="";
+		window.BMap_loadScriptTime = (new Date).getTime();
+		var map = new BMap.Map("allmap");
+		function getPeoplePosition() {
+			var geolocation = new BMap.Geolocation();
+			geolocation.getCurrentPosition(function(r) {
+				if(this.getStatus() == BMAP_STATUS_SUCCESS) {
+					lng = r.point.lng;
+					lat = r.point.lat;
+					//debugger;
+					//alert(lng);
+				} else {
+					alert(this.getStatus());
+				}
+			},{ enableHighAccuracy: true })
+		}
+		$("#ClubName").focus(function(){
+			$("#ClubName").val();
+		});
+		$('#ClubName').blur(function (){
+			var clubn = $("#ClubName").val();
+			if(clubn=="" || clubn.length>30){
+				mui.alert("请正确填写活动名!");
+			}
+		});
+		$("#ClubType").focus(function(){
+			$("#ClubType").text();
+		});
+		$('#ClubType').blur(function (){
+			var clubT = $("#ClubType").text();
+			if(clubT=="" || clubT.length>20){
+				mui.alert("请正确填写活动类型!");
+			}
+		});
+		$("#ClubTime").focus(function(){
+			$("#ClubTime").val();
+		});
+		$('#ClubTime').blur(function (){
+			var clubTi = $("#ClubTime").val();
+			if(clubTi==""){
+				mui.alert("请正确填写活动时间!");
+			}
+		});
+		$("#Clubpnum").focus(function(){ //当本次输入框获得焦点时
+			$("#Clubpnum").val(); //获取值
+		});
+		$('#Clubpnum').blur(function (){ //当本次输入框失去焦点时
+			var re = /^\+?[1-9][0-9]*$/;
+			var clubp = $("#Clubpnum").val();
+			if(!re.test(clubp)){
+				mui.alert("请正确填写活动人数!");
+			}
+		});
+		$("#ClubAddress").focus(function(){
+			$("#ClubAddress").text();
+		});
+		$('#ClubAddress').blur(function (){
+			var cluba = $("#ClubAddress").text();
+			if(cluba==""||cluba.length>30){
+				mui.alert("请正确填写活动地址!");
+			}
+		});
+		$("#ClubDetail").focus(function(){
+			$("#ClubDetail").val();
+		});
+		$('#ClubDetail').blur(function (){
+			var clubd = $("#ClubDetail").val();
+			if(clubd.length>300){
+				mui.alert("活动详情不能超过300个字!");
+			}
+		});
+		$("#ClubMoneyuse").focus(function(){
+			$("#ClubMoneyuse").val();
+		});
+		$('#ClubMoneyuse').blur(function (){
+			var cluba = $("#ClubMoneyuse").val();
+			if(cluba.length>300){
+				mui.alert("收取活动报名者费用以及用途不能超过300个字!");
+			}
+		});
+		document.getElementById("tijiao").addEventListener("tap",function(){			    
+				var ar = new Array();
+				ar.InterfaceAddress = "api/AddclubOrDetail";
+				ar.st = true;
+				ar.keyID = localStorage.getItem("UserId");
+				ar.UsID =  localStorage.getItem("UserId");
+                ar.ClubName = $("#ClubName").val();
+                if(ar.ClubName=="" || ar.ClubName.length>30){
+				   mui.alert("请正确填写活动名!");
+				   return false;
+			    }
+                ar.ClubType = $("#ClubType").text();
+                if(ar.ClubType=="" || ar.ClubType.length>20){
+				  mui.alert("请正确填写活动类型!");
+				  return false;
+			    }
+                ar.ClubTime = $("#ClubTime").val();
+                if(ar.ClubTime==""){
+				  mui.alert("请正确填写活动时间!");
+				  return false;
+			    }
+                ar.Clubpnum = $("#Clubpnum").val();
+                var ce = /^\+?[1-9][0-9]*$/;
+			    if(!ce.test(ar.Clubpnum)){
+				  mui.alert("请正确填写活动人数!");
+				  return false;
+			    }
+                ar.ClubAddress = $("#ClubAddress").text();
+                if(ar.ClubAddress==""||ar.ClubAddress.length>30){
+				   mui.alert("请正确填写活动地址!");
+				   return false;
+			    }
+                ar.ClubDetail = $("#ClubDetail").val();
+                if(ar.ClubDetail.length>300){
+				   mui.alert("活动详情不能超过300个字!");
+				   return false;
+			    }
+                ar.ClubMoneyuse = $("#ClubMoneyuse").val();
+                if(ar.ClubMoneyuse.length>300){
+				   mui.alert("收取活动报名者费用以及用途不能超过300个字!");
+				   return false;
+			    }
+                ar.ContentPP = $("#ContentPP").val();  
+		        ar.LONG = lng;
+		        ar.Dismension = lat;
+	            aes(ar, "endAddclubOrDetail");
+			})
+			function endAddclubOrDetail(rs){
+				var TData = eval("(" + rs + ")");
+				var ms = TData.msg;				
+				mui.alert(ms);	
+				setTimeout(function(){
+					mui.openWindow({
+						url:"../club.html",
+						id:"tijiao",
+						show:{
+							autoShow:true,//页面loaded事件发生后自动显示，默认为true
+						
+						},
+						waiting:{
+						}
+					})
+				},2000);
+			}
+</script>
+	</body>
+	
+	
+	
+</html>

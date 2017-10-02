@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>分散申请</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		body {
+			background: #fff;
+		}
+		
+		.mui-table-view1 {
+			margin-top: 65px;
+		}
+		
+		.mui-table-view1 .mui-table-view-cell {
+			padding: 4px 20px
+		}
+		
+		.mui-table-view1 input {
+			margin-bottom: 0px;
+			font-size: 12px;
+			height: 35px;
+			padding: 4px 4px;
+			border: 1px solid rgba(0, 0, 0, .2);
+			border-radius: 3px;
+		}
+	
+	.but-mui{padding:5px  23px;}
+	.but-mui img{width:25%;height:35%;}
+	
+	select{width:16%;background:#d9dadf;border-radius:2px;padding:6px 0px;margin-bottom:0px;display:inline;position:absolute;top:5px;right:20px;margin:0 auto;}
+	
+		.submit {
+			width: 60%;
+			background: #ff5000;
+			color: #fff;
+			margin-top: 25%;
+			margin-left: 21%;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background:#ff5000;">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" style="color:#fff;"></a>
+			<a class="mui-icon mui-icon-reply mui-pull-right"></a>
+			<h1 class="mui-title" style="color:#fff;">分期申请</h1>
+		</header>
+
+		<ul class="mui-table-view1">
+			<li class="mui-table-view-cell"><input type="text" name="" id="" value="" placeholder="请输入名字" /></li>
+			<li class="mui-table-view-cell"><span><input type="tyext" name="country_code" id="" value="" placeholder="请输入电话" style="width:60%;float:left;"/></span>
+				<span>
+					
+				<!--<input type="type" name="" id="" style="width:35%;float:right;"/>-->
+				<select>
+				  <option>性别</option>
+				  <option>男</option>
+				  <option>女</option>
+				
+				</select></span> </li>
+				
+			<li class="mui-table-view-cell"><input type="text" name="" id="" value="" placeholder="请输入身份证号码" /></li>
+			<li class="mui-table-view-cell" style="color:#7c7c7c;font-size:15px;font-family: '微软雅黑';">身份证照：</li>
+			<div class="but-mui"><span id="span"><img src="../images/sfz1.png"/></span><span id="span" style="margin-left:20px;"><img src="../images/sfz2.png"/></span></div>
+			<li class="mui-table-view-cell"><input type="text" name="" id="" value="" placeholder="请输入分期金额" /></li>
+			<li class="mui-table-view-cell"><input type="text" name="" id="" value="" placeholder="请输入分期用途" /></li>
+			<li class="mui-table-view-cell"><input type='text' "text" name="" id="" value="" placeholder="备注：" /></li>
+			<li class="mui-table-view-cell"><button class="submit">提交</button></li>
+		</ul>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+				
+				/*点击头像触发*/ 
+        document.getElementById('span').addEventListener('tap', function() { 
+            if (mui.os.plus) { 
+                var a = [{ 
+                    title: "拍照" 
+                }, { 
+                    title: "从手机相册选择" 
+                }]; 
+                plus.nativeUI.actionSheet({ 
+                    title: "请上传身份证", 
+                    cancel: "取消", 
+                    buttons: a 
+                }, function(b) { /*actionSheet 按钮点击事件*/ 
+                    switch (b.index) { 
+                        case 0: 
+                            break; 
+                        case 1: 
+                            getImage(); /*拍照*/ 
+                            break; 
+                        case 2: 
+                            galleryImg();/*打开相册*/ 
+                            break; 
+                        default: 
+                            break; 
+                    } 
+                }) 
+            } 
+        }, false);
+
+			//返回按钮
+			$('.mui-pull-left').on('tap',function(){
+				history.go(-1);
+			})
+				
+		</script>
+	</body>
+
+</html>

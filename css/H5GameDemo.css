@@ -1,0 +1,34 @@
+/* 人物头标样式  */
+.RealBlood{
+		background-color:red;
+		font-size: 10px;
+
+		height: 100%;
+}
+
+.xuetiao{
+    border: 1px solid red;
+	height: 14px;
+
+}
+.ppPhone{
+	width: 100px;
+	height: 85px;
+	background-color: white;
+	float: left;
+}
+.Name{
+	float: left;
+	padding-top: 10%;
+	text-align: left;
+	width:100px;
+	height: 100%;
+}
+.pp1{
+	border: 1px solid #EC971F;
+	height: 86px;		
+	font-size: 10px;
+	margin-right: 10%;
+	float: left;
+	}
+	

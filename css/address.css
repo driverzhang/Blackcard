@@ -1,0 +1,56 @@
+#address {
+	background: black;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 22px;
+}
+#M-address{
+	font-family: "黑体";
+	color: white;
+}
+.MSG{
+	position: relative;
+    top: -5px;
+    left: 5%;
+    
+}
+.jianrumsg{
+	position: relative;
+    left: 5%;
+    margin-top: 0.5rem;
+}
+:-moz-placeholder
+{
+  color: #999999;
+}
+::-webkit-input-placeholder
+{
+   color: #999999;
+}
+
+.Tips{
+	position: relative;
+    left: 5%;
+    font-family: "黑体";
+}
+#jichukafei{
+	margin-left: 10%;
+}
+#shangyibu{
+	color: #d2a971;
+    height: 30px;
+    width: 33%;
+	border: solid 1px #d2a971;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+#tijiao{
+	background:#d2a971;
+	color: white;
+	margin-left: 0.5rem;
+    height: 30px;
+    width: 35%;
+	border: solid 1px #d2a971;
+	border-radius: 10px;
+}

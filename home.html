@@ -1,0 +1,495 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="css/mui.min.css" rel="stylesheet" />
+
+		<link rel="stylesheet" type="text/css" href="shop_iconfont/iconfont.css">
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<style>
+		
+		body {
+				background: #3e3e3e;
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			.bodydiv{
+			    width:100%;
+			    height:100%;
+			    margin-bottom: 65px;
+			}
+			
+			.bgc {
+				width: 100%;
+				height: auto;
+				background-color: #3e3e3e;
+
+				margin-bottom: 1rem;
+			}
+			
+			.head1 {
+				font-family: "SimHei";
+				font-size: 1.25rem;
+				border: 1px dotted #ffffff;
+				border-radius: 20px;
+				background-color: #ffffff;
+				width: 94%;
+				margin: 0 3%;
+
+			}
+			
+			.head_up_left {
+				float: left;
+				height: 60px;
+				line-height: 60px;width: 50%;
+				text-align: center;
+				color: #cfa972;
+			}
+			
+			.head_up_right {
+				float: left;
+				height: 60px;
+				line-height: 60px;width: 50%;
+				text-align: center;
+
+				color: #c2c2c2;
+			}
+			
+			.xian {
+				margin: 0;
+				border-bottom: 3px dashed #a0a0a0;
+				margin-bottom: 5px;
+				border-top: none;
+				border-width: 1.5px;
+				width: 94%;
+			}
+			.head_down{
+				height:4rem;
+			}
+			.outtext
+			 {
+				float: left;
+				width: 25%;
+				text-align: center;
+				margin-top: 7px;
+				line-height: 1.8rem;
+			}
+			
+			
+			img {
+				width: 25px;
+			}
+			
+			.head_down {
+				width: 100%;
+			}
+			
+			.intext {
+				font-size: 1.25rem;
+				position: relative;
+				top: -7px;
+			}
+			
+			.head {
+				width: 94%;
+				height: 7rem;
+				margin: auto;
+			}
+			
+			.head-img {
+				float: left;
+				width: 4rem;
+				height: 4rem;
+				margin-left: 0px;
+				margin-top: 2rem;
+				border-radius: 4rem;
+				margin-right: 1rem;
+			}
+			
+			.head-name {
+				float: left;
+				height: 4rem;
+				width: auto;
+				margin-top: 2rem;
+				color: white;
+				line-height: 2rem;
+				text-align: left;
+			}
+			
+			.head-name p {
+				margin: 0;
+			}
+			
+			.head-name span {
+				font-size: 14px;
+			}
+			
+			.head-right {
+				float: right;
+				margin-top: 1rem;
+				height: 2rem;
+				width: 2rem;
+			}
+			
+			#middle {
+
+				width: 94%;
+				height: 35%;
+				border: solid 1px #3e3e3e;
+				border-radius: 20px;
+				margin: 0 3%;
+				margin-bottom: 1rem;
+			}
+			
+			.boder {
+				width: 100% height: auto;
+				border-bottom: dashed 1.5px #a0a0a0;
+				margin: 0.875rem;
+			}
+			
+			.img1 {
+				width: 30px;
+				height: 30px;
+				margin-left: 0.8rem;
+				margin-bottom: 0.5rem;
+			}
+			
+			.m-txh {
+				position: relative;
+				left: 1rem;
+				bottom: 16px;
+				font-size: 1.25rem;
+				font-family: "黑体";
+			}
+			
+			.img2 {
+				width: 25px;
+				height: 25px;
+				float: right;
+			}
+			
+			.shixinyuan-left {
+				width: 0.8rem;
+				height: 0.8rem;
+				background: #3e3e3e;
+				border-radius: 0.8rem;
+				float: left;
+				position: relative;
+				top: -1.4rem;
+				left: -0.4rem;
+			}
+			
+			.shixinyuan-right {
+				width: 0.8rem;
+				height: 0.8rem;
+				background: #3e3e3e;
+				border-radius: 0.8rem;
+				float: right;
+				position: relative;
+				top: -1.4rem;
+				right: -0.4rem;
+			}
+			
+			.bigthree {
+
+				width: 94%;
+				height: 10.1rem;
+				margin: 0 3%;
+				background-color: white;
+				border-radius: 1rem;
+			}
+			
+			.bigthree-list {
+				float: left;
+				width: 100%;
+				height: 3.3rem;
+				margin: auto;
+			}
+			
+			.bigthree-list-left {
+				float: left;
+				width: 30px;
+				height: 30px;
+				margin: 1rem;
+				margin-right: 1.5rem;
+				margin-left: 1.1rem;
+			}
+			
+			.bigthree-list-center {
+				float: left;
+				width: auto;
+				height: auto;
+				margin: auto;
+				line-height: 3.5rem;
+				font-size: 1.25rem;
+				font-family: "黑体";
+			}
+			
+			.bigthree-list-you {
+				float: right;
+				margin: 0.5rem;
+				height: 30px;
+				width: 30px;
+			}
+			
+			.garden-left {
+				position: relative;
+				float: left;
+				background: #3e3e3e;
+				width: 0.8rem;
+				height: 0.8rem;
+				border-radius: 0.8rem;
+				margin-top: -0.4rem;
+				margin-left: -0.4rem;
+			}
+			
+			.garden-right {
+				position: relative;
+				float: right;
+				overflow: hidden;
+				background: #3e3e3e;
+				width: 0.8rem;
+				height: 0.8rem;
+				border-radius: 0.8rem;
+				margin-top: -0.4rem;
+				margin-right: -0.4rem;
+			}
+		</style>
+		
+	</head>
+	
+		
+	<body>
+		<div class="bodydiv">
+			<div class="head">
+				<img class="head-img" src="images/det_banner.jpg" />
+				<div class="head-name">
+				<p class="personname" id="UserName"></p>
+					<span id="loginPhone">di:123456</span></div>
+				<img class="head-right" src="img/head-right.png" />
+			</div>
+			<div class="bgc">
+				<div class="head1">
+					<div style="width: 100%; height: 60px;font-size: 15px;">
+						<div class="head_up_left">
+							我的订单
+						</div>
+						<div class="head_up_right" style="position:relative; font-size: 15px;">
+							<span class="text_right">全部订单</span>
+							<img src="img/xiayibu.png" style="position: relative;right: 5px; top: 5px;" />
+						</div>
+					</div>
+					<hr class="xian" />
+					<div class="head_down">
+						<div class="outtext">
+							<img src="img/quanbu.png" /><br />
+							<span class="intext" style="font-size: 12px;">全部</span>
+						</div>
+						<div class="outtext">
+							<img src="img/fukuan.png" /><br />
+							<span class="intext" style="font-size: 12px;">待付款</span>
+						</div>
+						<div class="outtext">
+							<img src="img/pingjia.png" style="width: 30px;" /><br />
+							<span class="intext" style="font-size: 12px;">待使用</span>
+						</div>
+						<div class="outtext">
+							<img src="img/shiyong.png" /><br />
+							<span class="intext" style="font-size: 12px;">待评价</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="middle" style="background: white;">
+				<div class="boder" id="intergralClick">
+					<img class="img1" src="img/chaxun.png">
+					<span class="m-txh">积分查询</span>
+					<img class="img2" src="img/fuhao.png" style="margin-right: 1px;" ">	
+				</div>
+				
+				<div class="shixinyuan-left "></div>
+				<div class="shixinyuan-right "></div>
+				<div class="boder waitUp">
+					<img class="img1 " src="img/shouchang.png">
+					<span class="m-txh ">我的收藏</span>
+					<img class="img2 " src="img/fuhao.png">
+				</div>
+				
+				<div class="shixinyuan-left "></div>
+				<div class="shixinyuan-right "></div>
+				<div class="boder waitUp">
+					<img class="img1 " src="img/fenqi.png">
+					<span class="m-txh ">分期申请</span>
+					<img class="img2 " src="img/fuhao.png ">
+				</div>
+				
+				
+				<div class="shixinyuan-left "></div>
+				<div class="shixinyuan-right "></div>
+				<div class="waitUp" style="margin-left: 0.875rem; ">
+					<img class="img1 " src="img/heiyou.png">
+					<span class="m-txh ">黑友</span>
+					<img class="img2 " src="img/fuhao.png">
+				</div>
+
+		</div>
+		
+		<div class="bigthree ">
+
+			<div class="bigthree-list waitUp" style="border-bottom:1.5px dashed #acacac ">
+				<img class="bigthree-list-left " style="margin-left: 1.3rem; " src="img/gouwuche.png ">
+				<div class="bigthree-list-center "><span>购物车</span></div><img class="bigthree-list-you " src="img/you.png " style="margin-right:1rem ; ">
+			</div>
+
+			<div class="bigthree-list waitUp" style="border-bottom:1.5px dashed #acacac ">
+				<div class="garden-left "></div>
+				<div class="garden-right "></div>
+				<img class="bigthree-list-left " src="img/youhui.png ">
+				<div class="bigthree-list-center "><span>优惠券</span></div><img class="bigthree-list-you " src="img/you.png ">
+
+			</div>
+
+			<div class="bigthree-list waitUp">
+				<div class="garden-left "></div>
+				<div class="garden-right "></div>
+				<img class="bigthree-list-left " src="img/zhunxiang.png " style="margin-top:0.8rem; ">
+				<div class="bigthree-list-center " style="line-height: 3rem; "><span>会员尊享</span></div><img class="bigthree-list-you " src="img/you.png ">
+
+			</div>
+		</div>
+		
+	</div>
+		
+	<!--底部选项卡-->
+		<nav class="mui-bar mui-bar-tab "  style="background-color: #cfa972;font-size: 12px;color:white;">
+			<a id="index" class="mui-tab-item  tab-item" href="index.html">
+				<span class="mui-icon myico icon-fz icon iconfont " style="color:white;">&#xe60d;</span>
+				<span class="mui-tab-label tab-label" style="font-size:10px;color:white;">首 页</span>
+			</a>
+			<a id="integral" class="mui-tab-item tab-item" href="integral.html">
+				<span class="mui-icon myico  icon-lb icon iconfont" style="color:white;">&#xe60b;</span>
+				<span class="mui-tab-label"  style="font-size:10px;color:white;">积 分</span>
+			</a>
+			<a id="MainBuy" class="mui-tab-item tab-item" href="MainBuy.html">
+				<span class="mui-icon myico icon-fjmd icon iconfont "  style="color:white;">&#xe60e;</span>
+				<span class="mui-tab-label"  style="font-size:10px;color:white;">商 圈</span>
+			</a>
+			<a id="personage" class="mui-tab-item tab-item" href="personage.html">
+				<span class="mui-icon myico icon-gyw icon iconfont"  style="color:white;">&#xe60f;</span>
+				<span class="mui-tab-label"  style="font-size:10px;color:white;">个人中心</span>
+			</a>
+		</nav>
+		<script type="text/javascript">
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		document.getElementById("intergralClick").addEventListener("tap",function(){
+			mui.openWindow({
+				                url: "pullrefresh_main.html",
+				                id: "pullrefresh_main",
+				                show: {
+				                    autoShow: true,//页面loaded事件发生后自动显示，默认为true
+				
+				                },
+				                waiting: {
+									
+				                }
+				            })
+		})
+			var navs = document.querySelectorAll(".outtext");
+			for(n in navs) {
+				navs[0].addEventListener("tap", function() {
+					mui.openWindow({
+				                url: "examples/order_search.html",
+				                id: "order_search",
+				                show: {
+				                    autoShow: true,//页面loaded事件发生后自动显示，默认为true
+				
+				                },
+				                waiting: {
+									
+				                }
+				            })
+				});
+			}
+	var isToGoUrl=false;
+	setTimeout(function(){
+					var loginPhone=localStorage.getItem("loginPhone");
+					var loginPassword=localStorage.getItem("loginPassword");
+					if(loginPassword==null||loginPhone==null){
+						  mui.openWindow({
+				                url: "examples/forget_password.html",
+				                id: "forget_password",
+				                show: {
+				                    autoShow: true,//页面loaded事件发生后自动显示，默认为true
+				
+				                },
+				                waiting: {
+									
+				                }
+				            })
+					}
+				},1000);
+	window.onload = function() {
+		
+		var navs = document.querySelectorAll(".mui-tab-item");
+								for(n in navs) {
+									if(navs[n].getAttribute != undefined) {
+										obj = navs[n].getAttribute('id');
+										document.getElementById(obj).addEventListener("tap", function() {
+											if(!isToGoUrl){
+												var thisid=this.id;
+												isToGoUrl=true;
+												var ToshowWebView= plus.webview.getWebviewById(thisid);
+												if(ToshowWebView==""||ToshowWebView==undefined){
+													var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
+												    webviewContent= plus.webview.create(thisid + '.html',thisid,{render:'always',});//后台创建webview并打开show.html
+												  	webviewContent.addEventListener("rendered", function() { //注册新webview的渲染完成事件
+												        nwaiting.close(); //新webview的载入完毕后关闭等待框
+												        webviewContent.show("slide-in-right",300); //把新webview窗体显示出来，显示动画效果为速度200毫秒的右侧移入动画
+												    }, false);
+					                                isToGoUrl = false;
+													
+												}else{
+													plus.webview.show(ToshowWebView,'slide-in-right',200);
+													isToGoUrl=false;
+												}
+										}
+										});
+									}
+								}
+			
+				document.getElementById("UserName").innerText=localStorage.getItem("UserName");
+				document.getElementById("loginPhone").innerHTML='<i class="icon iconfont icon-shouji"></i>'+localStorage.getItem("loginPhone");
+							
+			}
+		$('.waitUp').click(function(){
+			 mui.alert("该功能正式发卡时上线，敬请期待", '我的黑卡平台');
+		})
+				
+			mui.init(
+				)
+			//从服务器获取数据
+				//业务数据获取完毕，并已插入当前页面DOM；
+				//注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；
+				mui.plusReady(function() {
+					//关闭等待框	
+					plus.nativeUI.closeWaiting(); //关闭等待框
+					
+				});
+		</script>
+	</body>
+
+</html>

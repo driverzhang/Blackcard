@@ -1,0 +1,116 @@
+ <style type="text/css">
+    * {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-touch-callout:none;
+}
+html {
+    font-size:62.5%;
+}
+body {
+    -webkit-text-size-adjust:100%;
+    -ms-text-size-adjust:100%;
+    -webkit-overflow-scrolling:touch;
+    overflow-scrolling:touch;
+}
+body {
+    margin:0;
+    background:#eee;
+    font-size:1.2rem;
+    line-height:1.6;
+    color:#0e0e0e;
+    font-family:'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+}
+a,input,textarea,select,button {
+    outline:0;
+}
+a {
+    color:#0e0e0e;
+    text-decoration:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+    	#bar-tab {
+    width:100%;
+    height:4.2rem;
+    background:#fff;
+    position:fixed;
+    bottom:0;
+    left:0;
+    z-index:999;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+#bar-tab .tab-item {
+    position:relative;
+    height:4.2rem;
+    text-align:center;
+    vertical-align:middle;
+    font-size:1.2rem;
+    flex:2;
+}
+#bar-tab .tab-item .icon {
+    width:2rem;
+    height:2rem;
+    display:inline-block;
+    position:relative;
+    top:.416667rem;
+    background-size:100% auto;
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+}
+#bar-tab .tab-item .icon1 {
+    background-image:url(./images/nav01.png);
+}
+#bar-tab .tab-item .icon2 {
+    background-image:url(./images/nav02.png);
+}
+#bar-tab .tab-item .icon3 {
+    background-image:url(./images/nav03.png);
+}
+#bar-tab .tab-item .icon4 {
+    background-image:url(./images/nav04.png);
+}
+#bar-tab .tab-item .tab-label {
+    display:block;
+    font-size:1.2rem;
+}
+#bar-tab .active {
+    color:#f4811f;
+}
+#bar-tab .active .icon1 {
+    background-image:url(./images/active-nav01.png);
+}
+#bar-tab .active .icon2 {
+    background-image:url(./images/active-nav02.png);
+}
+#bar-tab .active .icon3 {
+    background-image:url(./images/active-nav03.png);
+}
+#bar-tab .active .icon4 {
+    background-image:url(./images/active-nav04.png);
+}
+#bar-tab:before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:1px;
+    display:block;
+    z-index:12;
+    transform-origin:50% 0%;
+    background-color:#cfcece;
+    transform:scaleY(0.5);
+}
+
+    </style>
+    	<div id="bar-tab">
+			<a class="tab-item" href="index.html"><span class="icon icon1"></span><span class="tab-label">首页</span></a>
+			<a class="tab-item" href="integral.html"><span class="icon icon2"></span><span class="tab-label">积分</span></a>
+			<a class="tab-item" href="trading.html"><span class="icon icon3"></span><span class="tab-label">商圈</span></a>
+			<a class="tab-item" href="personage.html"><span class="icon icon4"></span><span class="tab-label">个人中心</span></a>
+		</div>
+	

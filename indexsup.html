@@ -1,0 +1,954 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>首页</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/TouchSlide.1.1.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=DQm1huuHqW6SHaYpEnrVMtE4fDmDrxVH&services=&t=20170406150344"></script>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/home.css" />
+		<link rel="stylesheet" type="text/css" href="shop_iconfont/iconfont.css" />
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/star.css"" />
+		<script src="js/star.js"></script>
+   		<link href="css/style.css" rel="stylesheet" />
+		<style type="text/css">
+			body{
+				font-family: "微软雅黑";
+			}
+				#segmentedControl {
+				font-size: 12px;
+				padding: 0;
+				border: 0px solid #D8D8D8;
+				background: #FFFFFF;
+			}
+			
+			#segmentedControl .mui-control-item {
+				border: 0px;
+				color: #C0C0C0;
+			}
+			
+			#segmentedControl .mui-active {
+				background: #FFFFFF;
+				color: #555555;
+			}
+			.mui-bar-tab .mui-tab-item.mui-active {
+				color: #f4811f;
+			}
+			.mui-popup-in{  
+				width: 200px;
+			}
+			body {
+				margin: 0;
+				background: #eee;
+				font-size: 1.2rem;
+				line-height: 1.6;
+				color: #0e0e0e;
+				font-family: 'microsoft yahei', Verdana, Arial, Helvetica, sans-serif;
+			}
+			
+			.mui-table-view-cell {
+				padding-right: 45px;
+				padding: 5px 15px;
+			}
+			
+			.mui-media-body {
+				padding: 15px 0px 0px 0px;
+				padding-left: 13px;
+			}
+			
+			.mui-pull-left {
+				display: block;
+				max-width: 135px;
+			}
+			
+			.wrap {
+				padding-bottom: 1rem;
+			}
+			
+			#HDDDMin ul li {
+				width: 0.8rem;
+				height: 0.8rem;
+			}
+			
+			.mui-iframe-wrapper {
+				position: relative;
+				height: 50rem;
+				bottom: 0px;
+			}
+			
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			ul li {
+				list-style: none;
+			}
+			
+			.view-mui-1 {
+				color: #f35a1f;
+				font-size: 16px;
+				font-weight: bold;
+				border-top: 1px solid #efefef;
+				border-bottom: 1px solid #efefef;
+			}
+			
+			.item-title-row ul li {
+				margin: 4px 0px;
+			}
+			
+			.mui-tt {
+				width: 98%;
+				height: 50px;
+				margin: 0 auto;
+				padding: 2px 2px;
+			}
+			
+			.mui-tt img {
+				width: 70px;
+				height: 46px;
+				border-right: 1px solid #f1f1f1;
+			}
+			
+			.mui-poster img {
+				float: left;
+			}
+			
+			.mui-slider-item img {
+				height: 50px;
+				width: 100%;
+			}
+			
+			.mui-slider-item img:hover {
+				transition: all ease 10s;
+			}
+			/*小广告轮播*/
+			
+			.mui-banner-z {
+				width: 100%;
+				height: 50px;
+			}
+			.O_d_name_N{
+					width:70%; white-space:nowrap; text-overflow:ellipsis; /* for internet explorer */ overflow:hidden; display:block;
+				}
+			@media screen and (min-width:0px) and (max-width:425px) {
+				.mui-banner-z {
+					width: 100%;
+					height: 100px;
+				}
+				.center{
+					max-width:75%;
+				}
+			}
+			@media screen and (min-width:425px) and (max-width:1204px) {
+				.mui-banner-z {
+					width: 100%;
+					height: 100px;
+				}
+				.center{
+					max-width:85%;
+				}
+			}
+			
+			@media screen and (min-width:1204px) and (max-width:1604px) {
+				.mui-banner-z {
+					width: 100%;
+					height: 150px;
+				}
+				.center{
+					max-width:95%;
+				}
+				
+			}
+			
+			@media screen and (min-width:1604px) and (max-width:3400px) {
+				.mui-banner-z {
+					width: 100%;
+					height: 350px;
+				}
+				.center{
+					max-width:95%;
+				}
+			}
+			
+			.mui-text-p {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			/*广告*/
+			/* .right-mui-sapn{background:red;;}*/
+			
+			.mui-jinghuan {
+				border: 1px solid red;
+				color: red;
+				padding: 1px 4px;
+				border-radius: 4px;
+			}
+			
+			.mui-manbody {
+				margin-left: 5px;
+			}
+			
+			.wang {
+				width: 70%;
+				position: relative;
+				left: 4px;
+				padding: 1px 1px;
+				display: block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			
+			@media only screen and (max-width:310px) {
+				.right-mui-sapn {
+					width: 100%;
+					margin: 0 auto;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav indexcssHC" style="background:#212123;position:fixed;margin-bottom: 2rem;box-shadow: 0 0px 0px #212123;display: none;">
+			<div class="top_Out">
+				<div class="right" style="background:none;float:right;"><span class="mui-icon myico myicos iconfont waitUp" style="margin: 7px auto auto 11px;">&#xe608;</span></div>
+				<div class="right" style="background: none;color: white;float:left"><span class="mui-icon myico myicos iconfont waitUp" style="margin: 7px auto auto 1px;">&#xe607;</span></div>
+			</div>
+			<div class="center" style="border-radius:30px; margin:0 auto;background:#646464;position:relative;top:-35px;">
+				<div class="mui-input-row">
+					<span class="mui-icon mui-icon-speech" id="mui-icon-speech" style="color: #fff;"></span>
+					<input type="text" id="mui-input-speech" class="mui-input-speech mui-input-clear" style="margin-bottom:none;color:#fff;">
+				</div>
+			</div>
+		</header>
+
+			<section id="waitSection"  style="margin: 0;top:0;">
+				<div id="slideBox11" class="slideBox">
+					<div class="bd">
+						<ul id="BoxImg11">
+
+						</ul>
+					</div>
+					<div class="hd">
+						<ul></ul>
+					</div>
+				</div>
+			</section>
+
+		<div class="wrap indexcssHC" style="padding-top: 4rem;display: none;">
+			<!--轮播开始-->
+			<section id="banner">
+				<div id="slideBox" class="slideBox">
+					<div class="bd">
+						<ul id="BoxImg">
+
+						</ul>
+					</div>
+					<div class="hd">
+						<ul></ul>
+					</div>
+				</div>
+			</section>
+			<!--项目选项-->
+			<section class="calssify" style="background:#fff;">
+				<div class="slideBox" id="slideBox-calssify" style="padding-bottom: 1rem;font-size: 10px;">
+					<div class="bd">
+						<ul>
+							<li>
+								<div class="box">
+									<div class="item waitUp"  style="cursor: pointer;" id="hksh">
+										<span class="img"><img src="img/Life.png" alt=""></span><span>黑卡生活 </span></div>
+									<div class="item" style="cursor: pointer;" id="TypeMainBug">
+										<span class="img"><img src="img/Buy.png" alt=""></span><span>黑卡商圈</span></div>
+									<div class="item"  style="cursor: pointer;" id="TypeMainShop">
+										<span class="img"><img src="img/ShopBuy.png" alt=""></span><span>黑卡商城</span></div>
+									<div class="item waitUp">
+										<span class="img"><img src="img/VIPmath.png" alt=""></span><span>黑卡俱乐部</span></div>
+								</div>
+								<div class="box">
+									<div class="item waitUp">
+										<span class="img"><img src="img/Money.png" alt=""></span><span>黑卡钱包</span></div>
+									<div class="item waitUp">
+										<span class="img"><img src="img/activity.png" alt=""></span><span>黑卡活动</span></div>
+									<div class="item" style="cursor: pointer;" id="Typeintegral">
+										<span class="img"><img src="img/inetergal.png" alt=""></span><span>积分商城</span></div>
+									<div class="item" id="TypePersonage">
+										<span class="img"><img src="img/peopleCenter.png" alt=""></span><span>个人中心</span></div>
+								</div>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="hd" style="bottom: 0rem;" id="HDDDMin">
+						<ul></ul>
+					</div>
+				</div>
+			</section>
+			<!--广告头条-->
+			<div style="width:100%;background:#fff;">
+				<div class="mui-tt">
+					<span class="mui-poster">            
+						<img src="images/tt.png" />
+		             </span >
+              
+					<span  class="right-mui-sapn" style="font-size: 12px;">
+						<span class="wang"><span class="mui-jinghuan">精华</span><span class="mui-manbody">热烈恭贺伊犁黑卡平台1.0上线</span></span>
+						<span class="wang"><span class="mui-jinghuan">精华</span><span class="mui-manbody">敬请期待伊犁黑卡平台2.0上线</span></span>
+					</span>
+				</div>
+			</div>
+			<!--广告轮播-->
+			<section id="banner">
+				<div id="slideBox1" class="slideBox">
+					<div class="bd">
+						<ul id="BoxImg1">
+
+						</ul>
+					</div>
+					<div class="hd" id="activityHd">
+						<ul></ul>
+					</div>
+				</div>
+			</section>
+			<ul class="mui-table-view" style="background-color: #212123;color:white;  ">
+				<li class="mui-table-view-cell">
+					<h3 class="shang_h3" style="margin-top: 10px;font-size: 12px;">推荐商家</h3>
+				</li>
+			</ul>
+			<div style="width:100%;height:100%;background-color: #363639;color: white;padding-bottom: 35px;" class="mui-table-viewNew">
+			
+			</div>
+		</div>
+		<nav class="mui-bar mui-bar-tab indexcssHC"  style="background-color: #cfa972;font-size: 12px;color:white;display: none;">
+			<a id="indexsup" class="mui-tab-item  tab-item" href="indexsup.html">
+				<span class="mui-icon myico icon-fz icon iconfont " style="color:white;">&#xe60c;</span>
+				<span class="mui-tab-label tab-label" style="font-size:10px;color:white;">首 页</span>
+			</a>
+			<a id="integral" class="mui-tab-item tab-item" href="integral.html">
+				<span class="mui-icon myico  icon-lb icon iconfont" style="color:white;">&#xe60b;</span>
+				<span class="mui-tab-label"  style="font-size:10px;color:white;">积 分</span>
+			</a>
+			<a id="MainBuy" class="mui-tab-item tab-item" href="MainBuy.html">
+				<span class="mui-icon myico icon-fjmd icon iconfont "  style="color:white;">&#xe60e;</span>
+				<span class="mui-tab-label"  style="font-size:10px;color:white;">商 圈</span>
+			</a>
+			<a id="MainShop" class="mui-tab-item tab-item" href="MainShop.html">
+				<span class="mui-icon myico icon-fjmd iconfont"  style="color:white;">&#xe681;</span>
+				<span class="mui-tab-label"  style="font-size:10px;color:white;">商 城</span>
+			</a>
+			<a id="personage" class="mui-tab-item tab-item" href="personage.html">
+				<span class="mui-icon myico icon-gyw icon iconfont"  style="color:white;">&#xe610;</span>
+				<span class="mui-tab-label"  style="font-size:10px;color:white;">个人中心</span>
+			</a>
+		</nav>
+		
+
+		<script src="js/MD5S.js"></script>
+		<script src="js/TravelTailorSafeInterface.js"></script>
+		<script type="text/javascript">
+			var img1 = localStorage.getItem("img1");
+			var img2 = localStorage.getItem("img2");
+			mui.init({});
+			window.BMap_loadScriptTime = (new Date).getTime();
+			var wgtVer=null;
+			TouchSlide({
+						slideCell: "#slideBox-calssify",
+						titCell: ".hd ul",
+						mainCell: ".bd ul",
+						effect: "left",
+						autoPage: true
+					});
+			$("#HDDDMin ul").attr("style","display: none;");
+			mui.plusReady(function() {
+				plus.nativeUI.showWaiting()
+				 // 获取本地应用资源版本号
+				 plus.runtime.getProperty(plus.runtime.appid,function(inf){
+				     wgtVer=inf.version;
+				     checkUpdate();
+				 });
+				dataclick();
+			});
+				// 检测更新
+var checkUrl="http://app.fuyou.sc.cn/api/UPdateApp";
+var update=false;
+function checkUpdate(){
+    var xhr=new XMLHttpRequest();
+    xhr.onreadystatechange=function(){
+        switch(xhr.readyState){
+            case 4:
+            if(xhr.status==200){
+                var newVer=xhr.responseText;
+                if(wgtVer&&newVer&&(wgtVer!=newVer)){
+   					update=true;
+                    downWgt();  // 下载升级包
+                }else{
+                	//显示当前页面
+                	
+                }
+            }else{
+            	
+            }
+            break;
+            default:
+            break;
+        }
+    }
+    xhr.open('POST',checkUrl);
+    xhr.send();
+}
+
+// 下载wgt文件
+var wgtUrl="http://app.fuyou.sc.cn/File/NewApp.wgt";
+function downWgt(){
+    plus.downloader.createDownload( wgtUrl, {filename:"_doc/update/"}, function(d,status){
+        if ( status == 200 ) { 
+            installWgt(d.filename); // 安装wgt包
+        } else {
+        	mui.currentWebview.show();
+       		plus.nativeUI.closeWaiting();
+        }
+    }).start();
+}
+// 更新应用资源
+function installWgt(path){
+    plus.runtime.install(path,{},function(){
+    	plus.nativeUI.alert("有新版本！点击确定自动重新启动",function(){
+            plus.runtime.restart();
+       		plus.nativeUI.closeWaiting();
+        });
+    },function(e){
+        plus.nativeUI.closeWaiting();
+    });
+}
+
+			var userid="";
+			var Shopindex = 0;
+			var Murl ="";
+			var imgsrc ="http://app.fuyou.sc.cn/Images/ExpertImg/admin/gg/";
+			var uil = "";
+			var uilBygg = "";
+			var CompanyImgsrc ="http://app.fuyou.sc.cn/Images/ExpertImg/admin/CompanyImg/";
+			var slider = mui("#slider");
+			var lng=sessionStorage.getItem("lng");var lat=sessionStorage.getItem("lat");
+			
+				var vhtml = '<div id="allmap"  style="display:none;"></div>';
+				$("body").append(vhtml);
+				var map ="";
+			function getPeoplePosition() {
+				map = new BMap.Map("allmap");
+				var geolocation = new BMap.Geolocation();
+				geolocation.getCurrentPosition(function(r) {
+					if(this.getStatus() == BMAP_STATUS_SUCCESS) {
+						lng= r.point.lng;
+						lat= r.point.lat;
+						sessionStorage.setItem("lng",lng);
+						sessionStorage.setItem("lat",lat);
+						$('.JLCSS').each(function(){
+							var pointA = new BMap.Point(lng,lat);
+							var pointB = new BMap.Point($(this).attr('LNGG'),$(this).attr('disment'));
+							var jl = map.getDistance(pointA,pointB).toFixed(2);
+							var jlstring="";
+							if(jl/1000>1){
+								var jlaa=Math.round(parseFloat(jl/1000)*100)/100;
+								jlstring=jlaa+"km";
+							}else{
+								jlstring=parseInt(jl)+"m";
+							}
+							$(this).html(jlstring);
+						})
+						
+						setTimeout(function() {
+					        var ar = new Array();
+					        ar.LONG = lng;
+					        ar.Dismension = lat;
+					        ar.from = "来源于伊犁APP";
+					        ar.UserPhoneId = userid;
+					        ar.InterfaceAddress = "api/Mapapi";
+					        aes(ar, "endClick");
+					   },500);
+						
+					} else {
+						alert('failed' + this.getStatus());
+					}
+				}, { enableHighAccuracy: true })
+			}
+			
+			function endClick (){
+			}
+   
+			
+			var isgetShop=false;
+			function AddShopList() {
+				if(!isgetShop){
+					isgetShop=true;
+					setTimeout(function(){
+						resetdata = false;
+		
+						var table = document.body.querySelector('.mui-table-viewNew');
+						var li = document.createElement('div');
+						li.className = 'OneProduct gclLoding';
+						var lihtml = '<div style="text-align:center;">' + ishasdata + '</div>';
+						li.innerHTML = lihtml;
+						table.appendChild(li);
+						var ar = new Array();
+						var ph = {
+							Collection: []
+						};
+						ar.Condition = ph;
+						ar.InterfaceAddress ="api/ShopInfo";
+						ar.Name ="YL_Stop";
+						ar.OrderBy ="CreationDate desc";
+						ar.Index = 0 + Shopindex;
+						ar.Size = 6;
+						ar.Handshake_Time = CurentTime('-', true);
+						aes(ar,"endshop");
+						},20);
+				}
+			}
+			var ishasdata ="加载数据中...";
+
+			function opinwin(id) {
+				try{
+					if(plus.webview.getWebviewById("shop")==""||plus.webview.getWebviewById("shop")==undefined||plus.webview.getWebviewById("shop")==null){}
+					else
+					{plus.webview.getWebviewById("shop").close();}
+				}catch(e){}
+				    var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
+						webviewContent= plus.webview.create("shop.html?id=" + id,"shop",{render:'always',});//后台创建webview并打开show.html
+						nwaiting.close(); //新webview的载入完毕后关闭等待框
+						webviewContent.show("slide-in-right",200); //把新webview窗体显示出来，显示动画效果为速度200毫秒的右侧移入动画
+			}
+			var resetdata = false;
+
+			function endshop(rd) {
+				var TData = eval("(" + rd +")");
+				var table = document.body.querySelector('.mui-table-viewNew');
+				var gclloding = document.getElementsByClassName("gclLoding")[0];
+				table.removeChild(gclloding);
+				if(TData == undefined || TData.length == undefined || TData.length == 0) {
+					ishasdata ="没有更多的数据";
+				} else {
+					Shopindex++;
+
+					var cells = document.body.querySelectorAll('.mui-table-viewNew');
+					for(var i = 0, len = TData.length; i < len; i++) {
+						var li = document.createElement('div');
+						li.className = 'OneProduct';
+						var jlstring="";
+						if(lng!=null&&lat!=null&&TData[i].LONG!=""&&TData[i].Dismension!=""&&map!=""){
+							
+							var pointA = new BMap.Point(lng,lat);
+							var pointB = new BMap.Point(TData[i].LONG,TData[i].Dismension);
+							var jl = map.getDistance(pointA,pointB).toFixed(2);
+							if(jl/1000>1){
+								var jlaa=Math.round(parseFloat(jl/1000)*100)/100;
+								jlstring=jlaa+"km";
+							}else{
+								jlstring=parseInt(jl)+"m";
+							}
+						}else{
+						    getPeoplePosition();
+						}
+						var zhekou=TData[i].zhekou>=1?"":(TData[i].zhekou*10+"折");
+						if(TData[i].zhekou>0.999999){
+							zhekou="";
+						}else{
+							var zkkk=Math.round(parseFloat(TData[i].zhekou)*100)/10;
+							zhekou=toDecimal2(zkkk)+"折";
+						}
+						
+						
+						var lihtml = '<div style="color:white;width:100%;height:100%;cursor:pointer;"  onclick=opinwin("' + TData[i].Id + '")>';
+						lihtml+='	<div class="o_details">';
+						lihtml+='<section><img src=" ' + CompanyImgsrc + TData[i].ImgsID + '_80x80.jpg" /></section>';
+						lihtml+='<p class="o_d_name"  style="color:white;"><span class="O_d_name_N" style="font-size:17.79px;">'+TData[i].StopName+'</span></p><p class="o_d_name" style="color:white;">';
+						lihtml+='<span class="O_d_name_N"><input disabled="disabled"  style="font-size: 1rem;" value="3.8" type="number" class="rating form-control" min="0" max="5" step="0.1" data-size="lg"></span></p>';
+						lihtml+='<p class="o_d_name"  style="color:white;"><span class="O_d_name_N" style="font-size: 10px;">配送费:￥3 | ￥22/人</span></p>';
+						lihtml+='<div style="right: 14px;top:18px;position: absolute;text-align: right;"><div style=";font-size:17.79px;color:#cfa972;height:28px;width:100%;">'+zhekou+'</div>';
+						lihtml+='<div  class="JLCSS" LNGG=" '+TData[i].LONG+'"  disment=" '+TData[i].Dismension+'" style="float: right;margin-right: 4px;margin-top: 1.4rem;">'+jlstring+'</div></div></div></div>';
+
+						
+						li.innerHTML = lihtml;
+						
+						table.appendChild(li);
+						var H5j='<span style="font-size:10.42px;color:#ffa63e;">3.8</span><span style="margin-left: 5px;color: #d0d0d0;font-size: 10.14px;">月售700单</span>';
+					$('.rating').rating();$('.rating-lg').attr("style","font-size:1.2rem;");$('.clear-rating').remove();$('.caption').html(H5j);
+					}
+				}
+				isgetShop=false;
+				resetdata = true;
+			}
+			function GetShopList() {
+				setTimeout(function(){
+				var ar = new Array();
+				var ph = {
+					Collection: [
+						
+					]
+				};
+				ar.Condition = ph;
+				ar.InterfaceAddress ="api/ShopInfo";
+				ar.Name ="stopAndImg";
+				ar.OrderBy ="CreationDate desc";
+				ar.Index = 0;
+				ar.Size = 6;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar,"Getshop");
+				},50);
+			}
+
+			function Getshop(rd) {
+				var TData = eval("(" + rd +")");
+
+				if(TData == undefined || TData.length == undefined || TData.length == 0) {} else {
+					Shopindex = 1;
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					table.innerHTML ="";
+					for(var i = 0, len = TData.length; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell mui-media';
+						var lihtml = '<a style="margin-right:-10px;"  onclick=opinwin(" ' + TData[i].Id + '")>';
+						lihtml += '<img class="mui-pull-left" src=" ' + CompanyImgsrc + TData[i].ImgsID + '_80x80.jpg">';
+						lihtml += '<div class="mui-media-body" style="font-size:12px;">' + TData[i].StopName;
+						lihtml += '<div class="mui-ellipsis" style="font-size:10px;">' + TData[i].Introduction + '</div>';
+						lihtml += '<p class="jiage" style="font-size:12px;"><span class="jiage_color">¥30.90</span><s>原60</s></p></div>';
+						lihtml += '</a>';
+
+						li.innerHTML = lihtml;
+
+						table.appendChild(li);
+						$('.mui-table-view-cell').css("padding-right","15px");
+					}
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				}
+							
+			}
+			
+	var isToGoUrl=false;
+	window.onload = function() {
+				var hclocal=localStorage.getItem("Q1");
+				localStorage.setItem("Q1","0");
+				if(hclocal==null){
+				var height=document.documentElement.clientHeight;
+				for(var i=0;i<3;i++){
+					var li=document.createElement("li");
+					var uil="";
+					uil += '<a class="lbtimgm" href=""><img src="http://app.fuyou.sc.cn/Images/ExpertImg/admin/gg/dacdc937-a236-4fb2-b760-0ea28c29d1d4__750x360.jpg" height="'+height+'"   width="100%" alt=""></a>';
+					li.innerHTML=uil;
+					document.getElementById("BoxImg11").appendChild(li);
+				}
+				
+				TouchSlide({
+						slideCell:"#slideBox11",
+						titCell:".hd ul",
+						mainCell:".bd ul",
+						effect:"leftLoop",
+						delayTime:"900",
+						interTime:"3000",
+						pnLoop:false,
+						autoPage: true,
+						autoPlay: false,
+						startFun:function(i,c){
+							if(++i==c){
+								
+								document.getElementById("waitSection").style.display="none";
+								
+								var hccss= document.querySelectorAll('.indexcssHC');
+								for(n in hccss){
+									if(hccss[n].getAttribute != undefined) {
+										hccss[n].style.display="block";
+									}
+								}
+								TouchSlide({
+									slideCell:"#slideBox",
+									titCell:".hd ul",
+									mainCell:".bd ul",
+									effect:"leftLoop",
+									delayTime:"300",
+									interTime:"3000",
+									autoPage: true,
+									autoPlay: true
+								});
+								TouchSlide({
+									slideCell:"#slideBox1",
+									titCell:".hd ul",
+									mainCell:".bd ul",
+									effect:"leftLoop",
+									delayTime:"300",
+									interTime:"5000",
+									autoPage: true,
+									autoPlay: true
+								});
+								TouchSlide({
+									slideCell: "#slideBox-calssify",
+									titCell: ".hd ul",
+									mainCell: ".bd ul",
+									effect: "left",
+									autoPage: true
+								});
+								$("#HDDDMin ul").attr("style","display: none;");
+							}
+						}
+						
+				});
+				}
+				else{
+				document.getElementById("waitSection").style.display="none";
+								
+								var hccss= document.querySelectorAll('.indexcssHC');
+								for(n in hccss){
+									if(hccss[n].getAttribute != undefined) {
+										hccss[n].style.display="block";
+									}
+								}
+								TouchSlide({
+									slideCell: "#slideBox-calssify",
+									titCell: ".hd ul",
+									mainCell: ".bd ul",
+									effect: "left",
+									autoPage: true
+								});
+				}
+		var navs = document.querySelectorAll(".mui-tab-item");
+				for(n in navs) {
+					if(navs[n].getAttribute != undefined) {
+						obj = navs[n].getAttribute('id');
+						document.getElementById(obj).addEventListener("tap", function() {
+							if(!isToGoUrl){
+								var thisid=this.id;
+								isToGoUrl=true;
+								var ToshowWebView= plus.webview.getWebviewById(thisid);
+								if(ToshowWebView==""||ToshowWebView==undefined){
+									var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
+								    webviewContent= plus.webview.create(thisid + '.html',thisid,{render:'always',});//后台创建webview并打开show.html
+								    isToGoUrl=false;
+								    webviewContent.show("slide-in-right",200); //把新webview窗体显示出来，显示动画效果为速度200毫秒的右侧移入动画
+									
+								}else{
+									plus.webview.show(ToshowWebView,'slide-in-right',300);
+									isToGoUrl=false;
+								}
+						}
+						});
+					}
+				}
+				
+			setTimeout(function() {
+				BindImg();
+				try{
+				userid= plus.device.uuid;
+				}catch(e){}
+				var range = 80; //距下边界长度/单位px
+				var elemt = 500; //插入元素高度/单位px
+				var num = 1;
+				var totalheight = 0;
+
+				$(window).scroll(function() {
+					var srollPos = $(window).scrollTop(); //滚动条距顶部距离(页面超出窗口的高度)
+
+
+					totalheight = parseFloat($(window).height()) + parseFloat(srollPos);
+					if(($(document).height() - range) <= totalheight && resetdata) {
+						AddShopList();
+					}
+				});		
+				},50);
+			}
+
+
+			function dataclick(){
+				$('#TypeMainShop').click(function(){
+							var ToshowWebView= plus.webview.getWebviewById("MainShop");
+							if(ToshowWebView==""||ToshowWebView==undefined){
+								var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
+								 webviewContent= plus.webview.create("MainShop.html","MainShop",{render:'always',});//后台创建webview并打开show.html
+								 nwaiting.close(); //新webview的载入完毕后关闭等待框
+								webviewContent.show("slide-in-right",200); //把新webview窗体显示出来，显示动画效果为速度200毫秒的右侧移入动画	
+							}else{
+								ToshowWebView.show();
+							}
+					});
+					$('#TypeMainBug').click(function(){
+							var ToshowWebView= plus.webview.getWebviewById("MainBuy");
+							if(ToshowWebView==""||ToshowWebView==undefined){
+								var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
+								webviewContent= plus.webview.create("MainBuy.html","MainBuy",{render:'always',});//后台创建webview并打开show.html
+								nwaiting.close(); //新webview的载入完毕后关闭等待框
+								webviewContent.show("slide-in-right",200); //把新webview窗体显示出来，显示动画效果为速度200毫秒的右侧移入动画
+							}else{
+									ToshowWebView.show();
+								}
+					});
+					$('#Typeintegral').click(function(){
+								var ToshowWebView= plus.webview.getWebviewById("integral");
+								if(ToshowWebView==""||ToshowWebView==undefined){
+									 var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
+								    webviewContent= plus.webview.create("integral.html","integral",{render:'always',});//后台创建webview并打开show.html
+								        nwaiting.close(); //新webview的载入完毕后关闭等待框
+								        webviewContent.show("slide-in-right",200); //把新webview窗体显示出来，显示动画效果为速度200毫秒的右侧移入动画
+								}else{
+									ToshowWebView.show();
+								}
+					});
+					$('#TypePersonage').click(function(){
+								var ToshowWebView= plus.webview.getWebviewById("personage");
+								if(ToshowWebView==""||ToshowWebView==undefined){
+									var nwaiting = plus.nativeUI.showWaiting();//显示原生等待框
+								    webviewContent= plus.webview.create("personage.html","personage",{render:'always',});//后台创建webview并打开show.html
+								    nwaiting.close(); //新webview的载入完毕后关闭等待框
+								    webviewContent.show("slide-in-right",200); //把新webview窗体显示出来，显示动画效果为速度200毫秒的右侧移入动画
+								}else{
+									ToshowWebView.show();
+								}
+					});
+					$('.waitUp').click(function(){
+						 mui.alert("该功能正式发卡时上线，敬请期待", '我的黑卡平台');
+					});
+			}
+
+			function BindImg() {
+				
+					setTimeout(function(){
+						var ph = {
+							Collection: [
+								{ F:"ImgGS", O:"%", P:"@@ImgGS", V: 1 },
+							]
+						};
+						var ar = new Array();
+						ar.Condition = ph;
+						ar.InterfaceAddress ="api/ShopInfo";
+						ar.Name ="YL_Imgs";
+						ar.OrderBy ="CreationDate desc";
+						ar.Index = 0;
+						ar.Size = 6;
+						ar.Handshake_Time = CurentTime('-', true);
+						aes(ar,"endk");
+					},50);
+				if(img1!=null){
+						$('#BoxImg').html(img1);
+						$('#BoxImg1').html(img2);
+						TouchSlide({
+							slideCell:"#slideBox",
+							titCell:".hd ul",
+							mainCell:".bd ul",
+							effect:"leftLoop",
+							delayTime:"300",
+							interTime:"3000",
+							autoPage: true,
+							autoPlay: true
+						});
+						TouchSlide({
+							slideCell:"#slideBox1",
+							titCell:".hd ul",
+							mainCell:".bd ul",
+							effect:"leftLoop",
+							delayTime:"300",
+							interTime:"5000",
+							autoPage: true,
+							autoPlay: true
+						});
+						
+						$("#activityHd ul").attr("style","display: none;");
+						$("#HDDDMin ul").attr("style","display: none;");
+		        		plus.nativeUI.closeWaiting();
+						AddShopList();
+						
+				}
+				
+				
+			}
+				
+
+
+			///minajax mui ajax 请求
+			///h 请求的页面
+			///id 传参的id
+			function minajax(h, id) {
+				mui.ajax(
+					h, {
+						data: {
+							id: id,
+						},
+
+						dataType:"html",
+						type:"get",
+						success: function(data) {
+							$('#bodyIDALL').html(data);
+						},
+						error: function(xhr) {
+							console.log(xhr)
+						}
+					})
+			}
+			function endk(rd) {
+				uil ="";
+				uilBygg ="";
+				var TData = eval("(" + rd +")");
+				for(var i = 0; i < TData.length; i++) {
+					if(TData[i].ImgType =="首页轮播图") {
+						uil += '<li>';
+						uil += '<a class="lbtimgm" href=" ' + TData[i].Href + '"><img src=" ' + imgsrc + TData[i].Id + '__750x360.jpg"  width="100%" alt=""></a>';
+						uil += '</li>';
+					} else if(TData[i].ImgType =="首页广告图") {
+						uilBygg += '<li>';
+						uilBygg += '<a class="ggtimgm" href=" ' + TData[i].Href + '"><img src=" ' + imgsrc + TData[i].Id + '__299x70.jpg"  width="100%" alt=""></a>';
+						uilBygg += '</li>';
+					}
+				}
+				localStorage.setItem("img1",uil);
+				localStorage.setItem("img2",uilBygg);
+				plus.nativeUI.closeWaiting();
+				if(img1==null||img1==undefined||img1==""){
+					$('#BoxImg').html(uil);
+					$('#BoxImg1').html(uilBygg);
+					TouchSlide({
+							slideCell:"#slideBox",
+							titCell:".hd ul",
+							mainCell:".bd ul",
+							effect:"leftLoop",
+							delayTime:"300",
+							interTime:"3000",
+							autoPage: true,
+							autoPlay: true
+						});
+						TouchSlide({
+							slideCell:"#slideBox1",
+							titCell:".hd ul",
+							mainCell:".bd ul",
+							effect:"leftLoop",
+							delayTime:"300",
+							interTime:"5000",
+							autoPage: true,
+							autoPlay: true
+						});
+						
+						$("#activityHd ul").attr("style","display: none;");
+						$("#HDDDMin ul").attr("style","display: none;");
+					AddShopList();
+					
+				}
+				
+				
+				
+			
+			}
+		</script>
+
+	</body>
+
+</html>

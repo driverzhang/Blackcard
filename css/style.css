@@ -1,0 +1,247 @@
+html {font-size: 12px;}
+input {border: none;}
+@font-face {
+	font-family: "youyuan";
+	src: url(fonts/youyuan.ttf);
+}
+body {background: #f2f2f2;}
+ul {list-style: none;margin: 0;padding: 0;}
+
+.progress{
+	margin-top: 20px;
+    height: 10px;
+    line-height: 10px;
+    background-color: #d5d5d5;
+    box-shadow: none;
+    padding: 0;
+    margin-top:20px;
+	overflow: visible;
+    border-radius:10px;
+}
+
+.progressbar-title{
+    color:#d8dedc;
+    font-size:15px;
+    margin:5px 0;
+    font-weight: bold;
+}
+.progress .progress-bar{
+    position: relative;
+    border-radius: 10px 0 0 10px;
+    animation: animate-positive 2s;
+}
+.progress .progress-bar span{
+    position: absolute;
+    top: -50px;
+    right: -40px;
+    color: #fff;
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 5px 7px;
+    border-radius: 0 0 5px 5px;
+}
+
+.progress .progress-bar span:after{
+    content: "";
+	overflow: visible;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+	background-color: #da4c3c;
+    font-size: 48px;
+    color: #333;
+    position: absolute;
+    top: 45px;
+    right: 31px;
+
+}
+
+.fix {position: fixed;top: 0;}
+.clearFix :after{
+  content: ""; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;  
+ }
+.clearfix {zoom: 1;}
+
+/*登录注册页面*/
+
+.u_bg {background: #ffb4bd;}
+.u_wordW {color: #ffffff;}
+.u_nav {
+	width: 100%;
+	font-size: 0.75rem;
+	margin-top: 45px;
+	background: #ffffff;
+	text-align: center;
+}
+.u_nav .active {
+	color: #ffb4bd;
+	border-bottom: 1px solid #ff88a5;
+}
+.u_nav a {
+	display: inline-block;
+	color: #323232;
+	padding: 8px 0;
+	width: 49%;
+}
+.u_line {
+	width:100%;
+	height:0;
+	border-bottom: 1px solid #d9d9d9;
+}
+#u_form_r {margin-top: 20px;}
+#u_form_l {margin-top: 20px;}
+#u_form_l div,
+#u_form_r div {position: relative;}
+#u_form_l input,
+#u_form_r input {
+	font-size: 0.75rem;
+	color: #999999;
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	padding-left: 44px;
+}
+#u_form_r span,#u_form_l span {
+	font-size: 0.75rem;
+	color: #323232;
+	position: absolute;
+	top: 10px;
+	left: 14px;
+}
+.u_testing {
+	font-size: 0.75rem;
+	color: #ff88a5;
+	margin: 0;
+	padding: 4px 6px;
+	line-height: 12px;
+	border: 1px solid #ff88a5;
+	border-radius: 10px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.u_l_forget {
+	font-size: 0.75rem;
+	color: #999999;
+	float: right;
+	margin-right: 10px;
+	clear: both;
+	padding: 10px 0;
+}
+.u_btn {
+	display: block;
+	width:95%;
+	line-height: 12px;
+	font-size: 1rem;
+	color: #ffffff;
+	padding: 15px 0;
+	text-align: center;
+	background: #ff88a5;
+	margin: 32px auto 0 auto;
+	border: none;
+}
+
+/*首页*/
+.m_tab {
+	width: 100%;
+	height: 86px;
+	background: #FFFFFF;
+	margin-top: -6px;
+	text-align: center;
+}
+.m_tab ul li {
+	display: inline-block;
+	position: relative;
+	margin-top: 10px;
+	text-align: center;
+	width: 18%;
+}
+.m_tab ul li span img {
+	width: 45px;
+	height: 45px;
+}
+.m_tab ul li span {
+	display: block;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+	background: url(../images/resou.png)no-repeat center;
+}
+.m_tab ul li p {
+	display: block;
+	font-size: 0.75rem;
+	color: #646464;
+	margin-top: 5px;
+}
+.m_activity ul {margin-top: 10px;}
+.m_activity ul li {
+	display: block;
+	width: 100%;
+}
+.m_activity ul li div {
+	width: 100%;
+}
+.m_activity ul li div img {
+	width: 100%;
+}
+.m_activity ul li p {
+	font-size: 0.75rem;
+	margin-top: -5px;
+	background: #ffffff;
+	padding: 0 5px;
+	text-align: center;
+}
+.m_activity ul li p span span{color: #FFB4BD;}
+
+/*订单管理*/
+
+input[type=button]{font-size: 0.55rem; }
+body{
+	background:#FFFFFF;
+}
+.o_content {margin-top: 45px;background: #ffffff;}
+.o_container {width: 95%;margin: 0 auto;}
+.o_merchant span {color: #323232;font-size: 0.75rem;}
+.o_right {float: right;}
+.o_details {
+	display: block;
+	padding: 4px;
+	position: relative;
+	font-size: 0.75rem;
+}
+.o_details section {
+	font-size: 0.43rem;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+
+	left: 0;
+}
+.o_details section img {
+	border: none;	font-size: 0.43rem;
+	width: 80px;
+	height: 80px;
+}
+.o_d_name {
+	margin-left: 85px;margin-bottom: 5px;
+}
+.OneProduct{
+	
+	width:100%;height:auto;border: 1px solid #242424;
+}
+.leftdiv{
+	float: left;
+}
+img.top{
+	
+}
+img.middle{
+	vertical-align:middle;
+}

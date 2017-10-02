@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+			<link href="css/goods.css" rel="stylesheet"/>
+		<style type="text/css">
+			p{
+				font-size: 0.8rem;
+			}
+			body{
+				    margin: 0;
+    background: #eee;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #0e0e0e;
+    font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+			}
+			
+			.mui-table-view-cell{
+				font-size: 0.8rem;
+				padding-right:45px;
+			}
+			.mui-media-body{
+				padding: 15px 0px 0px 0px;
+				padding-left: 13px;
+			}
+			.mui-pull-left{
+			display: block;
+    max-width: 135px;
+}			
+			.wrap{
+				padding-bottom: 1rem;
+			}
+			#HDDDMin ul li {
+				width: 0.8rem;
+				height: 0.8rem;
+			}
+			.mui-iframe-wrapper{
+				position: relative;
+				height: 50rem;
+				bottom: 0px;
+			}
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			ul li {
+				list-style: none;
+			}
+			
+			.view-mui-1 {
+				color: #f35a1f;
+				font-size: 16px;
+				font-weight: bold;
+				border-top: 1px solid #efefef;
+				border-bottom: 1px solid #efefef;
+			}
+			
+			.item-title-row ul li {
+				margin: 4px 0px;
+			}
+			
+			.mui-tt {
+				width: 90%;
+				height: 60px;
+				margin: 0 auto;
+				padding: 2px 2px;
+			}
+			
+			.mui-tt img {
+				width: 70px;
+				height: 46px;
+				border-right: 1px solid #f1f1f1;
+			}
+			
+			.mui-poster img {
+				float: left;
+			}
+			
+			.mui-slider-item img {
+				height: 50px;
+				width: 100%;
+			}
+			
+			.mui-slider-item img:hover {
+				transition: all ease 10s;
+			}
+			/*小广告轮播*/
+			
+			.mui-banner-z {
+				width: 100%;
+				height: 50px;
+			}
+			
+			@media screen and (min-width:225px) and (max-width:1204px) {
+				.mui-banner-z {
+					width: 100%;
+					height: 100px;
+				}
+				.mui-slider-item img {
+					width: 100%;
+					height: 100px;
+				}
+			}
+			
+			@media screen and (min-width:1204px) and (max-width:1604px) {
+				.mui-banner-z {
+					width: 100%;
+					height: 150px;
+				}
+				.mui-slider-item img {
+					width: 100%;
+					height: 150px;
+				}
+			}
+			
+			@media screen and (min-width:1604px) and (max-width:3400px) {
+				.mui-banner-z {
+					width: 100%;
+					height: 350px;
+				}
+				.mui-slider-item img {
+					width: 100%;
+					height: 350px;
+				}
+			}
+			
+			.mui-text-p {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			/*广告*/
+			/* .right-mui-sapn{background:red;;}*/
+			
+			.mui-jinghuan {
+				border: 1px solid red;
+				color: red;
+				padding: 1px 4px;
+				border-radius: 4px;
+			}
+			
+			.mui-manbody {
+				margin-left: 5px;
+			}
+			
+			.wang {
+				width: 70%;
+				position: relative;
+				left: 4px;
+				margin: 4px 5px;
+				padding: 1px 1px;
+				display: block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			
+			@media only screen and (max-width:310px) {
+				.mui-poster img {
+					display: none;
+				}
+				.right-mui-sapn {
+					width: 100%;
+					margin: 0 auto;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron">
+					
+				</ul>
+			</div>
+		</div> 
+		<script src="js/mui.min.js"></script>
+		
+	<script src="js/jquery.1.10.2.js"></script>
+		<script>
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						callback: pulldownRefresh
+					},
+					up: {
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+			
+	console.log($('#mui-input-speech', window.parent.document).val());
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				
+				setTimeout(function() {
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					for (var i = cells.length, len = i + 3; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell mui-media';
+						var lihtml='<a>';
+						lihtml+='<img class="mui-pull-left" style="width:50%;" src="images/sjia01.jpg">';
+						lihtml+='<div class="mui-media-body" style="width:50%;">五芳斋';
+						lihtml+='<p class="mui-ellipsis">商家的一些描述，商家的一些描述商家的一些描述，商家的一些描述商家的一些描述，商家的一些描述商家的一些描述，商家的一些描述</p>';
+						lihtml+='<p class="jiage"><span class="jiage_color">¥30.90</span><s>原60</s></p></div>';
+						lihtml+='</a>';
+						
+						li.innerHTML = lihtml;
+						//下拉刷新，新纪录插到最前面；
+						table.insertBefore(li, table.firstChild);
+					$('.mui-table-view-cell').css("padding-right","24px");
+					}
+					
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				}, 500);
+			}
+			var count = 0;
+			/**
+			 * 上拉加载具体业务实现
+			 */
+			function pullupRefresh() {
+				
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					for (var i = cells.length, len = i + 20; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell mui-media';
+						var lihtml='<a style="margin-right:-10px;">';
+						lihtml+='<img class="mui-pull-left" style="width:50%;" src="images/sjia01.jpg">';
+						lihtml+='<div class="mui-media-body" style="width:50%;">五芳斋';
+						lihtml+='<p class="mui-ellipsis">商家的一些描述，商家的一些描述商家的一些描述，商家的一些描述商家的一些描述，商家的一些描述商家的一些描述，商家的一些描述</p>';
+						lihtml+='<p class="jiage"><span class="jiage_color">¥30.90</span><s>原60</s></p></div>';
+						lihtml+='</a>';
+						
+						li.innerHTML = lihtml;
+						
+						table.appendChild(li);
+					$('.mui-table-view-cell').css("padding-right","15px");
+					}
+				}, 500);
+			}
+			if (mui.os.plus) {
+				mui.plusReady(function() {
+					setTimeout(function() {
+						mui('#pullrefresh').pullRefresh().pullupLoading();
+					}, 500);
+
+				});
+			} else {
+				mui.ready(function() {
+					mui('#pullrefresh').pullRefresh().pullupLoading();
+				});
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,137 @@
+{
+  "examples/details.html": {
+    "href": "examples/details.html",
+    "resources": [
+      "css/detail.css",
+      "css/mui.min.css",
+      "js/jquery.1.10.2.js",
+      "images/det_banner.jpg",
+      "images/det_img-sc.png",
+      "images/det_img-xl.png"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "examples/shop.html": {
+    "href": "examples/shop.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "js/mui.min.js",
+      "js/jquery.1.10.2.js",
+      "images/zhuanpan.png",
+      "images/kdj.png",
+      "images/t1.jpg",
+      "images/muwu.jpg",
+      "images/shangpin.png"
+    ],
+    "refer": [
+      "examples/details.html"
+    ],
+    "priority": 0
+  },
+  "tab-webview-subpage-setting.html": {
+    "href": "tab-webview-subpage-setting.html",
+    "resources": [
+      "js/jquery.1.10.2.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/my.css",
+      "img/product.png"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "MainBuy.html": {
+    "href": "MainBuy.html",
+    "resources": [
+      "js/jquery.min.js",
+      "js/mui.min.js",
+      "js/TouchSlide.1.1.js",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "css/home.css",
+      "images/rz.png",
+      "images/juli.png",
+      "images/bn.png"
+    ],
+    "refer": [
+      "examples/shop.html",
+      "index.html",
+      "ListIndex.html",
+      "MainBuy.html",
+      "tab-webview-subpage-setting.html"
+    ],
+    "priority": 0
+  },
+  "ListIndex.html": {
+    "href": "ListIndex.html",
+    "resources": [
+      "js/jquery.1.10.2.js",
+      "js/mui.min.js",
+      "js/update.js",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/my.css",
+      "css/home.css",
+      "css/iconfont.css",
+      "css/goods.css",
+      "images/jifen_banner01.png",
+      "images/jifen_icon01.png",
+      "images/jifen_icon02.png",
+      "images/jifen_icon03.png",
+      "images/jifen_icon04.png",
+      "images/jifen_icon05.png",
+      "images/jifen_icon06.png",
+      "images/jifen_icon07.png",
+      "images/jifen_icon08.png",
+      "images/jifen_icon09.png",
+      "images/jifen_icon10.png",
+      "images/ad_banne02.png",
+      "images/ad_banne01.png",
+      "images/sjia01.jpg",
+      "images/sjia02.jpg",
+      "images/sjia03.jpg",
+      "images/sjia04.jpg"
+    ],
+    "refer": [
+      "examples/shop.html",
+      "index.html",
+      "ListIndex.html",
+      "MainBuy.html",
+      "tab-webview-subpage-setting.html"
+    ],
+    "priority": 0
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "js/jquery.min.js",
+      "js/mui.min.js",
+      "js/TouchSlide.1.1.js",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "css/home.css",
+      "js/jquery.1.10.2.js",
+      "js/MD5S.js",
+      "js/TravelTailorSafeInterface.js",
+      "images/tt.png",
+      "images/tj.png",
+      "images/1.jpg",
+      "images/t1.jpg",
+      "images/t2.jpg",
+      "images/t3.jpg",
+      "images/2.png",
+      "images/w1.png",
+      "shop_iconfont/iconfont.css"
+    ],
+    "refer": [
+      "index.html",
+      "ListIndex.html",
+      "MainBuy.html",
+      "tab-webview-subpage-setting.html"
+    ],
+    "priority": 0
+  }
+}

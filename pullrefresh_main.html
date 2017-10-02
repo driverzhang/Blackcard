@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/TouchSlide.1.1.js"></script>
+		<script type="text/javascript" src="js/mapjs.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/home.css" />
+		<link rel="stylesheet" type="text/css" href="shop_iconfont/iconfont.css" />
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/star.css" " />
+    <script src="js/star.js "></script>
+    <link href="css/style.css " rel="stylesheet " />
+    <style type="text/css ">
+		body {
+				margin: 0;
+				background: #eee;
+				font-size: 1.2rem;
+				line-height: 1.6;
+				color: #0e0e0e;
+				font-family: '微软雅黑', Verdana, Arial, Helvetica, sans-serif;
+			}
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+				font-size:12px;padding-left:2px;
+				color: #ADADAD;
+			}
+			input:-moz-placeholder, textarea:-moz-placeholder {
+				color: #ADADAD; font-size:12px;padding-left:2px;
+			}
+			input::-moz-placeholder, textarea::-moz-placeholder {
+				color: #ADADAD; font-size:12px;padding-left:2px;
+			}
+			input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+				color: #ADADAD; font-size:12px;padding-left:2px;
+			}
+			@media only screen and (max-width:310px) {
+				.right-mui-sapn {
+					width: 100%;
+					margin: 0 auto;
+				}
+			}
+			
+			
+    </style>
+	</head>
+
+	<body style="background:whitesmoke; ">
+   <header  class="mui-bar mui-bar-nav " id="headerr" style="padding: 0;height: 200px;background-color: #efeff4; ">
+			<div style="height: 44px;background: #212123;color: white; ">
+				<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left " style="color: white; "></a>
+				<span class="mui-icon mui-icon-reply mui-pull-right "></span>
+				<h1 class="mui-title " id="proName " style="color: white; ">积分详情</h1>
+			</div>
+			<div style="background: whitesmoke;height: 156px;margin: 0;padding: 0; ">
+				<div class="head " style="width: 94%; height: 7rem; margin: auto; ">
+				<img class="head-img "  style="float: left; width: 4rem; height: 4rem; margin-left: 0px; margin-top: 2rem; border-radius: 4rem; margin-right: 1rem; " src="images/det_banner.jpg " />
+				<div class="head-name " style="margin-left: -8px;float: left; height: 4rem; width: auto; margin-top: 2rem; color: white; line-height: 2rem; text-align: left; ">
+					<p class="personname " style="font-size: 14px; margin-top: 0; margin-bottom: 10px; color: black; font-size: 16px; " id="UserName ">dd</p>
+					<span id="logincardID " style=" color: black; font-size: 16px; ">ID:123456</span>
+				</div>
+				<span class="manyfen " style="color: black;font-size: 12px; float: right; margin-top: 25px; margin-right: 17%; ">积分余额:</span>
+				<div id="numberjifen " style="float: right; margin-right: 10%;margin-top: 65px; font-size: 30px; position: absolute; right: 10%; ">0</div>
+			</div>
+				
+			</div>
+		</header>
+		
+		<div class="mui-content " >
+			
+		</div>
+	</body>
+	<script src="js/MD5S.js "></script>
+	<script src="js/mui.min.js"></script>
+    <script src="js/TravelTailorSafeInterface.js "></script>
+	<script type="text/javascript ">	
+	function getinters(){
+				var loginPhone = localStorage.getItem("loginPhone");
+				var loginPassword = localStorage.getItem("loginPassword");
+
+				var ar = new Array();
+				ar.InterfaceAddress = "api/appLogin";
+				ar.phone = loginPhone;
+				ar.password = loginPassword;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar, "endGetInter");
+		}
+		getinters();
+	setInterval(function(){
+		getinters();
+	},15000)
+	var username=  document.getElementById("UserName");
+	var logincardID=document.getElementById("logincardID");
+	var numberjifen=document.getElementById("numberjifen");
+			function endGetInter(rs) {
+				var verData = eval('(' + rs + ')');
+
+				if(verData == undefined) {
+					mui.alert("网络异常", '我的黑卡平台');
+
+				} else if(verData.suc) {
+					document.getElementById("headerr").getElementsByTagName("div")[2].getElementsByTagName("span")[0].innerText='ID:'+ verData.ReturnData.ICCard;
+					document.getElementById("headerr").getElementsByTagName("div")[2].getElementsByTagName("p")[0].innerText=localStorage.getItem("UserName");
+					document.getElementById("headerr").getElementsByTagName("div")[4].innerText= verData.ReturnData.Integral;
+				} else {
+					mui.alert("登陆失效，请重新登陆", '我的黑卡平台');
+				}
+			}
+	//启用双击监听
+		mui.init({ // mui框架：
+			gestureConfig:{
+				doubletap:true
+			},
+			subpages:[{  // 加载子页面
+				url:'pullrefresh_sub.html',
+				id:'pullrefresh_sub',
+				styles:{
+					top: '201px',
+					bottom: '0px', 
+				}
+			}] 
+		});
+		var old_back = mui.back;
+		mui.back = function(){
+			plus.webview.getWebviewById("pullrefresh_sub ").close();
+		    //显示上一个界面；
+			
+		    //继续当前页面原有返回逻辑
+		    old_back();
+		    
+		}
+		var contentWebview = null;
+		document.querySelector('header').addEventListener('doubletap',function () {
+			if(contentWebview==null){
+				contentWebview = plus.webview.currentWebview().children()[0];
+			}
+			contentWebview.evalJS("mui( '#pullrefresh').pullRefresh().scrollTo(0,0,100) ");
+		});
+	</script>
+
+</html>

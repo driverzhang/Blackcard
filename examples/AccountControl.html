@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css">
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+
+		<title>用户切换</title>
+		<style type="text/css">
+			body {
+				background-color: white;
+			}
+			
+			#AccountTop {
+				background: black;
+				height: 44px;
+				line-height: 44px;
+				text-align: center;
+				font-size: 22px;
+			}
+			
+			#Account {
+				color: white;
+			}
+			
+			.hrs {
+				border: solid 0.2px #c9c9c9;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="choseNumber">
+			<div id="top">
+				<div id="AccountTop">
+					<a href="zh-shezhi.html">
+						<span style="float: left;color: white;margin-top: 8px;" class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left"></span>
+					</a>
+					<span id="Account" style="font-family: '黑体'; font-size: 16px;">用户切换</span>
+					<div style=" float: right; margin-top: 6px;margin-right: 5%;">
+						<a href="zh-shezhi.html"><img style="width: 30px; height: 30px;padding-right: 5%;" class="head-right" src="../img/head-right.png" /></a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div id="BodyContent">
+			<div class="accountContent1" style="border: solid 1px #dcdcdc; border-left:thin;border-right:thin;margin-top: 30px; width: 100%;height: 85px;">
+				<div style="float: left;width: 70px; height: 70px; border-radius: 70px;margin-top: 4px;margin-bottom: 4px;margin-right: 4px; margin-left: 5%;">
+					<img style="width: 100%; height: 100%;" src="../images/header-img-comment_03.png" />
+				</div>
+				<div style="position: relative; top: 20px; left: 5px; float: left;">
+					<span style="color: #585756;font-family: '黑体';" id="UserName"></span>
+					<p style="color: #585756; margin-top: 5px;font-family: '黑体';" id="logincardID"></p>
+				</div>
+				<div id="onselect1" style="float: right; position: relative;top: 20px; right: 5%; width: 40px; height: 40px; display: none;">
+					<img style="width: 100%;" src="img/OnSelected.png" />
+				</div>
+			</div>
+
+
+				<div class="accountAdd" style="border: solid 1px #dcdcdc; border-left:thin;border-right:thin;margin-top: 15px; width: 100%;height: 85px;" onclick="logout()">
+					<div style="float: left;width: 70px; height: 70px; border-radius: 70px;margin-top: 4px;margin-bottom: 4px;margin-right: 4px; margin-left: 5%;">
+						<img style="width: 100%; height: 100%; padding: 15px;" src="../images/addfuhao.png" />
+					</div>
+					<div style="position: relative; top: 32px; left: 5px;">
+						<span style="color: #cfa972; font-family: '黑体'; font-size: 20px;">添加或者注册账号</span>
+					</div>
+				</div>
+
+		</div>
+		<div id="deleteFunction" style="background:#fefdfb ; position:fixed;bottom:0; width: 100%; text-align: center; display: none;">
+			<p style="font-family: '黑体';color: #000000; margin-top: 8px; font-size: 12px;" id="DeleteID">确定删除账号132456789?</p>
+			<hr class="hrs" />
+			<a>
+				<p style="font-family: '黑体';color: #000000;font-size: 20px;" onclick="deleteAccount()">仅删除账号</p>
+			</a>
+			<hr class="hrs" />
+			<a>
+				<p style="font-family: '黑体';color: #000000;font-size: 20px;" onclick="deleteAccount()">删除账号和本地纪录</p>
+			</a>
+			<hr class="hrs" />
+			<hr class="hrs" />
+			<a id="cancel">
+				<p style="font-family: '黑体'; color: #000000;font-size: 20px;">取消</p>
+			</a>
+		</div>
+	</body>
+	<script src="../js/jquery.min.js"></script>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/MD5S.js"></script>
+    <script src="../js/TravelTailorSafeInterface.js"></script>
+	<script>
+		var phone = localStorage.getItem("loginPhone");
+        if(localStorage.getItem("UserId")==null || phone==null){      		 
+			mui.openWindow({
+				url:"login.html",
+				id:"login",
+				show:{
+					autoShow:true,//页面loaded事件发生后自动显示，默认为true
+				},
+				waiting:{
+							
+				}
+			})
+		}
+		
+		
+		
+		$(document).ready(function(){
+    		getinters();
+		});
+		
+		
+		
+		
+		$(".accountContent1").click(function() {
+			$("#deleteFunction").fadeToggle(1000);
+			$("#onselect1").fadeToggle();
+
+		});
+		$(".accountContent2").click(function() {
+			$("#deleteFunction").fadeToggle(1000);
+			$("#onselect2").fadeToggle();
+		});
+		$("#cancel").click(function() {
+			document.getElementById("deleteFunction").style.display = "none";
+			document.getElementById("onselect1").style.display = "none";
+			document.getElementById("onselect2").style.display = "none";
+
+		});
+		function logout() {
+				if(confirm("是否要切换账号？")) //confirm() 方法用于显示一个带有指定消息和 OK 及取消按钮的对话框。
+				localStorage.removeItem("loginPhone"); 
+					mui.openWindow({
+						//						url: "examples/forget_password.html",
+						url: "login.html",
+						id: "forget_password",
+						show: {
+							autoShow: true, //页面loaded事件发生后自动显示，默认为true
+
+						},
+						waiting: {
+
+						}
+					})
+				return false; 
+		}
+		function deleteAccount() {
+				if(confirm("是否要清除账户信息！")) //confirm() 方法用于显示一个带有指定消息和 OK 及取消按钮的对话框。
+				localStorage.removeItem("loginPhone"); 
+					mui.openWindow({
+						//						url: "examples/forget_password.html",
+						url: "login.html",
+						id: "forget_password",
+						show: {
+							autoShow: true, //页面loaded事件发生后自动显示，默认为true
+
+						},
+						waiting: {
+
+						}
+					})
+				return false; 
+		}
+		
+		
+		function getinters() {
+				var loginPhone = localStorage.getItem("loginPhone");
+				var loginPassword = localStorage.getItem("loginPassword");
+				var ar = new Array();
+				ar.InterfaceAddress = "api/appLogin";
+				ar.phone = loginPhone;
+				ar.password = loginPassword;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar, "endGetInter");
+		}
+			//返回登录后的个人数据
+			function endGetInter(rs) {
+				var verData = eval('(' + rs + ')');
+
+				if(verData == undefined) {
+					mui.alert("网络异常", '我的黑卡平台');
+
+				} else if(verData.suc) {
+					document.getElementById("logincardID").innerHTML = "ID："+verData.ReturnData.ICCard;
+					document.getElementById("UserName").innerHTML = localStorage.getItem("UserName");
+					document.getElementById("DeleteID").innerHTML = "是否删除"+verData.ReturnData.ICCard+"的信息？";
+					
+
+				} else {
+					mui.alert("登陆失效，请重新登陆", '我的黑卡平台');
+				}
+			}
+		
+		
+		
+		
+	</script>
+
+</html>

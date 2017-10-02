@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>商品详情</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link type="text/css" href="css/detail.css" rel="stylesheet">
+		<link type="text/css" href="css/mui.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/home.css">
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    
+		<link rel="stylesheet" type="text/css" href="css/star.css" />
+		<script src="js/jquery.min.js"></script>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/TouchSlide.1.1.js"></script>
+		<script src="js/star.js"></script>
+		<style type="text/css">
+			body {
+				margin: 0;
+				font-family: 'microsoft yahei', Verdana, Arial, Helvetica, sans-serif;
+			}
+			.sp-jj{
+				font-family: "黑体";
+				color:black;
+			}
+			.fg{
+				float: right;
+				height: 60px;
+				width: 60px;
+				overflow: hidden;
+				border-left: 0.8px solid #8f8f94;
+				margin-top: 1rem
+			}
+			.hotelname{
+				width: 100%;
+				border:0;
+				border-top:0.8px solid #cacaca;
+				border-bottom:0.8px solid #cacaca;
+				height: 50px
+			}
+			.hotelnametext{
+				float: left;
+				line-height: 50px;
+				font-size: 14px;
+				margin-left: 20px;"
+				color:black;
+				font-size: 18px;
+				font-family: "黑体";
+			}
+			.hotelbutton{
+				float: right;
+				height: 50px;
+				width: 80px;
+				background-color: #cfa972;	
+				line-height: 50px;
+				text-align: center;"
+			}
+			#shopDetail{
+				text-align: left;
+				margin-top: 8px;
+				margin-left: 20px;
+				font-size: 18px;
+			}
+			.mapad{
+				margin-top: 2rem;
+				margin-left: 20px;
+				font-size: 18px;
+				height: 6rem;
+			}
+			.mapadDetail{
+				float:left;
+				text-align: left;
+				width: 72%;
+				height: auto;
+				overflow: hidden;
+			}
+			.mapad-map{
+				float:right;
+				height: 4rem;
+				width: 4rem;
+				margin-right: 1rem;
+				margin-bottom: 0.5rem;
+			}
+			.sp-div{
+				height: auto;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			.sp-header{
+				float:left;
+				width: 100%;
+				height: 3.5rem;
+				line-height: 3.5rem;
+				overflow: hidden;
+				font-size: 18px;
+				font-family: "黑体";
+				padding-left: 20px;
+				
+			}
+			.sp-li{
+				width: 100%;
+				height: 2rem;
+				line-height: 2rem;
+				overflow: hidden;
+				font-size: 16px;
+				font-family: "黑体";
+				padding-left: 20px;
+			}
+			.sp-down{
+				float:right;
+				height: 1rem;
+				width: 2rem;
+				margin-right: 2rem;
+				margin-top: 1.5rem;
+			}
+			.sp-textarea{
+				float:left;
+				width:100%;
+				height: auto;
+				text-align: left;
+				font-size: 14px;
+				padding: 20px;
+				color:black;
+				background: #fff;
+				font-family:'黑体' ;"
+			}
+			.jf-button{
+				float:left;
+				width: 100%;
+				height: auto;
+				margin-top: 1rem;
+				background: #EEEEEE;
+				padding-bottom: 2rem;
+			}
+			.jf-header{
+				height: 3.5rem;
+				width: 100%;
+				line-height: 3.5rem;
+				font-size: 16px;
+				text-align: center;
+			}
+			.jf-buttonleft{
+				float:left;
+				height: auto;
+				width: 49%;
+				overflow: hidden;
+				margin-left: -2px;
+				background: #fff;
+			}
+			.jf-buttonright{
+				float:right;
+				height: auto;
+				width: 49%;
+				overflow: hidden;
+				margin-right: -2px;
+				background: #fff;
+			}
+			.jf-buttonleft img{
+				width: 100%;
+				height: 100%;
+			}
+			.jf-buttonright img{
+				width: 100%;
+				height: 100%;
+			}
+			.jf-buttonleft s{
+				margin-left: 3px;
+				color:#888888;   
+				font-family: "黑体"; 
+				font-weight: normal;
+				font-size:12px"
+			}
+			.jf-buttonright s{
+				margin-left: 3px;
+				color:#888888;   
+				font-family: "黑体"; 
+				font-weight: normal;
+				font-size:12px"
+			}
+			.jf-p1{
+				padding-left: 4px;
+				font-family: "黑体";
+				color:black;
+				font-size: 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--** 导航 -->
+		<header class="mui-bar mui-bar-nav" style="background: #212123;color: white;">
+			<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<span class="mui-icon mui-icon-reply mui-pull-right"></span>
+			<h1 class="mui-title" id="proName" style="color: white;">加载...</h1>
+		</header>
+
+		<!--  end-->
+
+		<!--   banner  -->
+		<div class="wrap">
+		<section id="banner">
+				<div id="slideBox" class="slideBox">
+					<div class="bd">
+						<ul id="BoxImg">
+                        
+						</ul>
+					</div>
+					<div class="hd">
+						<ul></ul>
+					</div>
+				</div>
+			</section>
+		<!-- end  -->
+		<div class="clear"></div>
+
+		<!-- 等级认证 -->
+		<div class="title-sc">
+			<div class="title" id="bindPro1">
+
+			</div>
+			<!-- 分割线 -->
+			<div class="fg">
+			<div class="img-sc" style="padding-top: 0px;">
+				
+				<img src="images/fg-fx.png">
+				<p style="padding: 0px;">收藏</p>
+			</div>
+			</div>
+		</div>
+		<div style="width: 100%;height: auto;background-color: white;">
+			<div class="hotelname">
+						<div class="hotelnametext">雨林小铺</div>
+						<div class="hotelbutton" id="hotelbutton" style="color: white;font-size:15px;">关注</div>
+			</div>
+			<div id="shopDetail" >
+				营业时间:10:00-12:30
+			</div>
+			<div class="mapad">
+				<div class="mapadDetail">新疆维吾尔自tttt治区哈萨克自治州伊宁市北京路305号</div>
+				<img class="mapad-map" src="images/dw-map.png">
+			</div>
+		</div>
+		<!-- end  -->
+		<div style="height: 9px;width: 100%;background-color: #EEEEEE;"></div>
+		<!-- 使用时间  支付方式 -->
+		<div style="width: 100%;height: auto;background-color: white;height: 30px;line-height: 30px;">
+			<div style="width: 100%;border:0;height: 24px;margin-top: 3px;">
+						<div style="float: left;line-height: 24px;font-size: 14px;margin-left: 20px;">服务评价</div>
+						<div style="float:right;line-height: 24px;"><input disabled="disabled"  style="font-size: 1rem;" value="3" type="number" class="rating form-control" min="0" max="5" step="0.1" data-size="lg"></div>
+			</div>
+			
+		</div>
+		<div style="height: 9px;width: 100%;background-color: #EEEEEE;"></div>
+		
+			<div class="sp-div">
+				<div class="sp-header">商品属性:<img class="sp-down" src="images/sp-dwon.png"></div>
+				<div style="height:0.8px;width: 92%;margin: auto; overflow: hidden;background:#cacaca;"></div>				
+					<ul>
+						<li><div class="sp-li">单位：</div></li>
+						<li><div class="sp-li">品牌:</div></li>
+						<li><div class="sp-li">产地:</div></li>
+						<li><div class="sp-li">规格:</div></li>
+					</ul>				
+			</div>
+		
+		
+		<div style="height: 9px;width: 100%;background-color: #EEEEEE;"></div>
+			<div class="sp-div">
+				<div class="sp-header" style="text-align: center;">商品品说明</div>
+				<div style="height:0.8px;width: 92%;margin: auto; overflow: hidden;background:#cacaca;"></div>
+				<textarea type="text" disabled="disabled" class="sp-textarea" style="border: hidden;">好东西！</textarea>
+				
+			</div>
+		<!-- end  -->
+		<div class="jf-button">
+			<div class="jf-header">好货专属</div>
+			<div class="jf-buttonleft"><img src="images/shangping.png">
+				<p class="jf-p1">青少年短袖T恤 两件减5元</p>
+				<p><span style="color:#ff4101;">¥18.00</span> <s>￥ 198</s>&nbsp;&nbsp;&nbsp; <span style="text-align: right;font-size: 11px;">0人购买</span></p>
+			</div>
+			<div class="jf-buttonright">
+				<img src="images/shangping.png">
+					<p class="jf-p1">青少年短袖T恤 两件减5元</p>
+					<p><span style="color:#ff4101;">¥18.00</span> <s>￥ 198</s>&nbsp;&nbsp;&nbsp;<span style="text-align: right;font-size: 11px;">0人购买</span></p>
+			</div>
+		</div>
+		
+		<!--<div id="menu">
+			<!--tag标题-->
+		<!--	<ul id="nav">
+				<li class="tagall">
+					<a class="selected">产品详情</a>
+				</li>
+				<li class="tagall">
+					<a class="">评价</a>
+				</li>
+
+			</ul>-->
+			<!--二级菜单-->
+			<!--<div id="menu_con">
+				<div class="tag" style="display:block">
+					<ul>
+						<li id="prodetail"> </li>
+
+					</ul>
+				</div>
+				<div class="tag" style="display:none">
+					<ul>
+						<li>评价信息1.0版本保密</li>
+						<li>敬请期待2.0版本</li>
+
+					</ul>
+				</div>
+
+			</div>-->
+		</div>
+		
+		</div>
+		<div id="payEnd" style="width: 100%;height: 100%;position: fixed;top:0;display: none;z-index:99999;">
+			<div style="width:100%;height:100%;position: absolute; opacity: 0.4; filter: alpha(opacity=40);background-color:#070707;"  ></div>
+			<div style="top:17.5%;position: absolute;left:17.5%;width: 65%;height: 55%;margin:auto;background: url(jggimg/payStatu1.png);background-size:100% 100%;">
+				<div style="width: 80%;height: 100%;margin: auto;" id="rebalck">
+					<div style="width: 100%;height: 20%;"></div>
+					<div style="margin-top: 25%;width: 45%;margin: auto;"><img src="jggimg/payStatu2.png" width="100%"></div>
+					<div style="margin-top: 8%;text-align: center;font-size:26px;">支付成功</div>
+					<div style="margin-top: 20%;width: 100%;">
+						<div style="float:left;width: 45%;margin: auto;margin-right: 5%;" onclick="GoOrderInfor()"><img src="jggimg/payStatu3.png" width="100%"></div>
+						<div style="float:left;width: 45%;margin: auto;" onclick="GoIndex()"><img src="jggimg/payStatu4.png" width="100%"></div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<nav class="mui-bar mui-bar-tab" style="font-size: 16px;height: 55px;line-height: 55px;font-weight:bold;">
+
+			<div class="mui-tab-item"  style="background-color: white;font-size: 22px;color:#FFFFFF;">
+				<div style="float: left;width: 46%;height: 50px;line-height: 50px;text-align: center;font-size: 12px;"><img src="img/lt.png" style="margin-top: 2px;" width="40px"></div>
+				<div style="width: 0.8px;height: 100%;background-color: #ACACB4;float: left;"></div>
+				<div style="float: left;width: 46%;height: 50px;line-height: 50px;text-align: center;font-size: 12px;" onclick="goShop()"><img src="img/sd.png" width="55px"></div>
+
+			</div>
+			<div class="mui-tab-item" style="background-color: #eeeeee;font-size: 15px;font-family: "黑体";">加入购物车</div>
+			<div class="mui-tab-item" id="jfPay"  style="background-color: #cfa972;font-size: 15px;color:white;font-family: "黑体";">立刻购买</div>
+		</nav>
+		
+		<script src="js/MD5S.js"></script>
+		<script src="js/TravelTailorSafeInterface.js"></script>
+		<script type="text/javascript">
+					$('.rating').rating();$('.rating-lg').attr("style","font-size:1.2rem;");$('.clear-rating').remove();
+			
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			var EndAtime="";
+			var RealID = getQueryString("id");
+			var ImgID = getQueryString("img");
+			var uil = "";
+			var binter=false;
+			var Uintegral=0;
+			var umoney=0;
+			var CompanyImgsrc = httppp+"/Images/ExpertImg/admin/CompanyImg/";
+			function BindImg() {
+				setTimeout(function(){
+					var ph = {
+						Collection: [
+							{ F: "KeyId", O: "=", P: "@@KeyId", V: ImgID },
+							
+						]
+					};
+					var ar = new Array();
+					ar.Condition = ph;
+					ar.InterfaceAddress = "api/ShopInfo";
+					ar.Name = "YL_Imgs";
+					ar.OrderBy = "CreationDate desc";
+					ar.Index = 0;
+					ar.Size = 3;
+					aes(ar, "endImg");
+				},50);
+			}
+			document.getElementById("hotelbutton").addEventListener(function(){
+				var ar = new Array();
+					ar.Condition = ph;
+					ar.InterfaceAddress = "api/Collection";
+					ar.Name = "";
+					ar.Src="";
+					ar.User="";
+
+					aes(ar, "endHotel");
+			});
+			
+			function endHotel(rs){
+				
+			}
+			
+			var ItemUserId=localStorage.getItem("UserId");
+			if(ItemUserId==null){
+				mui.openWindow({
+					url:"examples/forget_password.html",
+					id:"forget_password",
+					
+					show:{
+						autoShow:true,//页面loaded事件发生后自动显示，默认为true
+					
+					},
+					waiting:{
+					
+					}
+				})
+			}
+			var jfpaydisabled=false;
+			document.getElementById("jfPay").addEventListener("tap", function() {
+				if(confirm("是否使用"+Uintegral+"积分换购该产品")){
+					if(!jfpaydisabled){
+						jfpaydisabled=true;
+					    var ar = new Array();
+					    var ListAppOrderInfo=[];
+					    var AppOrderInfo=[];
+	                    AppOrderInfo.ProductId = RealID;
+	                    AppOrderInfo.ShopId =MercharID;
+	                    AppOrderInfo.ProductNum =1;
+	                    AppOrderInfo.ISInterAndMoney =true;
+	                    ListAppOrderInfo.push(AppOrderInfo);
+	                    ar.ListAppOrderInfo=ListAppOrderInfo;
+	                    ar.UserID=ItemUserId;
+	                    
+						ar.InterfaceAddress = "api/AddOrder";
+	                    aes(ar, "endjfPay");
+                   }else{
+                   		alert("正在处理订单请稍后")
+                   }
+                }
+			});
+			
+			function endjfPay(rs){
+				var TData = eval("(" + rs + ")");
+				if(TData.suc){
+					if(umoney>0){
+						var appendHtml='<div style="color:red;width: 100%;font-size: 9px;">注：请于'+CurentTimeBydata("-",EndAtime,false)+'前到店核销</div><div style="color:red;width: 100%;font-size: 9px;">现金部分到店支付</div><div style="color:red;width: 100%;font-size: 9px;">祝您消费愉快</div>';
+						
+						$('#rebalck').append(appendHtml);
+
+					}
+					document.getElementById("payEnd").style.display="block";
+					
+				}else{
+					
+					alert(TData.msg);
+				}
+				jfpaydisabled=false;
+			}
+				
+				function GoOrderInfor(){
+				mui.openWindow({
+						url:"examples/order_search.html",
+						id:"order_search",
+						show:{
+							autoShow:true,//页面loaded事件发生后自动显示，默认为true
+						
+						},
+						waiting:{
+						
+						}
+					})
+			}
+			function GoIndex(){
+				mui.openWindow({
+						url:"index.html",
+						id:"index",
+						show:{
+							autoShow:true,//页面loaded事件发生后自动显示，默认为true
+						
+						},
+						waiting:{
+						
+						}
+					})
+			}
+			$(document).ready(function(){
+				BindImg();
+					
+				$('.waitUp').click(function(){
+						mui.alert("该功能正式发卡时上线，敬请期待", '我的黑卡平台');
+				})					
+			})
+			function endImg(rd) {
+				uil = "";
+				var TData = eval("(" + rd + ")");
+				for(var i = 0; i < TData.length; i++) {
+						uil += '<li>';
+						uil += '<a href="' + TData[i].Href + ';"><img src="' + CompanyImgsrc + TData[i].Id + '_750x360.jpg" width="100%" alt=""></a>';
+						uil += '</li>';
+				}
+				$('#BoxImg').html(uil);				
+				TouchSlide({
+					slideCell: "#slideBox",
+					titCell: ".hd ul",
+					mainCell: ".bd ul",
+					effect: "leftLoop",
+					delayTime: "1100",
+					interTime: "3000",
+					autoPage: true,
+					autoPlay: true
+				});				
+				BindProData();				
+				$('#activityHd ul').attr("style", "display: none;")				
+			}
+			var MercharID=null;
+			function goShop(){
+				if(MercharID!=null){
+					mui.openWindow({
+						url:"shop.html?id="+MercharID,
+						id:"shop",
+						show:{
+							autoShow:true,//页面loaded事件发生后自动显示，默认为true
+						
+						},
+						waiting:{
+						
+						}
+					})
+				}else{
+					mui.alert("该商家尚未入驻!");
+				}
+			}
+			function BindProData() {
+				setTimeout(function(){
+					var ar = new Array();
+					var ph = {
+						Collection: [
+							{ F: "Id", O: "%", P: "@@Id", V: RealID },
+						]
+					};
+					ar.Condition = ph;
+					ar.InterfaceAddress = "api/ShopInfo";
+					ar.Name = "Yl_ProductInfo";
+					ar.OrderBy = "CreationDate desc";
+					ar.Index = 0;
+					ar.Size = 1;
+					ar.Handshake_Time = CurentTime('-', true);
+					aes(ar, "endBindPro");
+				},50);
+			}
+			function endBindPro(rd) {				
+				var TData = eval("(" + rd + ")");
+				if(TData == undefined || TData.length == undefined || TData.length == 0) {} else {
+					$('#proName').html(TData[0].ProName);
+					var bindhtml = '';
+					bindhtml += '<p class="sp-jj" style="font-size:20px">' + TData[0].ProName + '</p>';
+					EndAtime= eval('new ' + eval(TData[0].EndTime).source);
+					if(TData[0].IsIntegral) {
+						binter=true;
+						Uintegral=TData[0].XIntegral;
+						umoney=TData[0].XMoney;
+						bindhtml += '<p class="jg-yh"><span style="width:100%;padding-right:0px;color;font-size:20px;font-family: "黑体";">￥' + TData[0].XMoney + '+' + TData[0].XIntegral + '积分</span><s class="O_price" style="margin-left: 5px;color:#888888;   font-family: "黑体"; font-weight: normal;font-size:12px">￥ '+TData[0].Oldprice+'</s></p>';
+					} else {
+						bindhtml += '<p class="jg-yh" style="margin-top:0.6rem;"><span style="padding-right:0px;font-size:20px;color:#cfa972;font-family: "黑体";">￥' + TData[0].proprice + '  +0积分</span><s class="O_price" style="margin-left: 5px;color:#888888; font-family: "黑体";   font-weight: normal;font-size:12px;">￥ '+TData[0].Oldprice+'</s></p>';
+					}
+					MercharID=TData[0].MercharID;
+					$('#bindPro1').html(bindhtml);
+					$('#prodetail').html(TData[0].ProInfo);
+				}
+				//从服务器获取数据
+				//业务数据获取完毕，并已插入当前页面DOM；
+				//注意：若为ajax请求，则需将如下代码放在处理完ajax响应数据之后；
+				mui.plusReady(function() {
+					plus.nativeUI.closeWaiting();
+				});				
+			}
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+		</script>
+		<!--代码部分end-->
+
+	</body>
+
+</html>

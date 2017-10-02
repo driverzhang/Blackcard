@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+ 
+	<head>
+		<meta charset="UTF-8">
+		<title>订单查询</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			body {
+				font-family: "微软雅黑";
+			}
+			
+			.mui-bar {
+				margin-top: 0px;
+				background: #212123;
+				padding-bottom: 10px;
+			}
+			
+			.mui-bar a {
+				color: #ffffff;
+			}
+			
+			.mui-bar .mui-title {
+				color: #FFFFFF;
+			}
+			
+			#segmentedControl {
+				border: 0px;
+				background: #FFFFFF;
+			}
+			
+			#segmentedControl .mui-control-item {
+				border: 0px;
+				color: #515151;
+			}
+			
+			#segmentedControl .mui-active {
+				background: #FFFFFF;
+				color: red;
+			}
+			
+			#segmentedControl .mui-active .small_icons {
+				color: red;
+			}
+			
+			#segmentedControl .mui-active .title-font {
+				color: red;
+			}
+			
+			#segmentedControl p span {
+				padding-bottom: 2px;
+			}
+			
+			.mui-segmented-control .mui-control-item {
+				line-height: 1;
+				padding-top: 8px;
+			}
+			
+			.mui-segmented-control .mui-control-item .small_icons {
+				font-size: 28px;
+				color: #565656;
+			}
+			
+			.mui-segmented-control .mui-control-item .title-font {
+				color: #565656;
+			}
+			
+			.mui-grid-view.mui-grid-9 {
+				background: #FFFFFF;
+			}
+			
+			.mui-grid-view.mui-grid-9 .grid-9-icon {
+				color: red;
+				font-size: 28px;
+			}
+			
+			.order-list {
+				margin-bottom: 10px;
+			}
+			
+			.order-list .list-top .success {
+				color: #008000;
+				font-weight: 800;
+			}
+			
+			.order-list .list-top img {
+				width: 28px;
+			}
+			
+			.order-list .list-top a {
+				font-size: 14px;
+				font-weight: 800;
+			}
+			
+			.order-list .list-content {
+				background: #f5f5f5;
+			}
+			
+			.order-list .list-content img {
+				margin-right: 10px;
+				width: 64px;
+				height: 64px;
+			}
+			
+			.order-list .list-content h5 {
+				color: #000000;
+				padding-left: 20px;
+			}
+			
+			.order-list .list-count {
+				padding: 4px;
+			}
+			
+			.order-list .list-count span {
+				font-size: 12px
+			}
+			
+			.order-list .list-btn .mui-btn {
+				margin-right: 10px;
+				font-size: 12px;
+				padding: 4px;
+			}
+			.mui-control-item {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left mui-action-back"></a>
+			<h1 class="mui-title">订单查询</h1>
+			<a class=" mui-pull-right" style="line-height: 44px;"><i class="icon iconfont icon-sousuo-sousuo" style=" font-size: 18px;"></i></a>
+		</header>
+		<div id="mui-contents">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-text-left">
+					<a class="mui-h5 mui-pull-right " style="color: #8f8f94;">更多></a>
+					<span class="" style=" font-size: 16px; font-weight: 800;">我的订单</span>
+
+				</li>
+			</ul>
+			<div class="">
+				<div>
+					<div id="segmentedControl" class="mui-segmented-control">
+						<a id="quanbu" name="quanbu" class="mui-control-item mui-active" href="#item1"  >
+							<!--去掉 mui-active 可以将默认红色解除-->
+							<p class="title-font" ><span onclick="fenlei()">全部</span></p>
+						</a>
+						</a>
+						<a class="mui-control-item" href="#item2"  >
+							<p class="title-font"><span onclick="fenlei()">待付款</span></p>
+						</a>
+						<a class="mui-control-item" href="#item3"  >
+							<p class="title-font"><span onclick="fenlei()">待使用</span>
+							</p>
+						</a>
+
+						<a class="mui-control-item" href="#item5" >
+							<p class="title-font"><span onclick="fenlei()">待评价</span></p>
+						</a>
+					</div>
+				</div>
+				<div class="mui-control-content mui-active">
+					<div id="scroll" class="">
+						<div class="mui-scroll" id="itemList">
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/MD5S.js"></script>
+		<script src="../js/TravelTailorSafeInterface.js"></script>
+		
+		<!--祖传框架，里面各种方法！-->
+		<script type="text/javascript">
+			// 构建方法，跨页面 取上级页面传递过来的参数 追加点击变状态功能。
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+
+			var clickurL = getQueryString('clicknum');
+			if(clickurL == 0) //代表上级页面传入 全部。
+			{
+				$(".mui-control-item").eq(0).addClass('mui-active'); //给 全部标签 附上红色状态选中。
+			}
+			if(clickurL == 1) {
+				$(".mui-control-item").eq(1).addClass('mui-active');
+				$(".mui-control-item").eq(0).removeClass('mui-active');
+
+			}
+			if(clickurL == 2) {
+				$(".mui-control-item").eq(2).addClass('mui-active');
+				$(".mui-control-item").eq(0).removeClass('mui-active');
+
+			}
+			if(clickurL == 3) {
+				$(".mui-control-item").eq(3).addClass('mui-active');
+				$(".mui-control-item").eq(0).removeClass('mui-active');
+
+			} else if(clickurL == null || clickurL == "" || clickurL == undefined) {
+				// 没有点击任何一个不做出处理。
+			}
+
+			//返回按钮
+			var ItemUserId = localStorage.getItem("UserId");
+			if(ItemUserId == null) {
+				mui.openWindow({
+					url: "examples/forget_password.html",
+					id: "forget_password",
+
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+
+					},
+					waiting: {
+
+					}
+				})
+			}
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			window.onload = function() {
+				var range = 50; //距下边界长度/单位px
+				var elemt = 500; //插入元素高度/单位px
+				var num = 1;
+				var totalheight = 0;
+				$(window).scroll(function() {
+					var srollPos = $(window).scrollTop(); //滚动条距顶部距离(页面超出窗口的高度)
+
+					totalheight = parseFloat($(window).height()) + parseFloat(srollPos);
+					if(($(document).height() - range) <= totalheight && resetdata) {
+						AddShopList();
+					}
+				});
+				setTimeout(function() {
+					AddShopList();
+				}, 50);
+			}
+
+			function AddShopList() {
+				resetdata = false;
+				var table = document.getElementById("itemList");
+				var li = document.createElement('li');
+				li.className = 'gclLoding mui-table-view-cell mui-media';
+				var lihtml = '<div style="text-align:center;">' + ishasdata + '</div>';
+				li.innerHTML = lihtml;
+				table.appendChild(li);
+				var ar = new Array();
+				var data=""
+				var ph = {
+
+				};
+				//点击每个标签，显示对应该有的数据。
+
+				if($('.mui-active span').eq(0).text() == "待使用") { // span 注意精确定位。
+					data = 2;
+
+					ph = {
+						Collection: [{
+								F: "userID",
+								O: "%",
+								P: "@@userID",
+								V: ItemUserId
+							},
+							{
+								F: "Status",
+								O: ">=",
+								P: "@@Status1", // 这里的@ @Status  要不一样。
+								V: 2
+							},
+							{
+								F: "Status",
+								O: "<=",
+								P: "@@Status2",
+								V: 6
+							},
+							{
+								F: "Status",
+								O: "!=",
+								P: "@@Status3",
+								V: 4
+							},
+							{
+								F: "Status",
+								O: "!=",
+								P: "@@Status4",
+								V: 5
+							},
+
+						]
+					};
+				} else if($('.mui-active span').eq(0).text() == "待评价") {
+					data = 3;
+					ph = {
+						Collection: [{
+								F: "userID",
+								O: "%",
+								P: "@@userID",
+								V: ItemUserId
+							},
+							{
+								F: "Status",
+								O: ">=",
+								P: "@@Status5",
+								V: 4
+							},
+							{
+								F: "Status",
+								O: "<=",
+								P: "@@Status6",
+								V: 8
+							},
+							{
+								F: "Status",
+								O: "!=",
+								P: "@@Status7",
+								V: 6
+							},
+						]
+					};
+				} else if($('.mui-active span').eq(0).text() == "待付款") {
+					data = 1;
+					ph = {
+						Collection: [{
+								F: "userID",
+								O: "%",
+								P: "@@userID",
+								V: ItemUserId
+							},
+							{
+								F: "Status",
+								O: "=",
+								P: "@@Status0",
+								V: 1
+							},
+
+						]
+					};
+				} else if($('.mui-active span').eq(0).text() == "全部") {
+					data = 0;
+					 ph = {
+						Collection: [{
+								F: "userID",
+								O: "%",
+								P: "@@userID",
+								V: ItemUserId
+							},
+							{
+								F: "Status",
+								O: ">=",
+								P: "@@Status8",
+								V: 0
+							},
+							{
+								F: "Status",
+								O: "<=",
+								P: "@@Status9",
+								V: 8
+							},
+						]
+					};
+				}
+				ar.Condition = ph;
+				ar.InterfaceAddress = "api/ShopInfo";
+				ar.Name = "YL_Order";
+				ar.OrderBy = "CreationDate desc";
+				ar.Index = 0 + Shopindex;
+				ar.Size = 8;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar, "endshop");
+			}
+			var ishasdata = "加载数据中...";
+			var CompanyImgsrc = httppp + "/Images/ExpertImg/admin/CompanyImg/";
+			var resetdata = false;
+			var Shopindex = 0;
+
+			function endshop(rd) {
+				var TData = eval("(" + rd + ")");
+				var table = document.getElementById("itemList");
+				var gclloding = document.getElementsByClassName("gclLoding")[0];
+				table.removeChild(gclloding);
+				if(TData == undefined || TData.length == undefined || TData.length == 0) {
+					ishasdata = "没有更多的数据";
+				} else {
+					Shopindex++;
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					for(var i = 0, len = TData.length; i < len; i++) {
+						var statusa = "";
+						switch(TData[0].Status) {
+							case 0:
+								statusa = "订单失效";
+								break;
+							case 1:
+								statusa = "下单成功";
+								break;
+							case 2:
+								statusa = "支付成功";
+								break;
+							case 3:
+								statusa = "物品配送";
+								break;
+							case 4:
+								statusa = "交易成功";
+								break;
+							case 5:
+								statusa = "核销成功";
+								break;
+							case 6:
+								statusa = "众筹中";
+								break;
+							case 7:
+								statusa = "已退款";
+								break;
+							case 8:
+								statusa = "众筹获奖";
+								break;
+							default:
+								statusa = "异常订单";
+						}
+						var uia = document.createElement('ul');
+						uia.className = 'mui-table-view order-list';
+						var lihtml = '<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-text-left list-top">';
+						lihtml += '<span class="mui-h5 mui-pull-right success" >' + statusa + '</span><span class="mui-pull-left"><img class="logo mui-block" src="' + CompanyImgsrc + TData[i].ShopImgID + '_80x80.jpg" / > </span>';
+						lihtml += '<a href="javascript:void(0);" class="mui-pull-left " style="    margin-left: 1px;">' + TData[i].ShopName + '</a></li>';
+						var oldprice = parseInt(TData[i].OrderPrice * 100) / 100 + parseInt(TData[i].Orderdiscount * 100) / 100;
+						lihtml += '<li class="mui-table-view-cell list-content" > <div class="mui-table"><div class="mui-table-cell mui-col-xs-8"><img class=" mui-pull-left" src="' + CompanyImgsrc + TData[i].ProductId + '_80x80.jpg" >';
+						lihtml += '<h5  style="">' + TData[i].ProName + '</h5></div>';
+						lihtml += '  <div class="mui-table-cell mui-col-xs-4 mui-text-right"> <h5 class="mui-ellipsis" >￥' + TData[i].OrderPrice + ' + ' + TData[i].OrderIntegal + '积分</h5><p class="mui-h5 mui-ellipsis" style="text-decoration:line-through;">￥' + oldprice + '</p><p class="mui-h5 mui-ellipsis"></p></div> </div> </li>';
+
+						lihtml += ' <li class="mui-table-view-cell mui-media mui-col-xs-12 mui-text-left list-count" ><span class="count mui-pull-right" >共1件商品 合计:￥' + TData[i].OrderPrice + ' + ' + TData[i].OrderIntegal + '积分</span></li>';
+
+						lihtml += '<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-text-left list-btn" style="padding: 6px;"><span class=" mui-pull-right" ><a class="mui-btn " > </a><a class="mui-btn " > 评价</a></span></li>  ';
+
+						uia.innerHTML = lihtml;
+
+						table.appendChild(uia);
+					}
+				}
+				resetdata = true;
+
+			}
+//			$(document).on('click','.edit',clickEventFunction);
+
+			$('.mui-control-item').click(function(i,c) {
+
+				//这里用 $('.mui-control-item').click(function(i, c) { 
+			    //本地页面可以实现功能，但手机APP 数据都是一样的，标签没有跳出对应数据。
+				Shopindex = 0;			
+				document.getElementById("itemList").innerHTML = "";	
+				AddShopList();	
+
+			});
+			function fenlei() {
+				Shopindex = 0;			
+				document.getElementById("itemList").innerHTML = "";	
+				AddShopList();	
+
+			}
+		</script>
+	</body>
+
+</html>

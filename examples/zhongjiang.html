@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>我的奖品</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			html{
+				font-size: 10px;
+			}
+			body{
+				margin: 0rem;
+				padding: 0rem;
+				background: white;
+			}
+			p{
+				color: #545454;
+				margin:0;
+				font-size: 1rem;
+			}
+			.main{
+				width: 100%;
+				height: 100%;
+				padding:6rem 0 3rem 0;
+				overflow: hidden;
+			}
+			.main-list{
+				width:90%;
+				height: auto;
+				margin: 1.5rem auto;
+				overflow: hidden;
+			}
+			.main-list1{
+				float:left;
+				width: 33%;
+				height: 100%;
+				text-align: center;
+			}
+			.main-listall{
+				float:left;
+				width: 33%;
+				height: 100%;
+				padding-left: 0.8rem;
+				overflow: hidden;
+			}
+			.main-listimg{
+				width: 6.2rem;
+				height: 6.5rem;
+				margin-top: 1.6rem;
+			}
+			.main-listsub{
+				margin-left: 0.6rem;
+				width: 90%;
+				height: auto;
+				margin-top: 4.5rem;
+				padding:0.1rem 0.4rem;
+				font-size: 1.4rem;
+				text-align: center;
+				font-family: simhei;
+				background-image:url(images/z-tijiao.png);
+                background-size:100% 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: black;">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left mui-action-back" style="color: white;"></a>
+			<h1 class="mui-title" style="color: white;">我的奖品</h1>
+			<a class=" mui-pull-right" style="line-height: 44px;"><i class="icon iconfont icon-sousuo-sousuo" style=" font-size: 18px;"></i></a>
+		</header>
+		<div class="main" id="main">			
+		</div>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/MD5S.js"></script>
+		<script src="../js/TravelTailorSafeInterface.js"></script>
+		<script type="text/javascript">
+			jggClick();
+			function getJGGData() {
+				var ar = new Array();
+				var ph = {
+					Collection: [
+
+					]
+				};
+				ar.Condition = ph;
+				ar.InterfaceAddress = "api/ShopInfo";
+				ar.Name = "YL_GoodsLuckDetail";
+				ar.OrderBy = "CreationDate desc";
+				ar.Index = 0;
+				ar.Size =20;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar, "endgetJGGData");
+			}
+
+			function endgetJGGData(rs) {
+				var TData = eval("(" + rs + ")");
+				//debugger;
+				var loginPhone = localStorage.getItem("loginPhone");
+				for(var i = 0; i < TData.length; i++) {
+					var n1=Math.floor(Math.random()*4+1);
+					if(loginPhone == TData[i].UserPhone){
+					var htmls ="";
+					var d = eval('new ' + eval(TData[i].CreationDate).source);
+					var month=d.getMonth()+3; 
+					var day = d.getDate(); 
+					if(month<10){ 
+					month = "0"+month; 
+					} 
+					if(day<10){ 
+					day = "0"+day; 
+					} 
+					var val =month+"."+day; 
+					
+					var cgodatatime = CurentTimeBydata("-", eval('new ' + eval(TData[i].CreationDate).source), true);
+					cgodatatime = cgodatatime.substring(5,cgodatatime.length-5);
+					cgodatatime = cgodatatime.replace("-",".");
+					//var htmls += '<dd><div class="right"><span><em>' + TData[i].UserName + '</em><em>' + TData[i].GoodsName + '</em><em>' + cgodatatime + '</em></span></div></dd>';
+					
+					htmls +='<div class="main-list" style="background:url(images/z-beijing' +n1+ '.png);-moz-background-size:100% 100%;background-size:100% 100%;">';				
+					//debugger;
+					//htmls += '<div class="main-list1"><img class="main-listimg" src="images/'+TData[i].GoodsName.substring(0,3)+'.png"/></div>';
+				    htmls += '<div class="main-list1"><img class="main-listimg" src="images/3Dx.png"/></div>';
+				    htmls += '<div class="main-listall"><p style="margin-top: 0.5rem;">奖品名称</p><p>' + TData[i].GoodsName + '</p><p style="margin-top:2rem">兑换期限</p><p>'+ cgodatatime +'-'+val+'</p></div>';
+				    htmls += '<div class="main-listall"><div class="main-listsub" onclick="goxi();">了解详情</div></div>';
+					htmls +='</div>';
+					document.getElementById("main").innerHTML+=htmls;
+					}	
+				}
+			}
+
+			function jggClick() {
+
+				var loginPhone = localStorage.getItem("loginPhone");
+				var loginPassword = localStorage.getItem("loginPassword");
+				//debugger;
+				if(loginPassword == null || loginPhone == null) {
+					mui.openWindow({
+						url: "login.html",
+						id: "login",
+						show: {
+							autoShow: true, //页面loaded事件发生后自动显示，默认为true
+
+						},
+						waiting: {
+
+						}
+					});
+
+				} else {
+					getJGGData();
+				}
+			}
+			function goxi(){
+				mui.alert("请在兑换期限内领取奖品");
+			}
+		</script>
+		<!--效果html结束-->
+
+	</body>
+
+</html>

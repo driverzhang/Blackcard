@@ -1,0 +1,54 @@
+#headImg {
+	height: 90px;
+	width: 90px;
+	border-radius: 90px;
+	margin: auto;
+	position: relative;
+	top: 3rem;
+}
+
+#HKlife {
+	text-align: center;
+	margin-top: 3rem;
+}
+
+#CardPhone {
+    height: 35px;
+	width: 75%;
+	color: #abaaaa;
+}
+
+#Password {
+	height: 35px;
+	width: 75%;
+	color: #abaaaa;
+}
+
+#loginIn {
+	width: 90%;
+	margin-left: 5%;
+	color: white;
+	background: #cea972;
+	border: solid 1px #cea972;
+	height: 40px;
+	border-radius: 5px;
+	margin-top: 1.5rem;
+	font-size: 16px;
+	font-family: "黑体";
+}
+
+#ApplicationPassword {
+	height: 40px;
+	margin-top: 5%;
+	text-align: center;
+}
+
+#visitorGallery {
+	background: transparent;
+	color: white;
+	border: solid 1px;
+	border-radius: 5px;
+	height: 25px;
+	width: 30%;
+	margin-top: 0.7rem;
+}

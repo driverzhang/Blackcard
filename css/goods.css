@@ -1,0 +1,156 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.mui-bar-tab .mui-tab-item.mui-active{
+	color: #f4811f;
+}		
+ul li {
+	list-style: none;
+}
+#icon .mui-index.mui-grid-view .mui-table-view-cell .mui-media-object{
+	max-width: 48px!important;
+}
+.all_goods .mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-object{
+	max-width: 100%;
+}
+.mui-col-xs-2{
+	width:20%;
+}
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
+	font-size: 12px;
+}
+#icon .mui-table-view.mui-grid-view .mui-table-view-cell>a:not(.mui-btn){
+	    margin: -10px 0 0 -35px;
+}
+.section .mui-media-body{
+	padding: 15px 0px 0px 20px;
+}
+.mui-media-body .mui-ellipsis{
+	margin-top: 10px;
+}
+.shang_h3{
+	font-weight: normal;
+	font-size: 18px;
+	letter-spacing: 1px;
+	position: relative;
+	padding-left: 20px;
+	padding-top: 3px;
+	
+}
+.shang_h3:after{
+	content: "";
+	display: block;
+	width: 4px;
+	height: 25px;
+	background: #ff5000;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.jiage .jiage_color{
+	display: inline-block;
+	padding-top: 10px;
+	font-size: 22px;
+	color: #ff5000;
+	margin-right: 10px;
+	margin-top: 5px;
+	list-style-type: none;
+	font-size: 18px;
+}
+.jiage .jiage_z{
+	padding: 3px 10px;
+	background: #ff5000;
+	color: #fff;
+	margin-right: 10px;
+}
+.section .mui-table-view .mui-media img{
+	display:block;
+	max-width: 135px;
+}
+.all_goods_nav{
+	background: #ff5000;
+	
+}
+.all_goods_nav .mui-title{
+	color: #fff;
+	letter-spacing: 1px;
+}
+.all_goods .all_goods_h3{
+	font-size: 16px;
+	color: #000000;
+	font-weight: normal;
+	text-align: left;
+	
+	max-width: 100%;
+}
+.all_goods .all_goods_des{
+	text-align: left;
+	
+	font-size: 14px;
+	margin-top: 8px;
+	line-height: 30px;
+}
+.all_goods .all_goods_color{
+	font-size: 18px;
+	color: #ff5000;
+	padding-top: 10px;
+	margin-right: 10px;
+}
+.all_goods .O_price{
+	color: #ccc;
+	letter-spacing: 1px;
+	margin-right: 15px;
+}
+.all_goods .goods_icon{
+	display: inline-block;
+	float: right;
+	
+	
+}
+.all_goods .goods_icon>img{
+	width: 70%;
+	height: 70%;
+	padding-bottom: 5px;
+}
+@media only screen and (max-width:320px) {
+	.section .mui-table-view .mui-media img{
+		max-width: 120px;
+	}
+	.section .mui-media-body {
+   	 padding: 10px 0px 0px 20px;
+	}
+	.jiage .jiage_color{
+		font-size: 16px;
+	}
+	.jiage .jiage_z {
+	    padding: 3px 6px;	   
+	}
+}
+@media only screen and (max-width:470px) {
+	.all_goods .all_goods_h3{
+		font-size: 14px;
+		overflow: hidden;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+	    max-width: 80%;
+	}
+	.all_goods .all_goods_color {
+	    font-size: 16px;	   
+	    margin-right: 5px;
+	   
+	}
+	.all_goods .O_price {
+	    margin-right: 5px;
+	    font-size: 12px;
+	}
+	
+	.all_goods .goods_icon>img {
+    	width: 50%;
+	    height: 50%;
+	  
+	}
+}
+@media only screen and (max-width:470px) {
+	
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>优惠卷</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/TouchSlide.1.1.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<style>
+			body {
+				margin: 0;
+				background: #eee;
+				font-size: 1.2rem;
+				line-height: 1.6;
+				color: #0e0e0e;
+				font-family: '微软雅黑', Verdana, Arial, Helvetica, sans-serif;
+				background: #eeeeee;
+			}
+			
+			.box {
+				width: 96%;
+				height: auto;
+				margin-left: 2%;
+			}
+			.box1 {
+				width: 96%;
+				height: auto;
+				margin-left: 2%;
+			}
+			
+			.box-1-all {
+				background: #afdff2;
+				float: left;
+				border-radius: 7px;
+			}
+			
+			.box-2-all {
+				background: #e4b1f3;
+				float: left;
+				margin-top: 10px;
+				border-radius: 7px;
+			}
+			
+			.left {
+				float: left;
+				width: 70%;
+				height: 130px;
+				border-right: 1px dashed #000;
+				border-color: #262626;
+			}
+			
+			.right {
+				width: 30%;
+				float: right;
+			}
+			
+			.right-box {
+				text-align: center;
+				margin-top: 30px;
+			}
+			.right-boxs {
+				text-align: center;
+				margin-top: 30px;
+			}
+			#changeTicket{
+				margin-top: 50px;
+				padding-bottom: 10px;
+			}
+			.Ticket{
+				width: 50%;
+				text-align: center;
+				margin-bottom: 20px;
+				background: #FFFFFF;
+			}
+			
+			.boxtcb{
+				border-bottom: 2px black solid;
+			}
+			
+			
+			
+		</style>
+	</head>
+
+	<body style="background: white;">
+		<header class="mui-bar mui-bar-nav" style="background: #212123;color: white;">
+			<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" href="../personage.html" style="color: white;"></a>
+			<span class="mui-icon mui-icon-reply mui-pull-right"></span>
+			<h1 class="mui-title" id="proName" style="color: white;">优惠卷</h1>
+		</header>
+		<div id="changeTicket">
+			<div class="Ticket boxtcb" style="float: left;"  onclick="changestatus()">
+				<span>可领优惠券</span>
+			</div>
+			<div class="Ticket" style="float: right;"  onclick="changestatus1()" >
+				<span>我的优惠券</span>
+			</div>
+			
+		</div>
+		<div class="box" id="BuyTicket">
+			<div class="box-1"  style="height:130px;">
+				<div class="box-1-all" style="width: 100%;height:130px;">
+					<div class="left">
+						<p style="font-size: 18px; color: #f99e16;width: 90%; margin: 10px 5% 0 5%;text-align: center;"><strong>爱吃串串优惠券 50元</strong> </p>
+						<div style="margin: 15px 5% 0 5%;width: 90%;text-align: center;">
+							<span style="font-size: 12px;color: #777777;">地址：伊犁斯大林街723号 四楼 </span><br />
+							<span style="font-size: 12px;color: #777777;">有效期：2017-8-2至2017-8-5 </span>
+						</div>
+					</div>
+					<div class="right">
+						<div style="border-radius: 10px;width: 10px;border: 1px solid white; height: 10px;background: white;position: relative;top: -6px;right: 5px;"></div>
+						<div style="border-radius: 10px;width: 10px;border: 1px solid white; height: 10px;background: white;position: relative;top: 116px;right: 5px;"></div>
+						<div class="right-box">
+							<input type="button" style="color: white;background: #f99f16;border-radius: 7px;" value="兑换" /><br />
+							<span style="color: white;font-size: 12px;">500积分</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box-2" style="height:130px;margin-top: 10px;">
+				<div class="box-2-all" style="width: 100%;height:130px;">
+					<div class="left">
+						<p style="font-size: 18px; color: #f99e16;width: 90%; margin: 10px 5% 0 5%;text-align: center;"><strong>爱吃串串优惠券 50元</strong> </p>
+						<div style="margin: 15px 5% 0 5%;width: 90%;text-align: center;">
+							<span style="font-size: 12px;color: #777777;">地址：伊犁斯大林街723号 四楼 </span><br />
+							<span style="font-size: 12px;color: #777777;">有效期：2017-8-2至2017-8-5 </span>
+						</div>
+					</div>
+					<div class="right">
+						<div style="border-radius: 10px;width: 10px;border: 1px solid white; height: 10px;background: white;position: relative;top: -6px;right: 5px;"></div>
+						<div style="border-radius: 10px;width: 10px;border: 1px solid white; height: 10px;background: white;position: relative;top: 116px;right: 5px;"></div>
+						<div class="right-box">
+							<input type="button" style="color: white;background: #f99f16;border-radius: 7px;" value="兑换" /><br />
+							<span style="color: white;font-size: 12px;">1000积分</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="box1" id="MyTicket" style="display: none;">
+			<div class="box-1" style="height:130px;">
+				<div class="box-1-all" style="width: 100%;height:130px;">
+					<div class="left">
+						<p style="font-size: 18px; color: #f99e16;width: 90%; margin: 10px 5% 0 5%;text-align: center;"><strong>爱吃串串优惠券 50元</strong> </p>
+						<div style="margin: 15px 5% 0 5%;width: 90%;text-align: center;">
+							<span style="font-size: 12px;color: #777777;">地址：伊犁斯大林街723号 四楼 </span><br />
+							<span style="font-size: 12px;color: #777777;">有效期：2017-8-2至2017-8-5 </span>
+						</div>
+					</div>
+					<a href="../index.html">
+						<div class="right">
+							<div style="border-radius: 10px;width: 10px;border: 1px solid white; height: 10px;background: white;position: relative;top: -6px;right: 5px;"></div>
+							<div style="border-radius: 10px;width: 10px;border: 1px solid white; height: 10px;background: white;position: relative;top: 116px;right: 5px;"></div>
+							<div class="right-boxs">
+								<input type="button" style="color: white;background: #f99f16;border-radius: 7px;" value="使用" /><br />
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="box-2" style="height:130px;margin-top: 10px;">
+				<div class="box-2-all" style="width: 100%;height:130px;">
+					<div class="left">
+						<p style="font-size: 18px; color: #f99e16;width: 90%; margin: 10px 5% 0 5%;text-align: center;"><strong>爱吃串串优惠券 50元</strong> </p>
+						<div style="margin: 15px 5% 0 5%;width: 90%;text-align: center;">
+							<span style="font-size: 12px;color: #777777;">地址：伊犁斯大林街723号 四楼 </span><br />
+							<span style="font-size: 12px;color: #777777;">有效期：2017-8-2至2017-8-5 </span>
+						</div>
+					</div>
+					<a href="../index.html">
+						<div class="right">
+							<div style="border-radius: 10px;width: 10px;border: 1px solid white; height: 10px;background: white;position: relative;top: -6px;right: 5px;"></div>
+							<div style="border-radius: 10px;width: 10px;border: 1px solid white; height: 10px;background: white;position: relative;top: 116px;right: 5px;"></div>
+							<div class="right-boxs">
+								<input type="button" style="color: white;background: #f99f16;border-radius: 7px;" value="使用" /><br />
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+	</body>
+	
+	<script type="text/javascript">
+		$('.Ticket').click(function(i, c) {
+			var $this = this;
+			$($this).addClass("boxtcb").siblings(".Ticket").removeClass("boxtcb");
+		})
+		
+		function changestatus(){
+			
+			document.getElementById("BuyTicket").style.display="block";
+			document.getElementById("MyTicket").style.display="none";
+			
+		}
+		function changestatus1(){
+			document.getElementById("MyTicket").style.display="block";
+			document.getElementById("BuyTicket").style.display="none";
+		}
+		
+		$(".right-box").click(function(){
+			mui.alert("兑换成功");
+		})
+	</script>
+
+</html>

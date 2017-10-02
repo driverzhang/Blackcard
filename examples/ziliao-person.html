@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人资料</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<style>
+			body {
+				margin: 0;
+				background: white;
+				font-size: 1.2rem;
+				line-height: 1.6;
+				color: #0e0e0e;
+				font-family: '微软雅黑', Verdana, Arial, Helvetica, sans-serif;
+			}
+			
+			.box-one {
+				margin-top: 44px;
+				height: 54px;
+				background: white;
+			}
+			
+			.box-two {
+				height: 84px;
+				background: white;
+				/*border-top: 1px solid #EDEDED;*/
+			}
+			
+			.box-three {
+				width: 90%;
+				margin: 44px auto;
+				border-radius: 30px;
+				border: 1px solid #cccccc;
+				height: 54px;
+				background: #cccccc;
+			}
+			
+			.pic {
+				float: right;
+				margin: 20px 5%;
+			}
+			
+			.box-two-text {
+				float: left;
+				margin-top: 25px;
+				width: 35%;
+			}
+			
+			.box-input {
+				float: right;
+				margin-top: 15px;
+				color: #7f7f7f;
+				width: 60%;
+				margin-right: 5%;
+			}
+			
+			.box-input input {
+				border: none;
+				text-align: right;
+				padding: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav" style="background: #212123;color: white;">
+			<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" style="color: white;" href="zh-shezhi.html"></a>
+			<span class="mui-icon mui-icon-reply mui-pull-right"></span>
+			<h1 class="mui-title" id="proName" style="color: white;">个人资料</h1>
+		</header>
+		<a>
+			<div class="box-one">
+				<p style="color: #9f9f9f; font-size: 16px; padding: 20px;">基础资料</p>
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a href="#">
+			<div class="box-two">
+				<div class="box-two-text">
+					<span style="color: black; font-size: 16px; padding: 30px 20px 30px 20px;">头像</span>
+				</div>
+				<div style="float: left;width: 60%;z-index: 999;position: fixed;width: 100%;">
+					<form action="admin/NewsManager/UpdateImgBy80" method="post">
+						<input style="background: transparent;opacity: 0;height: 80px;width: 100%;" type="file" id="fileUpload" name="fileTrans" multiple="true" value="上传图片" />
+					</form>
+				</div>
+				<div class="pic">
+					<div id="userImg" style="width: 45px;height: 45px;border-radius: 20px;margin-right: 10px;">
+						<img  id="sc-img" src="images/gwclogo.png" style="width: 45px;height: 45px;border-radius: 20px;" />
+					</div>
+					<!--<img src="img/ziliao-xiangyou.png" style="width: 10px; margin-bottom: 10px;margin-left: 10px;" />-->
+				</div>
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two">
+				<div class="box-two-text ">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">卡号</span>
+				</div>
+				<div class="box-input" style="text-align: right;margin-top: 25px;">
+					<span id="logincardID">自动生成中...</span>
+				</div>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two">
+				<div class="box-two-text">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">昵称</span>
+				</div>
+				<div class="box-input">
+					<input id="ncname" style="margin-top: 5px;" type="text" value="" placeholder="请输入你的昵称" />
+				</div>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two">
+				<div class="box-two-text">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">兴趣爱好</span>
+				</div>
+				<div class="box-input">
+					<input style="margin-top: 5px;" id="yourhabits" type="text" placeholder="请输入你的兴趣爱好" />
+
+				</div>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two">
+				<div class="box-two-text">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">个性签名</span>
+				</div>
+				<div class="box-input">
+					<input id="autograph" style="margin-top: 5px;" type="text" placeholder="请输入你的个性签名" />
+
+				</div>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two">
+				<p style="color: #9f9f9f; font-size: 16px; padding: 20px;position: relative;top: 30px;">保密资料</p>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two">
+				<div class="box-two-text">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">姓名</span>
+				</div>
+				<div class="box-input">
+					<input id="UserName" style="margin-top: 5px;" type="text" value="" placeholder="请输入你的真实姓名" />
+
+				</div>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two">
+				<div class="box-two-text">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">身份证号</span>
+				</div>
+				<div class="box-input">
+					<input id="IDnumber" style="margin-top: 5px;" type="text" value="" disabled="disabled" />
+				</div>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+
+		<a>
+			<div class="box-two">
+				<div class="box-two-text">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">性别</span>
+				</div>
+				<div class="box-input">
+					<input id="sex" style="margin-top: 5px;" type="text" value="" />
+
+				</div>
+
+			</div>
+		</a>
+
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two">
+				<div class="box-two-text">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">民族</span>
+				</div>
+				<div class="box-input">
+					<input id="nation" style="margin-top: 5px;" type="text" value="" placeholder="请输入你的民族" />
+
+				</div>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two">
+				<div class="box-two-text ">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">出生年月</span>
+				</div>
+				<div class="box-input btn" data-options='{"type":"date","beginYear":1956,"endYear":2016,"value":"1992-10-15"}'>
+					<input id="birth" class="StartTime" style="margin-top: 5px;" type="text" placeholder="请选择你的出生时间" value="1992-10-01" />
+				</div>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two">
+				<div class="box-two-text">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">手机号</span>
+				</div>
+				<div class="box-input">
+					<input id="iphonenumber" style="margin-top: 5px;" type="text" value="" />
+					<!--placeholder="请输入你的手机号" -->
+				</div>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two">
+				<div class="box-two-text">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">是否有车</span>
+				</div>
+				<div class="box-input" style="float: left; width: 50%; margin-right: 0;">
+					<!--<input id="car" style="margin-top: 5px;" type="text" value="否" />-->
+					<select dir="rtl" style="padding: 14px 15px;font-size: 16px;" id="IScar">
+						<option value="有车">是</option>
+						<option value="没车">否</option>
+					</select>
+
+				</div>
+
+				<div class="pic" style="margin-top: 32px;margin: 32px 25px 0 0;">
+					<img src="img/ziliao-xiangyou.png" style="width: 10px; margin-bottom: 10px;" />
+				</div>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two">
+				<div class="box-two-text">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">是否有房</span>
+				</div>
+				<div class="box-input" style="float: left; width: 50%; margin-right: 0;">
+					<select dir="rtl" style="padding: 14px 15px;font-size: 16px;" id="ISFz">
+						<option value="有房">是</option>
+						<option value="没房">否</option>
+					</select>
+
+				</div>
+				<div class="pic" style="margin-top: 32px;margin: 32px 25px 0 0;">
+					<img src="img/ziliao-xiangyou.png" style="width: 10px; margin-bottom: 10px;" />
+				</div>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+		<a>
+			<div class="box-two" id="czpass">
+				<div class="box-two-text">
+					<span style="color: black; font-size: 16px; padding-left: 20px;">修改密码</span>
+				</div>
+
+				<div class="pic" style="margin-top: 32px;margin: 32px 25px 0 0;">
+					<img src="img/ziliao-xiangyou.png" style="width: 10px; margin-bottom: 10px;" />
+				</div>
+
+			</div>
+		</a>
+		<div class="xian" style="height: 1px; background: #ededed; width: 90%; margin: 0 5%;"></div>
+
+		<a href="javascript:;" onclick="sub()">
+			<div class="box-three">
+				<p style="text-align: center; color: #333333; font-size: 16px; padding: 15px;">确 认</p>
+			</div>
+		</a>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/TouchSlide.1.1.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script src="../js/MD5S.js"></script>
+		<script src="../js/TravelTailorSafeInterface.js"></script>
+		<script>
+			$("#fileUpload").on('change', function() {
+
+				if(typeof(FileReader) != "undefined") {
+
+					var image_holder = $("#userImg");
+					image_holder.empty();
+
+					var reader = new FileReader();
+					reader.onload = function(e) {
+
+						$("<img />", { //创建img 然后追加进去
+							"src": e.target.result, //target中的result属性的值，就是该文件的base64数据
+							"style": "width:45px;height:45px;border-radius: 45px;",
+							"class": "thumb-image",
+							"id": "sc-img"
+						}).appendTo(image_holder);
+
+						var ar = new Array();
+						var ee = e.target.result;
+						var data = ee.substr(ee.indexOf('base64,') + 7); // 16+7=23
+
+						ar.InterfaceAddress = "admin/NewsManager/UpdateImgBy80";
+						ar.Pic = data;
+						ar.username = 999;
+						ar.id = localStorage.getItem("UserId");
+						ar.fileName = 'userHead';
+						ar.tm = '1';
+						ar.Handshake_Time = CurentTime('-', true);
+						aes(ar, "endHeadpic");
+						console.log(ar);
+	
+
+					}
+
+					image_holder.show();
+					reader.readAsDataURL($(this)[0].files[0]); //将文件读取为本地url 通过readAsDataURL读取数据成功后，就会触发load事件
+
+				} else {
+					alert("你的浏览器不支持FileReader.");
+				}
+
+			});
+
+			function endHeadpic(rs) {
+				
+				console.log(rs);
+//				if(rs != undefined || rs != null || rs != "") {
+//					document.getElementById('sc-img').src = httppp+"/Images/ExpertImg/admin/userHead/"+ rs;
+//					var dd = document.getElementById('sc-img').src;
+//					alert(dd);
+//					debugger;
+
+//				} else {
+					//					alert(verData.msg);
+//				}
+
+			}
+
+			//获取登录信息 ，收到返回数据。
+			function getinters() {
+				var loginPhone = localStorage.getItem("loginPhone");
+				var loginPassword = localStorage.getItem("loginPassword");
+				var ar = new Array();
+				ar.InterfaceAddress = "api/appLogin";
+				ar.phone = loginPhone;
+				ar.password = loginPassword;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar, "endGetInter");
+
+			}
+			getinters();
+			//						setInterval(function() {
+			//							getinters();
+			//						}, 60000)
+			var username = document.getElementById("UserName");
+			var logincardID = document.getElementById("logincardID");
+			//返回登录后的个人数据
+			function endGetInter(rs) {
+				//				var CompanyImgsrc = httppp + "/Images/ExpertImg/admin/CompanyImg/"+ Url + "?" + (Math.random());
+				var verData = eval('(' + rs + ')');
+				console.log(rs);
+
+				if(verData == undefined) {
+					mui.alert("网络异常", '我的黑卡平台');
+
+				} else if(verData.suc) {
+					document.getElementById("logincardID").firstChild.nodeValue = verData.ReturnData.ICCard; // 银行卡号
+					document.getElementById("UserName").value = localStorage.getItem("UserName");
+					document.getElementById("iphonenumber").value = localStorage.getItem("loginPhone");
+					document.getElementById("IDnumber").value = verData.ReturnData.ICard; //身份证号
+					document.getElementById("yourhabits").value = verData.ReturnData.xqah;
+					document.getElementById("autograph").value = verData.ReturnData.gxqm;
+					document.getElementById("ncname").value = localStorage.getItem("UserName");
+					document.getElementById("ISFz").value = localStorage.getItem("ISFz");
+					document.getElementById("IScar").value = localStorage.getItem("IScar");
+					document.getElementById("birth").value = localStorage.getItem("birth");
+					document.getElementById("nation").value = localStorage.getItem("nation");
+
+					document.getElementById('sc-img').src = httppp+"/Images/ExpertImg/admin/userHead/"+localStorage.getItem("Head");
+					var IDnumber = document.getElementById("IDnumber").value;
+					var sexno, sex1
+					if(IDnumber.length == 18) {
+						sexno = IDnumber.substring(16, 17)
+					} else if(IDnumber.length == 15) {
+						sexno = IDnumber.substring(14, 15)
+					} else {
+						alert("错误的身份证号码，请核对！")
+						return false
+					}
+					var tempid = sexno % 2;
+					if(tempid == 0) {
+						sex1 = '女'
+					} else {
+						sex1 = '男'
+					}
+					//					return sex;
+					document.getElementById("sex").value = sex1;
+
+				} else {
+					mui.openWindow({
+						url: "login.html",
+						id: "login",
+						show: {
+							autoShow: true,
+						},
+						waiting: {
+
+						}
+					})
+				}
+			}
+
+			//mui datepicker时间选择器。
+			(function($) {
+				$.init();
+				var btns = $('.btn');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = '{"type":"date"}'; // dateTime 有 时，分。
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							document.getElementsByClassName("StartTime")[i].value = rs.text;
+							picker.dispose();
+						});
+					}, false);
+				});
+			})(mui);
+
+			$("#birth").focus(function() {
+				$("#birth").val();
+			});
+			$('#birth').blur(function() {
+				var clubTi = $("#birth").val();
+				if(clubTi == "") {
+					mui.alert("请填写出生时间!");
+				}
+			});
+
+			//修改密码，跳转页面
+			document.getElementById("czpass").addEventListener("tap", function() {
+				mui.openWindow({
+					url: "ziliao-forget_password.html",
+					id: "zilao-forget_password",
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+					},
+					waiting: {
+
+					}
+				});
+			})
+
+			// 确认按钮，信息限制。
+			function sub() {
+				//alert(document.getElementById("userImg").src);
+				//				var nc = document.getElementById("ncname").value;
+				//				var xqah = document.getElementById("yourhabits").value;
+				//				var gxqm = document.getElementById("autograph").value;
+				//				var realName = document.getElementById("UserName").value;
+				//				var sex = true;
+				//				var nation = document.getElementById("nation").value;
+				//				var ICard = document.getElementById("IDnumber").value;
+				//				var phone = document.getElementById("iphonenumber").value;
+				//				var validate = /^[\u4E00-\u9FA5A-Za-z0-9]+$/;
+				//				var validate2 = /^[\u4E00-\u9FA5A-Za]+$/;
+				//				var validate3 = /^[\u4e00-\u9fa5]+$/;
+				//				var validate4 = /^[a-zA-Z]\w{5,17}$/;
+				//				var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+				//				if(nc == "" || !validate.test(nc)) {
+				//					mui.alert("昵称只能为中文、字母、数字!");
+				//					return false;
+				//				}
+				//
+				//				if(xqah == "" || !validate.test(xqah)) {
+				//					mui.alert("爱好只能为中文、字母、数字!");
+				//					return false;
+				//				}
+				//				if(xqah.length > 15) {
+				//					mui.alert("字数不能多余15个字符!");
+				//					return false;
+				//				}
+				//				if(gxqm.length > 15) {
+				//					mui.alert("字数不能多余15个字符!");
+				//					return false;
+				//				}
+				//
+				//				if(gxqm == "" || !validate.test(gxqm)) {
+				//					mui.alert("签名只能为中文、字母、数字!");
+				//					return false;
+				//				}
+				//
+				//				if(realName == "" || !validate3.test(realName)) {
+				//					mui.alert("姓名只能为中文！");
+				//					return false;
+				//				}
+				//
+				//				if(nation == "" || !validate3.test(nation)) {
+				//					mui.alert("民族只能为中文!");
+				//					return false;
+				//				}
+				//
+				//				if(phone == "" || !myreg.test(phone)) {
+				//					mui.alert("手机号格式错误，请重新输入!");
+				//					return false;
+				//				}
+
+				if(IdentityCodeValid($("#IDnumber").val())) {
+					var ar = new Array();
+					ar.InterfaceAddress = "api/AddUserInfo";
+					//					ar.cardID = document.getElementById("logincardID").innerText;
+					ar.phone = document.getElementById("iphonenumber").value;
+					ar.password = localStorage.getItem("loginPassword");
+					ar.address = localStorage.getItem("loginaddress");
+					ar.realName = localStorage.getItem("UserName");
+					ar.ICard = document.getElementById("IDnumber").value;
+					ar.sex = true;
+					ar.nc = document.getElementById("ncname").value;
+					ar.xqah = document.getElementById("yourhabits").value;
+					ar.gxqm = document.getElementById("autograph").value;
+					ar.headsrc =  localStorage.getItem("UserId")+"_80x80.jpg";
+					var re = $('#ISFz').val() + "," + $('#IScar').val();
+					ar.remark = re;
+					//					ar.appid = plus.device.uuid;
+					ar.appid = "550E8400-E29B-11D4-A716-446655440000";
+					ar.BankIcard = document.getElementById("logincardID").innerText;
+					ar.Handshake_Time = CurentTime('-', true);
+					aes(ar, "endRegision");
+					console.log(ar);
+
+				}
+				//				if(confirm("您确定要修改资料吗？")) //confirm() 方法用于显示一个带有指定消息和 OK 及取消按钮的对话框。
+				//					window.location = "zh-shezhi.html";
+				//				return false;
+			}
+
+			//返回数据 回调aes rs.
+			function endRegision(rs) {
+				console.log(rs);
+				var verData = eval('(' + rs + ')');
+				if(verData == undefined) {
+					console.log(rs);
+					plus.runtime.restart();
+				} else if(verData.suc) {
+					localStorage.setItem("loginstate", "true");
+					localStorage.setItem("loginPhone", verData.ReturnData.UserPhone);
+					localStorage.setItem("loginPassword", verData.ReturnData.passWord);
+					localStorage.setItem("UserName", verData.ReturnData.realName);
+					localStorage.setItem("nc", document.getElementById("ncname").value);
+					localStorage.setItem("ISFz", $('#ISFz').val());
+					localStorage.setItem("IScar", $('#IScar').val());
+					localStorage.setItem("birth", document.getElementById("birth").value);
+					localStorage.setItem("nation", document.getElementById("nation").value);
+					localStorage.setItem("Head", verData.ReturnData.Head);
+
+					mui.openWindow({
+						url: "zh-shezhi.html",
+						id: "zhshezhi",
+						styles: {
+							render: 'always'
+						},
+						show: {
+
+						},
+						waiting: {
+							autoShow: true, //自动显示等待框，默认为true
+							title: '正在加载...', //等待对话框上显示的提示内容
+
+						}
+					})
+				} else {
+					alert(verData.msg);
+				}
+
+			}
+		</script>
+	</body>
+
+</html>

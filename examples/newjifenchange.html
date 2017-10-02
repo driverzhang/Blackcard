@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="format-detection" content="telephone=no">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" rel="stylesheet" />
+	    <link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+	    <link rel="stylesheet" type="text/css" href="../css/home.css" />
+	    <link rel="stylesheet" type="text/css" href="../shop_iconfont/iconfont.css" />
+	    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="../css/star.css" " />
+		<title>积分换购</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: 'microsoft yahei', Verdana, Arial, Helvetica, sans-serif;
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#navigation{
+				background:#000000 ;
+				width: 100%;
+			}
+			#diamonds{
+				float: left;
+				width: 18%;
+				padding-top: 1%;
+
+			}
+			#foods{
+				float: left;
+				width: 18%;
+				padding-top: 1%;
+			}
+			#movies{
+				float: left;
+				width: 18%;
+				padding-top: 1%;
+			}
+			#recreation{
+				float: left;
+				width: 18%;
+				padding-top: 1%;
+			}
+			#merchandise{
+				float: left;
+				width: 18%;
+				padding-top: 1%;
+				    
+			}
+			#navigations{
+				background:#000000 ;
+				width: 100%;
+			}
+			#travelHotel{
+				float: left;
+				width: 18%;
+				padding-top: 1%;
+			}
+			#HairGirl{
+				float: left;
+				width: 18%;
+				padding-top: 1%;
+				
+			}
+			#Carfix{
+				float: left;
+				width: 18%;
+				padding-top: 1%;
+			}
+			#Hospit{
+				float: left;
+				width: 18%;
+				padding-top: 1%;
+			}
+			#anmo{
+				float: left;
+				width: 18%;
+				padding-top: 1%;
+				    
+			}
+			#xialameun{
+				float: left;
+				padding-top: 5%;
+    			margin-left: 2%;
+			}
+			
+			.head-day {
+				margin-left: 5%;
+			}
+			
+			.head-day-wordr {
+				font-size: 12px;
+				color: #959597;
+			}
+			
+			.head-day-in {
+				margin-left: 8px;
+				margin-top: 2px;
+				background-color: #CFA972;
+				border-radius: 5px;
+				width: 145px;
+				float: left;
+				height: 65px;
+			}
+			
+			.head-day-int {
+				margin-top: 2px;
+				background-color: #CFA972;
+				border-radius: 5px;
+				width: 145px;
+				float: left;
+				height: 65px;
+			}
+			
+			.head-day-pic {
+				float: left;
+				width: 30%;
+				padding: 5% 0 8% 6%;
+				position: relative;
+				display: block;
+			}
+			
+			.head-day-picin {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.head-day-text {
+				color: white;
+				margin-left: 43%;
+				padding-top: 10%;
+				font-size: 12px;
+			}
+			
+			.headday-textdown {
+				word-break: break-all;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 1;
+				overflow: hidden;
+			}
+			
+			.head-scoll {
+				width: 1000px;
+				height: 68px;
+			}
+			
+			a {
+				cursor: pointer;
+				text-decoration: none;
+				color: white;
+			}
+			
+			::-webkit-scrollbar {
+				width: 0px
+			}
+			
+			p {
+				margin: 0;
+				font-size: 14px;
+				font-family: "黑体";
+			}
+			
+			.button-main {
+				width: 100%;
+				height: auto;
+				background: white;
+				overflow: hidden;
+			}
+			
+			.button-header {
+				width: 100%;
+				height: 3.5rem;
+				margin-top: 0.6rem;
+				margin-left: 5%;
+			}
+			
+			.button-img {
+				float: left;
+				overflow: hidden;
+				width: auto;
+				height: 3.4rem;
+				margin-right: 0.4rem;
+				line-height: 3.4rem;
+				font-family: "黑体";
+			}
+			
+			.button-img img {
+				float: left;
+				margin-right: 0.4rem;
+			}
+			
+			.button-hotgoods {
+				float: left;
+				height: 3.4rem;
+				width: auto;
+				line-height: 4rem;
+				font-family: "黑体";
+			}
+			
+			.button-listmain {
+				clear: both;
+				overflow: hidden;
+				width: 90%;
+				height: auto;
+				margin: auto;
+			}
+			
+			.button-listleft {
+				float: left;
+				width: 48%;
+				height: auto;
+				overflow: hidden;
+				background: #f4f4f4;
+				margin: 0.3rem 0;
+				border-radius: 0 0 0.3rem 0.3rem;
+				margin-left: 0.5rem;
+			}
+			
+			.button-listright {
+				float: right;
+				width: 49%;
+				height: auto;
+				overflow: hidden;
+				background: #f4f4f4;
+				margin: 0.3rem 0;
+				border-radius: 0 0 0.3rem 0.3rem;
+			}
+			
+			.button-listleft img {
+				height: 100%;
+				width: 100%;
+			}
+			
+			.button-listright img {
+				height: 100%;
+				width: 100%;
+			}
+			
+			.button-listd {
+				margin-left: 0.5rem;
+				width: 100%;
+				height: auto;
+				color: #fd52bb;
+			}
+			
+			.button-listdright {
+				float: right;
+				width: 4.2rem;
+				height: 1.1rem;
+				margin-right: 0.8rem;
+				border-radius: 0.5rem;
+				background: #cfa972;
+				text-align: center;
+				color: white;
+				font-size: 11px;
+				margin-top: 0.1rem;
+				overflow: hidden;
+				padding-right: 0.2rem;
+				line-break: 1.1rem;
+			}
+			
+			.button-listdimg {
+				float: left;
+				margin: 0;
+			}
+			
+			.button-listdd {
+				float: left;
+				width: 100%;
+				height: auto;
+				margin: 1rem 0 2rem 0;
+				overflow: hidden;
+			}
+			
+			.button-listddcenter {
+				height: 3rem;
+				width: 8rem;
+				margin: auto;
+				overflow: hidden;
+				background: white;
+				color: #999999;
+				text-align: center;
+				line-height: 3.5rem;
+			}
+			
+			.headday-text {
+				font-size: 12px;
+			}
+			.headday-text{
+				color:white;
+			}
+			.headday-textdown{
+				color:white;
+			}
+		@media screen and (min-width:0px) and (max-width:580px) {
+					#navigation img{
+						width:50px;
+					}
+			}
+			
+
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background: #212123;color: white;">
+			<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<span class="mui-icon mui-icon-reply mui-pull-right"></span>
+			<h1 class="mui-title" id="proName" style="color: white;">积分换购</h1>
+		</header>
+
+		
+		<div id="navigation" style="float: left;">
+			<div id="diamonds" style="background: #cfa972;text-align: center;" onclick="onDiamonds(1)">
+				<img id="diamond1" src="img/diamond.png"style="padding-left: 25%; padding-bottom: 5%; display: block;"/>
+				<img id="diamond2" src="img/diamond1.png"style="padding-left: 25%; padding-bottom: 5%;display: none;"/>
+			</div>
+			<div id="foods"style="text-align: center;" onclick="onDiamonds(2)">
+				<img id="food1" src="img/foods.png" style="padding-left: 25%;  padding-bottom: 5%;display: block;"/>
+				<img id="food2" src="img/foods1.png" style="padding-left: 25%;  padding-bottom: 5%;display: none;"/>
+			</div>
+			<div id="movies"style="text-align: center;" onclick="onDiamonds(3)">
+				<img id="movie1" src="img/movie.png"style="padding-left: 25%; padding-bottom: 5%;display: block;"/>
+				<img id="movie2" src="img/movie1.png"style="padding-left: 25%; padding-bottom: 5%;display: none;"/>
+			</div>
+			<div id="recreation"style="text-align: center;" onclick="onDiamonds(4)">
+				<img id="recreation1" src="img/recreation.png"style="padding-left: 25%; padding-bottom: 5%;display: block;"/>
+				<img id="recreation2" src="img/recreation1.png"style="padding-left: 25%; padding-bottom: 5%;display: none;"/>
+			</div>
+			<div id="merchandise"style="text-align: center;" onclick="onDiamonds(5)">
+				<img id="merchandise1" src="img/merchandise.png"style="padding-left: 25%; padding-bottom: 5%;display: block;"/>
+				<img id="merchandise2" src="img/merchandise1.png"style="padding-left: 25%; padding-bottom: 5%;display: none;"/>
+			</div>
+			<div id="xialameun"style="width: 7%;height: 100%;" onclick="$('#navigations').toggle();">
+				<img src="img/xiala.png"style="width: 75%;"/>
+			</div>
+		</div>
+		<div id="navigations" style="float: left; display: none;">
+			<div id="travelHotel" style="text-align: center;">
+				<img src="img/travelHotel.png"style=" padding-bottom: 5%;width: 77%;"/>
+			</div>
+			<div id="HairGirl" style="text-align: center;">
+				<img src="img/HairGirl.png"style=" padding-bottom: 5%;width: 77%;"/>
+			</div>
+			<div id="Carfix" style="text-align: center;">
+				<img src="img/Carfix.png"style=" padding-bottom: 5%;width: 77%;"/>
+			</div>
+			<div id="Hospit" style="text-align: center;">
+				<img src="img/Hospit.png"style=" padding-bottom: 5%;width: 77%;"/>
+			</div>
+			<div id="anmo" style="text-align: center;">
+				<img src="img/anmo.png"style=" padding-bottom: 5%;width: 77%;"/>
+			</div>
+		</div>
+		
+		
+
+		<div class="button-main" style="padding-top:10px;">
+					<div class="head-day" style="height: 100px;">
+			<div class="head-day-word"><span>每日推荐 <span class="head-day-wordr">Recommendations</span></span>
+			</div>
+			<div style="height: 90px;overflow: scroll;">
+				<div class="head-scoll">  <!--此处 CSS width 大小与每天推荐内容多少有关！--> 
+					
+					<div class="head-day-in">
+						<div class="head-day-pic">
+							<a href="#"><img class="head-day-picin" src="img/bg-jifenchange.png" /></a>
+						</div>
+						<div class="head-day-text">
+							<a style="text-decoration: none;" href="#">
+								<p class="headday-text">[凡人食堂]</p>
+								<span class="headday-textdown">诱惑你的不诱惑你的不诱惑你的诱惑你的不不</span>
+							</a>
+						</div>
+					</div>
+					<div class="head-day-in">
+						<div class="head-day-pic">
+							<a href="#"><img class="head-day-picin" src="img/bg-jifenchange.png" /></a>
+						</div>
+						<div class="head-day-text">
+							<a style="text-decoration: none;" href="#">
+								<p class="headday-text">[凡人食堂]</p>
+								<span class="headday-textdown">诱惑你的不诱惑你的不诱惑你的诱惑你的不不</span>
+							</a>
+						</div>
+					</div>
+					<div class="head-day-in">
+						<div class="head-day-pic">
+							<a href="#"><img class="head-day-picin" src="img/bg-jifenchange.png" /></a>
+						</div>
+						<div class="head-day-text">
+							<a style="text-decoration: none;" href="#">
+								<p class="headday-text">[凡人食堂]</p>
+								<span class="headday-textdown">诱惑你的不诱惑你的不诱惑你的诱惑你的不不</span>
+							</a>
+						</div>
+					</div>
+					<div class="head-day-in">
+						<div class="head-day-pic">
+							<a href="#"><img class="head-day-picin" src="img/bg-jifenchange.png" /></a>
+						</div>
+						<div class="head-day-text">
+							<a style="text-decoration: none;" href="#">
+								<p class="headday-text">[凡人食堂]</p>
+								<span class="headday-textdown">诱惑你的不诱惑你的不诱惑你的诱惑你的不不</span>
+							</a>
+						</div>
+					</div>
+					<div class="head-day-in">
+						<div class="head-day-pic">
+							<a href="#"><img class="head-day-picin" src="img/bg-jifenchange.png" /></a>
+						</div>
+						<div class="head-day-text">
+							<a style="text-decoration: none;" href="#">
+								<p class="headday-text">[凡人食堂]</p>
+								<span class="headday-textdown">诱惑你的不w 诱惑你的不诱惑你的诱惑你的不不</span>
+							</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div style="width: 100%; height: 25px;background-color: #f4f4f4;"></div>
+			<div class="button-header">
+				<div class="button-img"><img src="images/heikash.png" style="width:2.4rem;height:2.9;">
+					<span style="font-size:20px;color:#cfa972">好货推荐</span>
+				</div>
+				<div class="button-hotgoods"><span style="font-size: 14px;color:#959597;">hot goods</span></div>
+			</div>
+			<div class="button-listmain" id="jfhg">
+
+
+			</div>
+			<div class="button-listdd" id="bottomDI" style="display: block;">
+					<hr style="margin-bottom: -1.5rem;margin-top: 0.8rem;">
+					<div class="button-listddcenter">
+						<img style="float:left;width: 2rem;height: 2rem;margin-top:0.6rem;margin-left: 0.5rem;" src="images/xiaolian.png"><span style="z-index: 3;">到底啦</span>
+					</div>
+
+			</div>
+
+		</div>
+
+	</body>
+	<script type="text/javascript" src="../js/jquery.min.js" ></script>
+	<script src="../js/MD5S.js"></script>
+    <script src="../js/TravelTailorSafeInterface.js"></script>
+	<script src="../js/mui.min.js" ></script>
+	<script type="text/javascript">
+		function onDiamonds(t){
+			if(t==1){
+				document.getElementById("diamonds").style.background="#cfa972";
+				document.getElementById("diamond1").style.display="block";
+				document.getElementById("diamond2").style.display="none";
+				
+				document.getElementById("foods").style.background="#000000";
+				document.getElementById("food2").style.display="none";
+				document.getElementById("food1").style.display="block";
+				
+				document.getElementById("movies").style.background="#000000";
+				document.getElementById("movie2").style.display="none";
+				document.getElementById("movie1").style.display="block";
+				
+				document.getElementById("recreation").style.background="#000000";
+				document.getElementById("recreation2").style.display="none";
+				document.getElementById("recreation1").style.display="block";
+				
+				document.getElementById("merchandise").style.background="#000000";
+				document.getElementById("merchandise2").style.display="none";
+				document.getElementById("merchandise1").style.display="block";
+			}
+			if(t==2){
+				document.getElementById("foods").style.background="#cfa972";
+				document.getElementById("food2").style.display="block";
+				document.getElementById("food1").style.display="none";
+				
+				document.getElementById("diamonds").style.background="#000000";
+				document.getElementById("diamond1").style.display="none";
+				document.getElementById("diamond2").style.display="block";
+				
+				document.getElementById("movies").style.background="#000000";
+				document.getElementById("movie2").style.display="none";
+				document.getElementById("movie1").style.display="block";
+				
+				document.getElementById("recreation").style.background="#000000";
+				document.getElementById("recreation2").style.display="none";
+				document.getElementById("recreation1").style.display="block";
+				
+				document.getElementById("merchandise").style.background="#000000";
+				document.getElementById("merchandise2").style.display="none";
+				document.getElementById("merchandise1").style.display="block";
+			}
+			if(t==3){
+				document.getElementById("movies").style.background="#cfa972";
+				document.getElementById("movie2").style.display="block";
+				document.getElementById("movie1").style.display="none";
+				
+				document.getElementById("diamonds").style.background="#000000";
+				document.getElementById("diamond1").style.display="none";
+				document.getElementById("diamond2").style.display="block";
+				
+				document.getElementById("foods").style.background="#000000";
+				document.getElementById("food2").style.display="none";
+				document.getElementById("food1").style.display="block";
+				
+				document.getElementById("recreation").style.background="#000000";
+				document.getElementById("recreation2").style.display="none";
+				document.getElementById("recreation1").style.display="block";
+				
+				document.getElementById("merchandise").style.background="#000000";
+				document.getElementById("merchandise2").style.display="none";
+				document.getElementById("merchandise1").style.display="block";
+				
+
+			}
+			if(t==4){
+				document.getElementById("recreation").style.background="#cfa972";
+				document.getElementById("recreation2").style.display="block";
+				document.getElementById("recreation1").style.display="none";
+				
+				document.getElementById("diamonds").style.background="#000000";
+				document.getElementById("diamond1").style.display="none";
+				document.getElementById("diamond2").style.display="block";
+				
+				document.getElementById("foods").style.background="#000000";
+				document.getElementById("food2").style.display="none";
+				document.getElementById("food1").style.display="block";
+				
+				document.getElementById("movies").style.background="#000000";
+				document.getElementById("movie2").style.display="none";
+				document.getElementById("movie1").style.display="block";
+				
+				document.getElementById("merchandise").style.background="#000000";
+				document.getElementById("merchandise2").style.display="none";
+				document.getElementById("merchandise1").style.display="block";
+			}
+			if(t==5){
+				document.getElementById("diamonds").style.background="#000000";
+				document.getElementById("diamond1").style.display="none";
+				document.getElementById("diamond2").style.display="block";
+				
+				document.getElementById("foods").style.background="#000000";
+				document.getElementById("food2").style.display="none";
+				document.getElementById("food1").style.display="block";
+				
+				document.getElementById("movies").style.background="#000000";
+				document.getElementById("movie2").style.display="none";
+				document.getElementById("movie1").style.display="block";
+				
+				document.getElementById("recreation").style.background="#000000";
+				document.getElementById("recreation2").style.display="none";
+				document.getElementById("recreation1").style.display="block";
+				
+				
+				document.getElementById("merchandise").style.background="#cfa972";
+				document.getElementById("merchandise2").style.display="block";
+				document.getElementById("merchandise1").style.display="none";
+			}
+			
+		}
+		function opinwin(id, ProPhotosId) {
+				mui.openWindow({
+				    url: "../details.html?id=" + id + "&img=" + ProPhotosId,
+				    id: "shop",
+				    styles: {
+				        render:'always'
+				    },
+				    
+				    show: {
+				        
+				    },
+				    waiting: {
+				        autoShow: true, //自动显示等待框，默认为true
+				        title: '正在加载...', //等待对话框上显示的提示内容
+				        
+				    }
+				})
+			}
+		var shopindex=0;
+		var CompanyImgsrc = httppp+"/Images/ExpertImg/admin/CompanyImg/";
+		
+		SetHGData();
+
+
+		function SetHGData(){
+                    var ar = new Array();
+                    var ph = {
+                        Collection: [
+                         { F: "IsIntegral", O: "%", P: "@@IsIntegral", V: 1 },
+                         { F: "XMoney", O: "!=", P: "@@XMoney", V: 0 },
+                        ]
+                    };
+                    ar.Condition = ph;
+                    ar.InterfaceAddress = "api/ShopInfo";
+                    ar.Name = "Yl_ProductInfo";
+                    ar.OrderBy = "CreationDate desc";
+                    ar.Index = shopindex;
+                    ar.Size = 20;
+                    aes(ar, "endHGData");
+			}
+		var isFirst=false;
+		function endHGData(rs){
+            	var TData = eval("(" + rs + ")");
+            	if(TData==undefined||TData.length==undefined||TData.length==0){
+            		document.getElementById("bottomDI").style.display="block";
+            		return false;
+            	}
+	            for (var i = 0; i < TData.length; i++) {
+	            	var jfli=document.createElement("div");
+	            	jfli.className="button-listleft";
+	            		var jfhgli='';
+					jfhgli+='<a href="javascript:void(0);" onclick=opinwin("' + TData[i].Id + '","' + TData[i].ProPhotosId + '")>'
+					jfhgli+='	<img class="mui-media-object"  style="max-width:1000px;" src="'+CompanyImgsrc+TData[i].InterImg+'_650x320.jpg">'
+					jfhgli+='	<p class="mui-h5 mui-text-left " style="color:#090909;margin-left:0.5rem;">'+TData[i].ProName+'</p>'
+					jfhgli+='	<p class="mui-h5 mui-text-left" style="color: #fd52bb; "><p class="O_price" style="color:#c5c5c5;font-size: 12px;margin-left:0.5rem;text-decoration:line-through; ">原价'+TData[i].Oldprice+'元</p><span style="font-size:14px;color:#fd52bb;">'+TData[i].XMoney+'元</span><span style="width:100px;height:20px;float:right;background-image: url(../jggimg/interger-1.png) ;background-size:100% 100%;"><span style="font-size: 10px;float: right;margin-top: 2px;color:white;margin-right: 8px;">+'+TData[i].XIntegral+'积分</span></span></p>			'
+					jfhgli+='</a>';
+					jfli.innerHTML=jfhgli;
+					document.getElementById("jfhg").appendChild(jfli);
+					
+	            }
+	            shopindex++;
+	            isFirst=true;
+			}
+		
+	</script>
+
+</html>

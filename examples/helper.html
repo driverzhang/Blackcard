@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>黑卡助手</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			*{margin:0px;padding:0px;}
+			body{background:#fff;}
+			.phone_mui img{margin-top:42px;}
+			
+			@media only screen and (max-width:319px) {
+				.phone_mui{width:100%;height:265px;}
+			}
+			
+			.mui-veiw-top{border-top:none;}
+			
+			.mui-table-view1 .mui-table-view-cell{color:#4a4a4a;font-size:14px;font-family: "微软雅黑";}
+				.mui-table-view1 .mui-table-view-cell span{font-size:10px;float:right}
+		</style>
+	</head>
+	<body>
+		
+		  <header class="mui-bar mui-bar-nav" style="background:#ff5000;">
+			  <a class="mui-icon mui-icon-left-nav mui-pull-left" style="color:#fff;"></a>
+			  <a class="mui-icon mui-icon-reply mui-pull-right"></a>
+			  <h1 class="mui-title" style="color:#fff;">黑卡助手</h1>
+		</header>
+		
+     	<div class="phone_mui">
+     		<img src="../images/phone.png"/ width="100%">
+	    </div>
+
+			<ul  class="mui-table-view1" >
+				 <li class="mui-table-view-cell"><img src="../images/solid2.png"/></li>
+		         <li class="mui-table-view-cell">黑卡使用规则<span >2016-02-01</span></li>
+		         <li class="mui-table-view-cell">黑卡使用规则使用规则<span>2016-02-01</span></li>
+		         <li class="mui-table-view-cell mui-veiw-top" >常见问题<span >2016-02-01</span></li>
+		         <li class="mui-table-view-cell">黑卡使用规则<span >2016-02-01</span></li>
+		         <li class="mui-table-view-cell">黑卡使用规则使用规则<span >2016-02-01</span></li>
+			</ul>
+		
+		
+		
+		
+		
+		
+		
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+
+		<script type="text/javascript">
+			mui.init();
+			//返回按钮
+			$('.mui-pull-left').on('tap',function(){
+				history.go(-1);
+			})
+		</script>
+	</body>
+
+</html>

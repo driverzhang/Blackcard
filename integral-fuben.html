@@ -1,0 +1,512 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<title>黑卡生活-积分商城</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/TouchSlide.1.1.js"></script>
+		<script src="js/mui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/home.css">
+		<link rel="stylesheet" type="text/css" href="shop_iconfont/iconfont.css">
+		<style type="text/css">
+			.mui-bar-tab .mui-tab-item.mui-active{
+				color: #f4811f;
+			}
+			.mui-table-view{
+	
+				margin: auto;
+			}
+		</style>
+		
+	</head>
+   
+	<body>
+	<header class="mui-bar mui-bar-nav indexcssHC" style="background:#212123;box-shadow: 0 0px 0px #212123;">
+        <div class="top_Out">
+           <div class="right" style="background:none;float:right;"><span class="mui-icon myico myicos iconfont waitUp" style="margin: 5px 5px auto 11px;">&#xe608;</span></div>
+        	<div class="right" style="background: none;color: white;float:left"><span class="mui-icon myico myicos iconfont waitUp" style="margin: 5px 5px auto 1px;">&#xe607;</span></div>
+        </div>
+        <div class="center" style="border-radius:10px; margin:0 auto;background:#646464;position:relative;top:-35px;width: 80%;">
+            <div class="mui-input-row">
+                <span class="mui-icon mui-icon-speech" id="mui-icon-speech" style="color: #fff;margin-top: -2px; "></span>
+                <input type="text" id="mui-input-speech" class="mui-input-speech mui-input-clear" style="margin-bottom:none;color:#fff;margin-top: -4px;">
+            </div>
+        </div>
+    </header>
+    
+    
+    
+		<div style="margin-bottom: 2rem;">
+		<!--轮播图-->
+		<section id="banner">
+				<div id="slideBox" class="slideBox">
+					<div class="bd">
+						<ul id="BoxImg">
+
+						</ul>
+					</div>
+					<div class="hd">
+						<ul></ul>
+					</div>
+				</div>
+			</section>
+		<ul class="mui-table-view">
+			
+			<li class="mui-table-view-cell mui-media mui-col-xs-12" style="height: 120px;">
+				<div id="jifenguize" style="float: right;">
+					<img src="img/xiangqing.png" style="position: relative;top: -5px;width: 20%;"/>
+					<span style="position: relative;top: -8px;color: #9b9b9b;">积分规则</span>
+				</div>
+				<div class="mui-media-body" style="position: relative;top: 50%; left: 45%; transform: translate(-50%,-50%);" >
+					<p>我的积分</p><span id="Usinter" style="padding-left: 5%;">0</span>
+				</div>
+					<div class="mui-pull-right mui-btn mui-btn-warning" id="sign" onclick="sign();" style="background-color: white; color: #cfa972;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);border: solid 1px #cfa972; border-radius: 80px;height: 80px; width: 80px;z-index: 1;">
+						<span style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); ">签到</span>
+					</div>
+				<div class="mui-media-body" style="float: right; position: absolute;top: 50%;right: 2.5%; transform: translate(-50%,-50%);">
+					<p class="mui-h5 mui-ellipsis" >活跃天数</p><span id="SignTianshu" class='mui-h5 mui-ellipsis' style="font-size: 12px;color: #000000;padding-left: 15%;">5/月</span>
+				</div>
+			</li>
+		</ul>
+		<!--轮播图-->
+		<ul class="mui-table-view" style="margin-top: 4px;">
+			<li class="mui-table-view-cell mui-media">
+				
+
+					<div class="mui-media-body" style="float: left; width: 50%; border-right: 1px solid #e1e1e1;">
+				<a href="examples/jgg.html" style="width: 100%;height: 100%;">
+						<div style="float: left; margin-top: 10%;margin-bottom: 10%;">
+
+							<span style="font-weight: bolder;font-size: 1rem;color: #cfa972;font-family: '黑体';">积分抽奖</span>
+							<p class='mui-ellipsis' style="font-size: 1.2rem; font-family: '黑体';">小积分抽大奖</p>
+						</div>
+						<img src="img/Iphone.png" style="width: 36%;height: 80%; margin-top: 7.5%;margin-left: 5%; " />
+				</a>
+					</div>
+
+
+					<div class="mui-media-body" style="">
+				<a href="examples/chowIntegral.html" style="width: 100%;height: 100%;">
+						<div style="float: left; margin-top: 10%;margin-bottom: 10%; margin-left: 5%;">
+							
+							<span style="font-weight: bolder;font-size: 1rem;color: #cfa972;font-family: '黑体';">积分众筹</span>
+							<p class='mui-ellipsis' style="font-size: 1.2rem;font-family: '黑体';">拼手气&nbsp;赢好礼</p>
+						</div>
+						<img src="img/xiaoxiong.png" style="width: 36%;height: 80%; margin-top: 7.5%; margin-left: 5%;" />
+				</a>
+					</div>
+
+			</li>
+		</ul>
+	
+	
+		<!--积分换购-->
+	<ul class="mui-table-view mui-grid-view" style="margin-top: 10px;" id="jfhg">
+		<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-text-left">
+			<span class="mui-h5 mui-pull-right mui-icon mui-icon-arrowright" style="font-size: 18px;margin-top: 6px;"></span>
+			<span class="mui-h5 mui-pull-right " id="hginter" style="font-family: '黑体';margin-top: 3px;">更多</span>
+			<span class="" style="font-weight: bolder; color:#cfa973;font-family: '黑体';">积分换购</span>
+		</li>
+	</ul>
+	
+	
+		<!--积分换礼-->
+	<ul class="mui-table-view mui-grid-view" style="margin-top: 10px;padding-bottom: 38px;" id="jfdh">
+		<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-text-left">
+			<span class="mui-h5 mui-pull-right mui-icon mui-icon-arrowright" style="font-size: 18px;margin-top: 6px;"></span>
+			<span class="mui-h5 mui-pull-right" id="drinter" style="font-family: '黑体'; margin-top: 3px;">更多</span>
+			<span class="" style="font-weight: bolder; color:#cfa973; font-family: '黑体';">积分换礼</span>
+			
+		</li>
+		
+	</ul>
+	
+
+	
+	
+	
+</div>
+
+<nav class="mui-bar mui-bar-tab "  style="background-color: #cfa972;font-size: 12px;color:white;">
+			<a id="index" class="mui-tab-item  tab-item" href="index.html">
+				<span class="mui-icon myico icon-fz icon iconfont " style="color:white;">&#xe60d;</span>
+				<span class="mui-tab-label tab-label" style="font-size:10px;color:white;">首 页</span>
+			</a>
+			<a id="integral" class="mui-tab-item tab-item" href="integral.html">
+				<span class="mui-icon myico  icon-lb icon iconfont" style="color:white;">&#xe60a;</span>
+				<span class="mui-tab-label"  style="font-size:10px;color:white;">积 分</span>
+			</a>
+			<a id="MainBuy" class="mui-tab-item tab-item" href="MainBuy.html">
+				<span class="mui-icon myico icon-fjmd icon iconfont "  style="color:white;">&#xe60e;</span>
+				<span class="mui-tab-label"  style="font-size:10px;color:white;">商 圈</span>
+			</a>
+			
+			<a id="personage" class="mui-tab-item tab-item" href="personage.html">
+				<span class="mui-icon myico icon-gyw icon iconfont"  style="color:white;">&#xe610;</span>
+				<span class="mui-tab-label"  style="font-size:10px;color:white;">个人中心</span>
+			</a>
+		</nav>
+
+    <script src="js/MD5S.js"></script>
+    <script src="js/TravelTailorSafeInterface.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			mui.plusReady(function() {
+					//显示当前页面
+				plus.nativeUI.closeWaiting();
+			});
+		   
+			var slider = mui("#slider");
+			slider.slider({
+						interval: 500
+			});
+		
+			$('.waitUp').click(function(){
+					 mui.alert("该功能正式发卡时上线，敬请期待", '我的黑卡平台');
+			});
+
+	var isToGoUrl=false;
+	
+			var imgsrc = httppp+"/Images/ExpertImg/admin/gg/";
+        var uil = null;
+        function sign(){
+        	 	var loginPhone=localStorage.getItem("loginPhone");
+        		var ar = new Array();
+	                    ar.InterfaceAddress = "api/UserSign";
+	                    ar.phone = loginPhone;
+
+	                    ar.Handshake_Time = CurentTime('-', false);
+	                    aes(ar, "endsign");
+        }
+        function endsign(rs){
+        	  var verData = eval('(' + rs + ')');
+		  
+            if (verData == undefined) {
+					mui.alert("网络异常","黑卡平台");
+            }
+            else if (verData.suc) {
+                var loginPhone=localStorage.getItem("loginPhone");
+				var loginPassword=localStorage.getItem("loginPassword");
+					if(loginPassword==null||loginPhone==null){
+						  mui.openWindow({
+				                url: "examples/login.html",
+				                id: "login",
+				                show: {
+				                    autoShow: true,//页面loaded事件发生后自动显示，默认为true
+				
+				                },
+				                waiting: {
+				
+				                }
+				           });
+
+					}else{
+						var ar = new Array();
+	                    ar.InterfaceAddress = "api/appLogin";
+	                    ar.phone = loginPhone;
+	                    ar.password = loginPassword;
+	                    ar.Handshake_Time = CurentTime('-', true);
+	                    aes(ar, "endGetInter");
+	                   }
+					mui.alert(verData.msg,"黑卡平台");
+            } else {
+					mui.alert(verData.msg,"黑卡平台");
+            	
+            }
+        	
+        }
+	window.onload = function() {
+			
+	
+		var navs = document.querySelectorAll(".mui-tab-item");
+			 for (n in navs) {
+                if (navs[n].getAttribute != undefined) {
+                    obj = navs[n].getAttribute('id');
+                    document.getElementById(obj).addEventListener("tap", function () {
+                        if (!isToGoUrl) {
+                            var thisid = this.id;
+                            isToGoUrl = true;
+                            mui.openWindow({
+								url:thisid + '.html',
+								id:thisid,
+								
+								show:{
+									autoShow:true,//页面loaded事件发生后自动显示，默认为true
+								
+								},
+								waiting:{
+								
+								}
+							});
+							isToGoUrl=false;
+                          
+                        }
+                    });
+                }
+            }
+								
+							
+			}
+		
+				setTimeout(function(){
+					var loginPhone=localStorage.getItem("loginPhone");
+					var loginPassword=localStorage.getItem("loginPassword");
+					if(loginPassword==null||loginPhone==null){
+						  mui.openWindow({
+				                url: "examples/login.html",
+				                id: "login",
+				                show: {
+				                    autoShow: true,//页面loaded事件发生后自动显示，默认为true
+				
+				                },
+				                waiting: {
+				
+				                }
+				           });
+
+					}else{
+						var ar = new Array();
+	                    ar.InterfaceAddress = "api/appLogin";
+	                    ar.phone = loginPhone;
+	                    ar.password = loginPassword;
+	                    ar.Handshake_Time = CurentTime('-', true);
+	                    aes(ar, "endGetInter");
+	                   }
+				},100);
+				 setInterval(function(){
+				 	var loginPhone=localStorage.getItem("loginPhone");
+					var loginPassword=localStorage.getItem("loginPassword");
+				 		var ar = new Array();
+	                    ar.InterfaceAddress = "api/appLogin";
+	                    ar.phone = loginPhone;
+	                    ar.password = loginPassword;
+	                    ar.Handshake_Time = CurentTime('-', true);
+	                    aes(ar, "endGetInter");
+				 },8000);
+
+	function endGetInter(rs){
+		  var verData = eval('(' + rs + ')');
+		  
+            if (verData == undefined) {
+            	mui.alert("网络异常", '我的黑卡平台');
+
+            }
+            else if (verData.suc) {
+                document.getElementById("Usinter").innerText=verData.ReturnData.Integral;
+                document.getElementById("SignTianshu").innerText=verData.ReturnData.SignTimeNum+"/月";
+               
+            } else {
+            	mui.alert("登陆失效，请重新登陆", '我的黑卡平台');
+
+                 mui.openWindow({
+				                url: "examples/login.html",
+				                id: "login",
+				                show: {
+				                    autoShow: true,//页面loaded事件发生后自动显示，默认为true
+				
+				                },
+				                waiting: {
+				
+				                }
+				           });
+            }
+	}
+	document.getElementById("hginter").addEventListener("tap",function(){
+		mui.openWindow({
+				    url: "examples/HGIntegralList.html",
+				    id: "HGIntegralList",
+				    styles: {
+				        render:'always'
+				    },
+				    
+				    show: {
+				        
+				    },
+				    waiting: {
+				        autoShow: true, //自动显示等待框，默认为true
+				        title: '正在加载...', //等待对话框上显示的提示内容
+				        
+				    }
+				})
+	})
+	document.getElementById("drinter").addEventListener("tap",function(){
+		mui.openWindow({
+				    url: "examples/DHIntegralList.html",
+				    id: "DHIntegralList",
+				    styles: {
+				        render:'always'
+				    },
+				    
+				    show: {
+				        
+				    },
+				    waiting: {
+				        autoShow: true, //自动显示等待框，默认为true
+				        title: '正在加载...', //等待对话框上显示的提示内容
+				        
+				    }
+				})
+	})
+	BindImg();
+	SetDHData();
+	SetHGData();
+	var CompanyImgsrc = httppp+"/Images/ExpertImg/admin/CompanyImg/";
+			function SetDHData(){
+                    var ar = new Array();
+                    var ph = {
+                        Collection: [
+                         { F: "IsIntegral", O: "%", P: "@@IsIntegral", V: 1 },
+                         { F: "XMoney", O: "=", P: "@@XMoney", V: 0 },
+                        ]
+                    };
+                    ar.Condition = ph;
+                    ar.InterfaceAddress = "api/ShopInfo";
+                    ar.Name = "Yl_ProductInfo";
+                    ar.OrderBy = "CreationDate desc";
+                    ar.Index = 0;
+                    ar.Size = 2;
+                    ar.Handshake_Time = CurentTime('-', true);
+                    aes(ar, "endDHData");
+			}
+			function endDHData(rs){
+            	var TData = eval("(" + rs + ")");
+	            for (var i = 0; i < TData.length; i++) {
+	            	var jfli=document.createElement("li");
+	            	jfli.className="mui-table-view-cell mui-media mui-col-xs-12";
+	            	var jfhgli='';
+					jfhgli+='<a href="javascript:void(0);"  onclick=opinwin("' + TData[i].Id + '","' + TData[i].ProPhotosId + '")>'
+					jfhgli+='	<img class="mui-media-object" style="max-width:1000px;" src="'+CompanyImgsrc+TData[i].InterImg+'_650x320.jpg">'
+					jfhgli+='	<p class="mui-h5 mui-text-left " style="color: #000; font-weight: bolder;">'+TData[i].ProName+'</p>'
+					jfhgli+='	<p class="mui-h5 mui-text-left" style="color: #fd52bb; "><span style="font-weight: bolder; letter-spacing:2px;">'+TData[i].XIntegral+'</span> 积分</p>'			
+					jfhgli+='</a>';
+					jfli.innerHTML=jfhgli;
+					document.getElementById("jfdh").appendChild(jfli);
+	            }
+			}
+			function endHGData(rs){
+            	var TData = eval("(" + rs + ")");
+	            for (var i = 0; i < TData.length; i++) {
+	            	var jfli=document.createElement("li");
+	            	jfli.className="mui-table-view-cell mui-media mui-col-xs-12";
+	            	var jfhgli='';
+					jfhgli+='<a href="javascript:void(0);" onclick=opinwin("' + TData[i].Id + '","' + TData[i].ProPhotosId + '")>'
+					jfhgli+='	<img class="mui-media-object"  style="max-width:1000px;" src="'+CompanyImgsrc+TData[i].InterImg+'_650x320.jpg">'
+					jfhgli+='	<p class="mui-h5 mui-text-left " style="color: #000; font-weight: bolder;">'+TData[i].ProName+'</p>'
+					jfhgli+='	<p class="mui-h5 mui-text-left" style="color: #fd52bb; "><span style="font-weight: bolder; letter-spacing:2px;">'+TData[i].XMoney+'元<s class="O_price" style="margin-left: 5px;color:#888888;    font-weight: normal;">原价'+TData[i].Oldprice+'元</s></span><span style="width:80px;height:20px;float:right;background-image: url(jggimg/interger-1.png) ;background-size:100% 100%;"><span style="font-size: 10px;float: right;margin-top: 2px;color:white;margin-right: 8px;">+'+TData[i].XIntegral+'积分</span></span></p>			'			
+					jfhgli+='</a>';
+					jfli.innerHTML=jfhgli;
+					document.getElementById("jfhg").appendChild(jfli);
+	            }
+			}
+		function SetHGData(){
+				
+                    var ar = new Array();
+                    var ph = {
+                        Collection: [
+                         { F: "IsIntegral", O: "%", P: "@@IsIntegral", V: 1 },
+                         { F: "XMoney", O: "!=", P: "@@XMoney", V: 0 },
+                        ]
+                    };
+                    ar.Condition = ph;
+                    ar.InterfaceAddress = "api/ShopInfo";
+                    ar.Name = "Yl_ProductInfo";
+                    ar.OrderBy = "CreationDate desc";
+                    ar.Index = 0;
+                    ar.Size = 2;
+                    aes(ar, "endHGData");
+			}
+		
+			function opinwin(id, ProPhotosId) {
+				mui.openWindow({
+				    url: "details.html?id=" + id + "&img=" + ProPhotosId,
+				    id: "shop",
+				    styles: {
+				        render:'always'
+				    },
+				    
+				    show: {
+				        
+				    },
+				    waiting: {
+				        autoShow: true, //自动显示等待框，默认为true
+				        title: '正在加载...', //等待对话框上显示的提示内容
+				        
+				    }
+				})
+			}
+			function BindImg() {
+				isshop=false;
+				if(uil!=null){
+					$('#BoxImg').html(uil);
+					TouchSlide({
+						slideCell: "#slideBox",
+						titCell: ".hd ul",
+						mainCell: ".bd ul",
+						effect: "leftLoop",
+						delayTime: "1100",
+						interTime: "3000",
+						autoPage: true,
+						autoPlay: true
+					});
+					
+        			plus.nativeUI.closeWaiting();
+					
+				}
+				else{
+					setTimeout(function(){
+						var ph = {
+							Collection: [
+								{ F: "ImgGS", O: "%", P: "@@ImgGS", V: 1 },
+								
+							]
+						};
+						var ar = new Array();
+						ar.Condition = ph;
+						ar.InterfaceAddress = "api/ShopInfo";
+						ar.Name = "YL_Imgs";
+						ar.OrderBy = "CreationDate desc";
+						ar.Index = 0;
+						ar.Size = 6;
+						ar.Handshake_Time = CurentTime('-', true);
+						aes(ar, "endk");
+					},100);
+				}
+			}
+			function endk(rd) {
+				var TData = eval("(" + rd + ")");
+				uil="";
+				for(var i = 0; i < TData.length; i++) {
+					if(TData[i].ImgType == "首页轮播图") {
+						uil += '<li>';
+						uil += '<a href="' + TData[i].Href + ';"><img src="' + imgsrc + TData[i].Id + '__750x360.jpg" width="100%" alt=""></a>';
+						uil += '</li>';
+					} 
+				}
+				$('#BoxImg').html(uil);
+				TouchSlide({
+					slideCell: "#slideBox",
+					titCell: ".hd ul",
+					mainCell: ".bd ul",
+					effect: "leftLoop",
+					delayTime: "1100",
+					interTime: "3000",
+					autoPage: true,
+					autoPlay: true
+				});
+
+				
+			}
+		</script>
+	</body>
+
+</html>

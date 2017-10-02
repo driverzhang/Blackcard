@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>设置</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/TouchSlide.1.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<style>
+			body {
+				margin: 0;
+				background: #eee;
+				font-size: 1.2rem;
+				line-height: 1.6;
+				color: #0e0e0e;
+				font-family: '微软雅黑', Verdana, Arial, Helvetica, sans-serif;
+			}
+			
+			.box-one {
+				margin-top: 64px;
+				height: 64px;
+				background: white;
+				border-top: 1px solid #EDEDED;
+			}
+			
+			.box-two {
+				height: 64px;
+				background: white;
+				border-top: 1px solid #EDEDED;
+			}
+			
+			.box-three {
+				margin-top: 44px;
+				height: 64px;
+				background: white;
+				border-top: 1px solid #EDEDED;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background: #212123;color: white;">
+			<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" style="color: white;" href="../personage.html"></a>
+			<span class="mui-icon mui-icon-reply mui-pull-right"></span>
+			<h1 class="mui-title" id="proName" style="color: white;">设 置</h1>
+		</header>
+		<a href="ziliao-person.html">
+			<div class="box-one">
+				<p style="color: black; font-size: 16px; padding: 20px;">资料修改</p>
+			</div>
+		</a>
+		<a href="#">
+			<div class="box-two">
+				<p style="color: black; font-size: 16px; padding: 20px;">账户与安全</p>
+			</div>
+		</a>
+		<a href="#">
+			<div class="box-two">
+				<p style="color: black; font-size: 16px; padding: 20px;">我的黑友</p>
+			</div>
+		</a>
+		<a href="help-center.html">
+			<div class="box-two">
+				<p style="color: black; font-size: 16px; padding: 20px;">帮助中心</p>
+			</div>
+		</a>
+
+		<a href="AccountControl.html">
+			<div class="box-three">
+				<p style="color: black; font-size: 16px; padding: 20px;">用户切换</p>
+			</div>
+		</a>
+		<a href="blackcard-life.html">
+			<div class="box-two">
+				<p style="color: black; font-size: 16px; padding: 20px;">关于黑卡生活</p>
+			</div>
+		</a>
+
+		<a href="javascript:window.opener=null;window.close();" onclick="logout()">
+			<div class="box-three">
+				<p style="text-align: center; color: #ff4242; font-size: 16px; padding: 20px;">退出登录</p>
+			</div>
+		</a>
+		 <script src="../js/mui.min.js"></script>
+		<script>
+			var phone = localStorage.getItem("loginPhone");
+		        if(localStorage.getItem("UserId")==null || phone==null){      		 
+					mui.openWindow({
+						url:"login.html",
+						id:"login",
+						show:{
+							autoShow:true,
+						},
+						waiting:{
+									
+						}
+					})
+				}
+			
+			
+			function logout() {
+				if(confirm("您确定要退出登录吗？"))//confirm() 方法用于显示一个带有指定消息和 OK 及取消按钮的对话框。
+				localStorage.removeItem("loginPhone"); 
+					mui.openWindow({
+						//						url: "examples/forget_password.html",
+						url: "login.html",
+						id: "forget_password",
+						show: {
+							autoShow: true, //页面loaded事件发生后自动显示，默认为true
+
+						},
+						waiting: {
+
+						}
+					})
+				return false; 
+			}
+		</script>
+	</body>
+
+</html>

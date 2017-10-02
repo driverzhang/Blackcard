@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../shop_iconfont/iconfont.css" />
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+		<title>活动详情</title>
+		<style>
+			.mui-content {
+				height: 0px;
+				margin: 0px;
+				background-color: #efeff4;
+			}
+			
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			
+			* {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+			}
+			
+			html {
+				font-size: 10px;
+			}
+			
+			input::-webkit-input-placeholder {
+				/*WebKit browsers*/
+				color: #9a9798;
+			}
+			
+			input::-moz-input-placeholder {
+				/*Mozilla Firefox*/
+				color: #9a9798;
+			}
+			
+			input::-ms-input-placeholder {
+				/*Internet Explorer*/
+				color: #9a9798;
+			}
+			
+			textarea::-webkit-input-placeholder {
+				/*WebKit browsers*/
+				color: #9a9798;
+			}
+			
+			textarea::-moz-input-placeholder {
+				/*Mozilla Firefox*/
+				color: #9a9798;
+			}
+			
+			textarea::-ms-input-placeholder {
+				/*Internet Explorer*/
+				color: #9a9798;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background: #212123;color: white;">
+			<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<h1 class="mui-title" id="proName" style="color: white;">活动详情</h1>
+		</header>
+		<div class="accountContent1" style=" border: solid 1px #dcdcdc; border-left:none;border-right:none; margin-top: 70px; width: 100%;height: 85px;">
+			<div style="float: left;width: 70px; height: 70px; border-radius: 70px;margin-top: 13px;margin-right: 4px; margin-left: 5%;">
+				<img style="width:70%; height: 70%;" src="../images/header-img-comment_03.png" />
+			</div>
+			<div style="position: relative; top: 20px; ">
+				<span style="color: #585756;font-family: '黑体';" id="UserName"></span>
+				<p style="color: #585756; margin-top: 5px;font-family: '黑体';" id="logincardID"></p>
+			</div>
+		</div>
+		<!--动态HTML开始。-->
+		<div id="Dhtml-show">
+		</div>
+
+		<input type="button" id="canjia" value="参加活动 " style="font-size: 18px; width: 90%;height: 40px; background-color: #cfa972; margin-left:5%; bottom: 0rem;position: fixed;border:none;color:white;" />
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/MD5S.js"></script>
+		<script src="../js/TravelTailorSafeInterface.js"></script>
+		<script>
+		var phone = localStorage.getItem("loginPhone");
+        if(localStorage.getItem("UserId")==null || phone==null){      		 
+			mui.openWindow({
+				url:"login.html",
+				id:"login",
+				show:{
+					autoShow:true,//页面loaded事件发生后自动显示，默认为true
+				},
+				waiting:{
+							
+				}
+			})
+		}
+		
+			var loginPhone = localStorage.getItem("loginPhone");
+			var loginPassword = localStorage.getItem("loginPassword");
+			var ar = new Array();
+			ar.InterfaceAddress = "api/appLogin";
+			ar.phone = loginPhone;
+			ar.password = loginPassword;
+			ar.Handshake_Time = CurentTime('-', true);
+			aes(ar, "endGetInter");
+
+			function endGetInter(rs) {
+				console.log(rs);
+				var verData = eval('(' + rs + ')');
+
+				if(verData == undefined) {
+					mui.alert("网络异常", '我的黑卡平台');
+
+				} else if(verData.suc) {
+					document.getElementById("logincardID").innerHTML = "ID：" + verData.ReturnData.ICCard;
+					document.getElementById("UserName").innerHTML = localStorage.getItem("UserName");
+
+				} else {
+					mui.alert("登陆失效，请重新登陆", '我的黑卡平台');
+				}
+			}
+			//获取 url 后的参数方法。
+			function GetQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+
+			var cc = GetQueryString("id");
+			if(cc == "" || cc == null || cc == undefined) {
+				//				mui.alert("没用获取到参数！");
+			}
+
+			$(document).ready(function() {
+
+				setTimeout(function() {
+
+					var ph = {
+						Collection: [{
+							F: "Id",
+							O: "=",
+							P: "@@Id",
+							//							V: "cf02f94c-a4fa-496b-8efc-0bf2bc055445"
+							V: cc
+						}]
+					};
+					var ar = new Array();
+					ar.Condition = ph;
+					ar.InterfaceAddress = "api/ShopInfo";
+					ar.Name = "YL_Club";
+					ar.OrderBy = "CreationDate desc";
+					ar.Index = 0;
+					ar.Size = 10;
+					ar.Handshake_Time = CurentTime('-', true);
+					aes(ar, "clubfind");
+				}, 500);
+
+			});
+
+			function clubfind(rs) {
+				console.log(rs);
+				var TData = eval("(" + rs + ")");
+
+				for(var i = 0; i < TData.length; i++) {
+					var adata = CurentTimeBydata(".", eval('new ' + eval(TData[i].LastUpdate).source), true);
+					adata = adata.substring(0, 10);
+					var n1 = Math.floor(Math.random() * 4 + 1);
+
+					var d = eval('new ' + eval(TData[i].CreationDate).source);
+					var year = d.getFullYear();
+					var month = d.getMonth() + 1;
+					var day = d.getDate() + 10;
+					if(month < 10) {
+						month = "0" + month;
+					}
+					if(day < 10) {
+						day = "0" + day;
+					}
+					var bdata = year + "." + month + "." + day;
+
+					//动态HTML开始。
+					var dhtml = "";
+					dhtml += '<div id="' + TData[i].Id + '">';
+					dhtml += '<div id="XQtext" style="height: 100px;text-align: left;margin: 20px 30px;">';
+					dhtml += '<p id="inner-text">' + TData[i].ClubDetail + '</p>';
+					dhtml += '</div>';
+					dhtml += '<div id="placewhere" style="border: 1px solid #dcdcdc;border-left: none;border-right: none;border-bottom: none;padding: 20px;">';
+					dhtml += '<span class="place-text" style="color: #8f8f94;">地址：<span id="placeA">' + TData[i].ClubAddress + '</span></span>';
+					dhtml += '</div>';
+					dhtml += '<div id="realtime" style="border: 1px solid #dcdcdc;border-left: none;border-right: none;border-bottom: none;padding: 20px;">';
+					dhtml += '<span class="place-text" style="color: #8f8f94;">有效时间：<span id="Rtime">' + adata + '-' + bdata + '</span></span>';
+					dhtml += '</div>';
+					dhtml += '<div id="INperson" style="border: 1px solid #dcdcdc;border-left: none;border-right: none;padding: 20px;">';
+					dhtml += '<span class="place-text" style="color: #8f8f94;">已经参与人数：<span id="takePart">' + TData[i].Clubpnum + '</span>人</span>';
+					dhtml += '</div>';
+					document.getElementById("Dhtml-show").innerHTML += dhtml;
+					
+					$("#canjia").on("tap",function() {
+							
+							mui.alert("已成功参加活动！");
+//							parseInt('+TData[i].Clubpnum+') + 1;
+
+						});
+
+				}
+
+			}
+		</script>
+	</body>
+
+</html>

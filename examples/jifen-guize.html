@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>积分规则</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/TouchSlide.1.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<style>
+			body {
+				margin: 0;
+				font-size: 1.2rem;
+				line-height: 1.6;
+				color: #f4f7f7;
+				font-family: '微软雅黑', Verdana, Arial, Helvetica, sans-serif;
+			}
+			.box1 {
+				margin-top: 44px;
+				height: 60px;
+				background: white;
+
+				line-height: 3;
+				
+			}
+			.box2,.box3,.box4,.box5 {
+				margin-top: 14px;
+				height: 60px;
+				background: white;
+
+				line-height: 3;
+			}
+			.text-span {
+				font-size: 14px;
+				color: #585756;
+				
+			}
+			#box-text1 p {
+				font-size: 14px;
+				color: #4f646a;
+				margin-left:15px;;
+			
+			}
+			#box-text2 p {
+				font-size: 14px;
+				color: #4f646a;
+				margin-left:15px;;
+			
+			}
+			#box-text3 p {
+				font-size: 14px;
+				color: #4f646a;
+				margin-left:15px;;
+			
+			}
+			#box-text4 p {
+				font-size: 14px;
+				color: #4f646a;
+				margin-left:15px;;
+			
+			}
+			
+			
+		</style>
+	</head>
+	<body >
+		<header class="mui-bar mui-bar-nav" style="background: #212123;color: white;">
+			<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" href="../integral.html" style="color: white;"></a>
+			<span class="mui-icon mui-icon-reply mui-pull-right"></span>
+			<h1 class="mui-title" id="proName" style="color: white;">积分规则</h1>
+		</header>
+		<div class="box1" onclick="show(1)">
+			<span style="color: #050504; font-size: 16px;margin-left: 15px;">怎么获取积分?</span>
+			<img id="xiangxia1" style="width: 25px; float: right; margin-top: 20px;margin-right: 15px;" src="../img/xiangxia1.png" />
+			<img id="xiangshang1" style="display: none; width: 25px; float: right; margin-top: 20px;margin-right: 15px;" src="../img/xiangshang1.png"/>
+		</div>
+		<div id="box-text1" style="display: none;" >
+			<p style="margin-top: 40px;">1.下载积分：下载APP可获得5积分</p>
+			<p >2.推荐积分:成功推荐亲友下载黑卡生活app者，给予5积分</p>
+			<p >3.签到积分：每日签到每天1积分，每月连续签到第五天2积分，第十天3积分，第十六天3积分，第二十三天4积分，第三十天5积分。</p>
+			<p >4.会员参与黑卡组织的各种活动，给予10积分/次（可根据活动更改）</p>
+			<p >5.参与抽奖,积分数根据具体抽到积分而定</p>
+			<p >6.添加黑友,奖励5积分/人</p>
+			<p >7.评论带图及30个字,2-8积分/次</p>
+			
+			
+		</div>
+		<div class="box2" onclick="show(2)">
+			<span style="color: #050504; font-size: 16px;margin-left:15px;">如何使用积分消费？</span>
+			<img id="xiangxia2" style="width: 25px; float: right; margin-top: 20px;margin-right: 15px;" src="../img/xiangxia1.png" />
+			<img id="xiangshang2" style="display: none; width: 25px; float: right; margin-top: 20px;margin-right: 15px;" src="../img/xiangshang1.png"/>
+		</div>
+		<div id="box-text2" style="display: none" >
+			<p style="margin-top: 40px;">1.积分商城抽奖一次消耗20积分</p>
+			<p >2.积分换礼:根据积分商城积分换礼模块每个商品所需积分兑换</p>
+			<p >3.积分换购:根据积分商城积分换购模块每个商品所需积分兑换及金额兑换</p>
+			<p >4.参与活动:根据不同活动内容，消费不同积分及费用</p>
+		</div>
+		<div class="box3"onclick="show(3)">
+			<span style="color: #050504; font-size: 16px;margin-left:15px;">积分有效期是多久？</span>
+			<img id="xiangxia3" style="width: 25px; float: right; margin-top: 20px;margin-right: 15px;" src="../img/xiangxia1.png" />
+			<img  id="xiangshang3" style="display: none; width: 25px; float: right; margin-top: 20px;margin-right: 15px;" src="../img/xiangshang1.png"/>
+		</div>
+		<div id="box-text3" style="display: none" >
+			<p style="margin-top: 40px;">所有所得积分在当年有效，次年作废，请注意过期时间以免积分失效</p>
+		</div>
+		<div class="box4"onclick="show(4)">
+			<span style="color: #050504; font-size: 16px;margin-left:15px;">消费与所得积分金额不符怎么办？</span>
+			<img id="xiangxia4" style="width: 25px; float: right; margin-top: 20px;margin-right: 15px;" src="../img/xiangxia1.png" />
+			<img  id="xiangshang4" style="display: none; width: 25px; float: right; margin-top: 20px;margin-right: 15px;" src="../img/xiangshang1.png"/>
+		</div>
+		<div id="box-text4" style="display: none" >
+			<p style="margin-top: 40px;">1.会员使用积分过程中，如有商家拒绝给予积分请拨打投诉电话4004000333039；</p>
+			<p >2.会员使用积分过程中，如遇积分更新上传错误及失败情况，请保留好小票，拨打客服电话4000333039，寻求更改及补充。</p>
+		</div>
+		<script>
+			function show(t) {
+				if (t==1) {
+					$("#xiangxia1").toggle();
+					$("#xiangshang1").toggle();
+					$("#box-text1").toggle();
+						
+				}if(t==2) {
+					$("#xiangxia2").toggle();
+					$("#xiangshang2").toggle();
+					$("#box-text2").toggle();
+				}if(t==3) {
+					$("#xiangxia3").toggle();
+					$("#xiangshang3").toggle();
+					$("#box-text3").toggle();
+				}if(t==4) {
+					$("#xiangxia4").toggle();
+					$("#xiangshang4").toggle();
+					$("#box-text4").toggle();
+				}
+			}
+			
+			
+		</script>
+		
+		
+			
+	
+	</body>
+</html>

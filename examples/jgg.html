@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>积分抽奖</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			body {
+				background-image: url(../jggimg/cjback.png);
+				filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+				-moz-background-size: 100% 100%;
+				background: #c72222;
+				width: 100%;
+				font-size: 14px;
+				height: 100%;
+				margin: 8px 0;
+			}
+			
+			#lottery {
+				width: 90%;
+				height: auto;
+				margin: auto;
+			}
+			
+			#lottery table {
+				width: 90%;
+				height: 18rem;
+				margin: auto;
+			}
+			
+			#lottery table td {
+				position: relative;
+				width: auto;
+				height: auto;
+				text-align: center;
+				color: #333;
+				font-index: -999
+			}
+			
+			#lottery table td a {
+				width: 100%;
+				height: 100%;
+				display: block;
+				text-decoration: none;
+			}
+			
+			#lottery table td a img {}
+			
+			#lottery table td a:hover {
+				background-image: url(../jggimg/lottery1.png);
+			}
+			
+			#lottery table td.active .mask {
+				display: block;
+			}
+			
+			@media screen and (min-width:0px) and (max-width:500px) {
+				#lottery table td img {
+					display: block;
+					width: 100%;
+					height: 70%;
+				}
+			}
+			
+			@media screen and (min-width:425px) and (max-width:8888px) {
+				#lottery table td img {
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
+			}
+			
+			.mask {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background-color: rgba(252, 211, 4, 0.5);
+				display: none;
+			}
+			
+			.main-sec {
+				width: 92%;
+				overflow: hidden;
+				margin: auto;
+			}
+			
+			.g-num {
+				width: 80%;
+				height: 40px;
+				background: #d82828;
+				border-radius: 20px;
+				border: 1px solid #e44025;
+				margin: 0 auto;
+				margin-top: 10px;
+				line-height: 40px;
+				text-align: center;
+				color: #fff;
+				font-size: 1.3em
+			}
+			
+			.g-num em {
+				margin: 0 5px;
+				color: #ffd737;
+			}
+			
+			.m-title {
+				width: 100%;
+				height: 15px;
+				margin-top: 10px;
+				border-bottom: 1px solid #ffb820;
+				margin-bottom: 30px;
+			}
+			
+			.m-title h3 {
+				width: 35%;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				color: #ffb820;
+				background: #c72222;
+				margin: 0 auto;
+				font-size: 1.3em;
+				font-weight: bold;
+			}
+			
+			.peolist {
+				width: 100%;
+				overflow: hidden;
+				background: #b21b1b;
+			}
+			
+			.peolist dd {
+				width: 92%;
+				overflow: hidden;
+				padding: 10px 0;
+				border-bottom: 1px dashed #ffb820;
+				margin: 0 auto;
+			}
+			
+			.peolist dd div.right {
+				width: 100%;
+				float: right;
+			}
+			
+			.peolist dd div.right span {
+				width: 100%;
+				height: 8px;
+				color: #ffc5c5;
+				display: block;
+				font-family: "微软雅黑";
+			}
+			
+			div.right span em {
+				width: 32%;
+				float: left;
+				font-size: 0.9em;
+				font-weight: 100;
+				font-style: normal;
+			}
+			
+			.einfo {
+				width: 92%;
+				overflow: hidden;
+				padding: 0px 4%;
+				background: #b21b1b;
+			}
+			
+			.einfo p {
+				line-height: 16px;
+				color: #ffb820;
+			}
+			
+			footer {
+				width: 100%;
+				line-height: 24px;
+				color: #ffb820;
+				text-align: center;
+				margin: 0 6px;
+			}
+			
+			.mzj {
+				width: 6rem;
+				height: 2.5rem;
+				border: 1px solid #ffb820;
+				float: right;
+				margin-right: 2rem;
+				margin-top: 1rem;
+				border-radius: 0.5rem;
+				color: white;
+				text-align: center;
+				font-size: 1rem;
+				line-height: 2.5rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: black;">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left mui-action-back" style="color: white;"></a>
+			<h1 class="mui-title" style="color: white;">积分抽奖</h1>
+			<a class=" mui-pull-right" style="line-height: 44px;"><i class="icon iconfont icon-sousuo-sousuo" style=" font-size: 18px;"></i></a>
+		</header>
+		<div class="keBody" style="padding-top: 50px;">
+			<!--效果html开始-->
+			<div id="lottery" style="display: none;">
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tr style="width:auto;height:auto;">
+						<td class="lottery-unit lottery-unit-0"><img id="img1">
+							<div class="mask"></div>
+						</td>
+						<td class="lottery-unit lottery-unit-1"><img id="img2">
+							<div class="mask"></div>
+						</td>
+						<td class="lottery-unit lottery-unit-2"><img id="img3">
+							<div class="mask"></div>
+						</td>
+					</tr>
+					<tr style="width:auto;height:auto;">
+						<td class="lottery-unit lottery-unit-7"><img id="img4">
+							<div class="mask"></div>
+						</td>
+						<td>
+							<a href="javascript:void(0);" onclick="jggClick()"><img src="../jggimg/lottery1.png" /></a>
+						</td>
+						<td class="lottery-unit lottery-unit-3"><img id="img5">
+							<div class="mask"></div>
+						</td>
+					</tr>
+					<tr style="width:auto;height:auto;">
+						<td class="lottery-unit lottery-unit-6"><img id="img6">
+							<div class="mask"></div>
+						</td>
+						<td class="lottery-unit lottery-unit-5"><img id="img7">
+							<div class="mask"></div>
+						</td>
+						<td class="lottery-unit lottery-unit-4"><img id="img8">
+							<div class="mask"></div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="mzj" onclick="myjp()">我的奖品</div>
+
+			<section class="main-sec loptop">
+				<div class="m-title">
+					<h3>中奖情况</h3></div>
+				<dl class="peolist" id="peolist">
+
+				</dl>
+
+			</section>
+			<section class="main-sec">
+				<div class="m-title">
+					<h3>活动说明</h3></div>
+				<div class="einfo">
+					<p>活动时间：X月X日-X月3X日</p>
+					<p>100积分抽奖1次</p>
+				</div>
+			</section>
+
+			<section class="main-sec">
+				<footer>浮游科技,提供技术支持</footer>
+			</section>
+		</div>
+
+		</div>
+		<script src="../js/jqlatest.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/MD5S.js"></script>
+		<script src="../js/TravelTailorSafeInterface.js"></script>
+		<script type="text/javascript">
+			getJGGData();
+
+			function getJGGData() {
+				var ar = new Array();
+				var ph = {
+					Collection: [
+
+					]
+				};
+				ar.Condition = ph;
+				ar.InterfaceAddress = "api/ShopInfo";
+				ar.Name = "YL_GoodsLuckDetail";
+				ar.OrderBy = "CreationDate desc";
+				ar.Index = 0;
+				ar.Size = 20;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar, "endgetJGGData");
+			}
+
+			function endgetJGGData(rs) {
+				//debugger;
+				var TData = eval("(" + rs + ")");
+				//debugger;
+				for(var i = 0; i < TData.length; i++) {
+					var cgodatatime = CurentTimeBydata("-", eval('new ' + eval(TData[i].CreationDate).source), true, false);
+					var htmls = '<dd><div class="right"><span><em>' + TData[i].UserName + '</em><em>' + TData[i].GoodsName + '</em><em>' + cgodatatime + '</em></span></div></dd>';
+					document.getElementById("peolist").innerHTML += htmls;
+				}
+			}
+
+			function jggClick() {
+				if(!isGet) {
+					isGet = true;
+					var loginPhone = localStorage.getItem("loginPhone");
+					var loginPassword = localStorage.getItem("loginPassword");
+					if(loginPassword == null || loginPhone == null) {
+						mui.openWindow({
+							url: "login.html",
+							id: "login",
+							show: {
+								autoShow: true, //页面loaded事件发生后自动显示，默认为true
+
+							},
+							waiting: {
+
+							}
+						});
+
+					} else {
+						var ar = new Array();
+						ar.InterfaceAddress = "api/Lottery";
+						ar.phone = loginPhone;
+						ar.password = loginPassword;
+						ar.Handshake_Time = CurentTime('-', true);
+						aes(ar, "endGetInter");
+					}
+				}
+			}
+
+			function myjp() {
+				var id = localStorage.getItem("UserId");
+				mui.openWindow({
+					url: "zhongjiang.html?id=" + id,
+					id: "id",
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+
+					},
+					waiting: {
+
+					}
+				});
+			}
+			var isGet = false;
+			var GetId = "togoone";
+
+			function endGetInter(rs) {
+				var TData = eval("(" + rs + ")");
+				if(TData.suc) {
+					isGet = false;
+					GetId = TData.ReturnData;
+					
+					mui.alert(TData.msg, "黑卡生活");
+					if(click) { //click控制一次抽奖过程中不能重复点击抽奖按钮，后面的点击不响应
+						return false;
+					} else {
+						lottery.speed = 100;
+						roll(); //转圈过程不响应click事件，会将click置为false
+						click = true; //一次抽奖完成后，设置click为true，可继续抽奖
+						return false;
+					}
+					debugger;
+					getJGGData();
+				} else {
+					
+					mui.alert(TData.msg, "黑卡生活")
+				}
+				isGet = false;
+			}
+
+			var lottery = {
+				index: -1, //当前转动到哪个位置，起点位置
+				count: 0, //总共有多少个位置
+				timer: 0, //setTimeout的ID，用clearTimeout清除
+				speed: 20, //初始转动速度
+				times: 0, //转动次数
+				cycle: 50, //转动基本次数：即至少需要转动多少次再进入抽奖环节
+				prize: -1, //中奖位置
+				init: function(id) {
+					if($("#" + id).find(".lottery-unit").length > 0) {
+						$lottery = $("#" + id);
+						$units = $lottery.find(".lottery-unit");
+						this.obj = $lottery;
+						this.count = $units.length;
+						$lottery.find(".lottery-unit-" + this.index).addClass("active");
+					};
+				},
+				roll: function() {
+					var index = this.index;
+					var count = this.count;
+					var lottery = this.obj;
+					$(lottery).find(".lottery-unit-" + index).removeClass("active");
+					index += 1;
+					if(index > count - 1) {
+						index = 0;
+					};
+					$(lottery).find(".lottery-unit-" + index).addClass("active");
+					this.index = index;
+					return false;
+				},
+				stop: function(index) {
+					this.prize = index;
+					return false;
+				}
+			};
+
+			function roll() {
+				lottery.times += 1;
+				lottery.roll(); //转动过程调用的是lottery的roll方法，这里是第一次调用初始化
+				if(lottery.times > lottery.cycle + 10 && $(".lottery-unit-" + lottery.index).children().eq(0).attr("id") == GetId) {
+					clearTimeout(lottery.timer);
+					lottery.prize = -1;
+					lottery.times = 0;
+					click = false;
+				} else {
+					if(lottery.times < lottery.cycle && !isGet) {
+						if(lottery.speed > 10)
+							lottery.speed -= 10;
+						else
+							lottery.speed = 1;
+					} else if(lottery.times == lottery.cycle) {
+						var index = Math.random() * (lottery.count) | 0; //中奖物品通过一个随机数生成
+						lottery.prize = index;
+					} else {
+						if(lottery.times > lottery.cycle + 10 && ((lottery.prize == 0 && lottery.index == 7) || lottery.prize == lottery.index + 1)) {
+							lottery.speed += 110;
+						} else {
+							lottery.speed += 20;
+						}
+					}
+					if(lottery.speed < 40) {
+						lottery.speed = 40;
+					};
+					//console.log(lottery.times+'^^^^^^'+lottery.speed+'^^^^^^^'+lottery.prize);
+					lottery.timer = setTimeout(roll, lottery.speed); //循环调用
+				}
+				return false;
+			}
+
+			var click = false;
+
+			window.onload = function() {
+				lottery.init('lottery');
+
+			};
+
+			GEtJGGThing();
+
+			function GEtJGGThing() {
+				var ar = new Array();
+				var ph = {
+					Collection: [
+
+					]
+				};
+				ar.Condition = ph;
+				ar.InterfaceAddress = "api/ShopInfo";
+				ar.Name = "YL_GoodsLuck";
+				ar.OrderBy = "CreationDate desc";
+				ar.Index = 0;
+				ar.Size = 8;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar, "endGEtJGGThing");
+
+			}
+
+			function endGEtJGGThing(rs) {
+				var TData = eval("(" + rs + ")");
+				for(var i = 0; i < TData.length; i++) {
+					var f = "img" + (i + 1);
+					document.getElementById(f).src = httppp + "/Images/ExpertImg/admin/CompanyImg/" + TData[i].GoodSimgId + "_190x170.jpg";
+					document.getElementById(f).setAttribute("id", TData[i].Id);
+				}
+				document.getElementById("lottery").style.display = "block";
+			}
+		</script>
+		<!--效果html结束-->
+
+	</body>
+
+</html>

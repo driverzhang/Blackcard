@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>俱乐部详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../shop_iconfont/iconfont.css" />
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<style type="text/css">
+		.OneDetails {
+			background: white;
+			margin-top: 15px;
+		}
+		
+		.ClubName {
+			margin-left: 8px;
+			font-size: 1.8rem;
+		}
+		
+		.ClubDeatils {
+			margin-left: 8px;
+			color: #665b5d;
+		}
+		
+		.ClubAddress {
+			margin-left: 8px;
+			font-size: 1.8rem;
+		}
+		
+		.ClubTime {
+			margin-top: 5px;
+			margin-left: 8px;
+		}
+		
+		img {
+			width: 18px;
+			height: 28px;
+			margin-bottom: 8px;
+		}
+		
+		.xiangqing {
+			float: right;
+			margin-right: 5%;
+			position: relative;
+			bottom: 15px;
+		}
+		
+		span {
+			font-family: '黑体';
+		}
+		
+		.time {
+			color: #a0a0a0;
+		}
+	</style>
+
+	<body style="background: #EEEEEE;">
+		<header class="mui-bar mui-bar-nav" style="background: #212123;color: white;">
+			<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" style="color: white;" href="../club.html"></a>
+			<h1 class="mui-title" id="proName" style="color: white;"></h1>
+		</header>
+		<div class="comment-show" id="comment-show" style="margin-top: 60px;">
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery.1.10.2.js"></script>
+	<script src="../js/TravelTailorSafeInterface.js "></script>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/mui.picker.min.js"></script>
+	<script src="../js/MD5S.js"></script>
+	<script>
+		var phone = localStorage.getItem("loginPhone");
+        if(localStorage.getItem("UserId")==null || phone==null){      		 
+			mui.openWindow({
+				url:"login.html",
+				id:"login",
+				show:{
+					autoShow:true,//页面loaded事件发生后自动显示，默认为true
+				},
+				waiting:{
+							
+				}
+			})
+		}
+		
+		
+		var C2 = "";
+		$(document).ready(function() {
+			C1 = window.location.search.substr(1);
+			C2 = C1.split("=")[1]; //得到
+			if(C2 == "A") {
+				C2 = "观影";
+			}
+			if(C2 == "B") {
+				C2 = "音乐舞蹈";
+			}
+			if(C2 == "C") {
+				C2 = "真人游戏";
+			}
+			if(C2 == "D") {
+				C2 = "桌游";
+			}
+			if(C2 == "E") {
+				C2 = "户外极限";
+			}
+			if(C2 == "F") {
+				C2 = "城市探索";
+			}
+			if(C2 == "G") {
+				C2 = "运动健身";
+			}
+			if(C2 == "H") {
+				C2 = "阅读";
+			}
+			if(C2 == "I") {
+				C2 = "科普";
+			}
+			if(C2 == "J") {
+				C2 = "艺术";
+			}
+			if(C2 == "K") {
+				C2 = "实验";
+			}
+			if(C2 == "L") {
+				C2 = "手做";
+			}
+			document.getElementById("proName").innerHTML = C2;
+			setTimeout(function() {
+				var ph = {
+					Collection: [{
+						F: "ClubType",
+						O: "=",
+						P: "@@ClubType",
+						V: C2
+					}, ]
+				};
+				var ar = new Array();
+				ar.Condition = ph;
+				ar.InterfaceAddress = "api/ShopInfo";
+				ar.Name = "YL_Club";
+				ar.OrderBy = "CreationDate desc";
+				ar.Index = 0;
+				ar.Size = 10;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar, "clubfind");
+			}, 500);
+		});
+
+		function clubfind(rs) {
+			var TData = eval("(" + rs + ")");
+			for(var i = 0; i < TData.length; i++) {
+				var adata = CurentTimeBydata(".", eval('new ' + eval(TData[i].LastUpdate).source), true);
+				adata = adata.substring(0, 10);
+				var n1 = Math.floor(Math.random() * 4 + 1);
+
+				var d = eval('new ' + eval(TData[i].CreationDate).source);
+				var year = d.getFullYear();
+				var month = d.getMonth() + 1;
+				var day = d.getDate() + 10;
+				if(month < 10) {
+					month = "0" + month;
+				}
+				if(day < 10) {
+					day = "0" + day;
+				}
+				var bdata = year + "." + month + "." + day;
+
+				var ahtml = '<div class="OneDetails" id="' + TData[i].Id + '">';
+				ahtml += '<div class="ClubName">';
+				ahtml += '<span>' + TData[i].ClubName + '</span> </div>';
+				ahtml += '<div class="ClubDeatils">';
+				ahtml += '<span>' + TData[i].ClubDetail + '</span>	</div>';
+				ahtml += '<div class="ClubAddress">';
+				ahtml += '<span>地址：' + TData[i].ClubAddress + '</span> </div>';
+				ahtml += '<div class="ClubTime">';
+			    ahtml += '<span>有效期：' + adata + '-' + bdata + '</span> <span class="xiangqing"><a style="color:black;text-decoration:none;" href="AD-club.html?id='+ TData[i].Id+'" >查看详情</a><span> <img src="images/chakan.png"/> </div>';
+//				ahtml += '<span>有效期：' + adata + '-' + bdata + '</span> <span class="xiangqing">查看详情<span> <img src="images/chakan.png"/> </div>';
+
+				ahtml += '</div>'
+				document.getElementById("comment-show").innerHTML += ahtml;
+
+			}
+
+		}
+	</script>
+
+</html>

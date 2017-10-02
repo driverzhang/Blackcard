@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+     <link href="css/my.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body id="bodyid">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color:#ffffff"  ></a>
+				<h1 class="mui-title" style="color:#ffffff">购物车</h1>
+			</header>
+			
+						
+<div class="mui-content" style="padding-top: 0px;">
+	<ul class="mui-table-view mui-table-view-radio" style="margin-top:0px;">
+	<li class="mui-table-view-cell  mui-bar-tab">
+				<input name="checkbox1" value="全选"  type="checkbox" checked/>2件商品
+	</li></ul>
+	
+
+	<ul class="mui-table-view mui-table-view-radio">
+	<li class="mui-table-view-cell  mui-bar-tab">
+		<a class="mui-navigate-right ">
+			<div  class="mui-tab-item "><input name="checkbox1" value="全选"  type="checkbox" checked/></div>
+			<div  class="mui-tab-item " >
+				<img src="img/product.png" style="max-width: 100px;max-height: 100px;min-height: 30px;min-width: 30px;" width="100%" height="100%">
+			</div>
+			<div class="mui-tab-item" style="width: 45%;">
+				<div style="height: 60%;">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+				<div>
+					<span class="mui-icon mui-icon-minus" style="font-size: 12px;"></span>
+					<input type="text" style="width: 10px;height:10px;line-height: 12px;" />
+					<span class="mui-icon mui-icon-plus"  style="font-size: 12px;"></span>
+				</div>
+			</div>
+			<div  class="mui-tab-item">
+				<div style="color:red;">￥1</div>
+				<div class="mui-icon mui-icon-close"></div>
+			</div>
+		</a>
+	</li>
+	<li class="mui-table-view-cell  mui-bar-tab  mui-selected">
+		<a class="mui-navigate-right"><input name="checkbox1" value="全选"  type="checkbox" checked/>Item 2</a>
+	</li>
+	<li class="mui-table-view-cell  mui-bar-tab">
+		<a class="mui-navigate-right"><input name="checkbox1" value="全选"  type="checkbox" checked/>Item 3</a>
+	</li>
+</ul>
+</div>
+						
+					
+
+		<nav class="mui-bar mui-bar-tab" style="font-family: hyxyj; font-size: 20px;font-weight:bold;">
+			<div class="mui-tab-item ">
+				<div class="mui-tab-item ">
+					<input name="checkbox1" value="全选"  type="checkbox" checked>全选
+				</div>
+				<div class="mui-tab-item">
+					<div class="mui-tab-item ">总计:</div>
+					<div class="mui-tab-item "><div style="margin-top: -5%;"><span style="color:red;">￥379.9</span></div><div style="font-size: 16px;"><span>(运费￥10)</span></div></div>
+				</div>
+			</div>
+			<div class="mui-tab-item" style="background-color: #ff5454;font-size: 22px;color:#FFFFFF;">立即购买</div>
+		</nav>
+</body>
+</html>
+
+<script type="text/javascript" src="js/jquery.1.10.2.js" ></script>
+<script type="text/javascript" src="js/mui.min.js" ></script>
+<script type="text/javascript">
+	mui.init();
+	window.onload=function(){
+		var el=$('.mui-tab-item');
+		for(var i=0;i<el.length;i++){
+			el[i].addEventListener('tap',function(){
+				opernCustURL(this.getAttribute('href'));
+				
+			});
+			
+		}
+		
+	}
+	mui.plusReady(function(){
+		plus.nativeUI.closeWaiting();//关闭等待框
+		mui.currentWebview.show();//显示当前页面
+		
+	});
+	$('.mui-action-back').click(function(){
+		history.go(-1);
+		
+	});
+	
+</script>

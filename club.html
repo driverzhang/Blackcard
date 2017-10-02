@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>商品详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link type="text/css" href="css/mui.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/home.css">    
+		<style type="text/css">
+			html{
+				font-size: 10px;
+			}
+			body{
+				margin: 0;
+				padding: 0;
+				font-family:simhei;
+			}
+			.mui-bar-nav {
+			    top: 0;
+			    -webkit-box-shadow: 0 1px 6px #212123;
+			    box-shadow: 0 1px 6px #212123;
+    		}
+    		.c1{
+    			margin-top: -0.2rem;
+    			margin-bottom: 0rem;
+    			width: 100%;
+    			height: auto;
+    			overflow: hidden;
+    		}
+    		.c1-img{
+    			width: 100%;
+    			height: 100%;
+    		}
+    		.c2{
+    			width: 100%;
+    			height: auto;
+    			background:white;
+    		}
+    		.c2-1{
+    			width: 100%;
+    			height: 4rem;
+    			padding: 1rem 0;
+    			line-height: 2rem;
+    			border: 1px solid #e1e8e8;
+    		}
+    		.c2-1_1{
+    			float: left;
+    			height: 2rem;
+    			width: 0.7rem;
+    			background: #cea972;
+    			margin:0 1rem;
+    			border-radius: 0.3rem;
+    		}
+    		.c2-1_2{
+    			font-size: 2rem;
+    			color:black;
+    		}
+    		.c2-2{
+    			clear: both;
+    			width: 100%;
+    			height: auto;
+    			overflow: hidden;
+    			margin-top: 1rem;
+    			background: white;
+    		}
+    		.c2-2_1{
+    			float:left;
+    			width: 19%;
+    			margin-left: 4.5%;
+    			height: auto;
+    			overflow: hidden;
+    			text-align: center;
+    		}
+    		.c2-2_1img{
+    			width: 100%;
+    			height: 95%;
+    			border-radius: 0.5rem;
+    		}
+    		.c2-2_2{
+    			font-size: 1.5rem;
+    			line-height: 1.5rem;
+    			font-family: simhei;
+    		}
+    		.c3{
+    			width: 100%;
+    			height: auto;
+    			background:white;
+    			overflow: hidden;
+    			margin-top: 0.5rem;
+    		}
+    		.c3-1{
+    			width: 100%;
+    			height: 4rem;
+    			padding: 1rem 0;
+    			line-height: 2rem;
+    			margin-bottom: 1.5rem;
+    			border-bottom: 1px solid #e1e8e8;
+    		}
+    		.c3-2{
+    			margin: auto;
+    			width: 92%;
+    			height: auto;
+    			overflow: hidden;
+    			margin-bottom: 0.8rem;
+    		}
+    		.c4{
+    			width: 100%;
+    			height: auto;
+    			background:white;
+    			overflow: hidden;
+    			margin-top: 0.5rem;
+    			padding-bottom: 2rem;
+    		}
+		</style>
+	</head>
+	<body>
+		<!--** 导航 -->
+		<header class="mui-bar mui-bar-nav" style="background: #212123;color: white;">
+			<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" style="color: white;" href="index.html"></a>
+			<span class="mui-icon mui-icon-reply mui-pull-right"></span>
+			<h1 class="mui-title" id="proName" style="color: white;">黑卡俱乐部</h1>
+		</header>
+
+		<!--  end-->
+
+		<!--   banner  -->
+		<div class="wrap" style="background:#e5e5e4;">
+			<section id="banner" style=" margin-bottom: 0.4rem;">
+					<div id="slideBox" class="slideBox">
+						<div class="bd">
+							<a href="javascript:;"><img src="images/club.png" id="activ" width="100%" alt=""></a>
+						</div>
+						<div class="hd">
+							<ul></ul>
+						</div>
+					</div>
+			</section>
+	        <div class="c1">
+	        	<img class="c1-img" src="images/c1-img.png"/>
+	        </div>
+	        <div class="c2">
+	        	<div class="c2-1">
+	        		<div class="c2-1_1"></div>
+	        		<p class="c2-1_2">大家常逛的</p>
+	        	</div>
+	        	<div class="c2-2">
+	        		<a href="examples/ClubDetails.html?id=A">
+	        			<div class="c2-2_1">
+	        				<img class="c2-2_1img" src="images/c2-2_1img.png"/>
+	        				<p class="c2-2_2">观影</p>
+	        			</div>
+	        		</a>
+	        		<a href="examples/ClubDetails.html?id=B">
+		        		<div class="c2-2_1">
+		        			<img class="c2-2_1img" src="images/yinyue.png"/>
+		        			<p class="c2-2_2">音乐舞蹈</p>
+		        		</div>
+		        	</a>	
+	        		<a href="examples/ClubDetails.html?id=C">
+		        		<div class="c2-2_1">
+		        			<img class="c2-2_1img" src="images/zhenren.png"/>
+		        			<p class="c2-2_2">真人游戏</p>
+		        		</div>
+	        		</a>	
+	        		<a href="examples/ClubDetails.html?id=D">
+		        		<div class="c2-2_1">
+		        			<img class="c2-2_1img" src="images/zuoyou.png"/>
+		        			<p class="c2-2_2">桌游</p>
+		        		</div>
+	        		</a>
+	        		<a href="examples/ClubDetails.html?id=E">
+		        		<div class="c2-2_1">
+		        			<img class="c2-2_1img" src="images/huwai.png"/>
+		        			<p class="c2-2_2">户外极限</p>
+		        		</div>
+	        		</a>
+	        		<a href="examples/ClubDetails.html?id=F">
+		        		<div class="c2-2_1">
+		        			<img class="c2-2_1img" src="images/chengshi.png"/>
+		        			<p class="c2-2_2">城市探索</p>
+		        		</div>
+	        		</a>
+	        		<a href="examples/ClubDetails.html?id=G">
+		        		<div class="c2-2_1">
+		        			<img class="c2-2_1img" src="images/yundong.png"/>
+		        			<p class="c2-2_2">运动健身</p>
+		        		</div>
+	        		</a>
+	        		<a href="examples/ClubDetails.html?id=H">
+		        		<div class="c2-2_1">
+		        			<img class="c2-2_1img" src="images/yuedu.png"/>
+		        			<p class="c2-2_2">阅读</p>
+		        		</div>
+	        		</a>
+	        		<a href="examples/ClubDetails.html?id=I">
+		        		<div class="c2-2_1">
+		        			<img class="c2-2_1img" src="images/kebu.png"/>
+		        			<p class="c2-2_2">科普</p>
+		        		</div>
+	        		</a>
+	        		<a href="examples/ClubDetails.html?id=J">
+		        		<div class="c2-2_1">
+		        			<img class="c2-2_1img" src="images/yishu.png"/>
+		        			<p class="c2-2_2">艺术</p>
+		        		</div>
+	        		</a>
+	        		<a href="examples/ClubDetails.html?id=K">
+		        		<div class="c2-2_1">
+		        			<img class="c2-2_1img" src="images/shiyan.png"/>
+		        			<p class="c2-2_2">实验</p>
+		        		</div>
+	        		</a>
+	        		<a href="examples/ClubDetails.html?id=L">
+		        		<div class="c2-2_1">
+		        			<img class="c2-2_1img" src="images/shouzuo.png"/>
+		        			<p class="c2-2_2">手做</p>
+		        		</div>
+	        		</a>
+	        	
+	        	</div>
+	        	
+	        </div>
+	        <div class="c3">
+	        	<div class="c3-1">
+	        		<div class="c2-1_1"></div>
+	        		<p class="c2-1_2">公益</p>
+	        	</div>
+	        	<div class="c3-2">
+	        	 <img class="c1-img" src="images/c1-img.png"/>
+	            </div>
+	            <div class="c3-2">
+	        	 <img class="c1-img" src="images/c3-img2.png"/>
+	            </div>
+	        </div>
+	        
+	        <div class="c4">
+	        	<div class="c3-1">
+	        		<div class="c2-1_1"></div>
+	        		<p class="c2-1_2">兴趣研究</p>
+	        	</div>
+	            <div class="c3-2">
+	        	 <img class="c1-img" src="images/c4-img.png"/>
+	            </div>
+	        </div>
+		</div>
+		<script type="text/javascript" src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="js/TouchSlide.1.1.js"></script>
+		<script src="js/MD5S.js"></script>
+		<script type="text/javascript">
+           $('#activ').click(function () {
+           	var userid = localStorage.getItem("UserId");
+           	//debugger;
+            	mui.openWindow({
+					url:"examples/Activitybegin.html?id="+userid,
+					id:"Activitybegin",
+					show:{
+						autoShow:true,//页面loaded事件发生后自动显示，默认为true
+					
+					},
+					waiting:{
+					
+					}
+				});
+                
+            });
+		</script>
+	</body>
+
+</html>

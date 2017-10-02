@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<link type="text/css" href="../css/mui.min.css" rel="stylesheet">
+		<script src="../js/mui.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DQm1huuHqW6SHaYpEnrVMtE4fDmDrxVH"></script>
+	<style type="text/css">
+		body, html {width: 100%;height: 100%; margin:0;font-family:"微软雅黑";}
+		#l-map{height:300px;width:100%;}
+		#r-result,#r-result table{width:100%;}
+		.anchorBL{display:none;}
+	</style>
+	
+	<title>导航的结果面板</title>
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" onclick="goback()"></a>
+			<a class="mui-icon mui-icon-reply mui-pull-right"></a>
+			<h1 class="mui-title" id="proName">一键导航</h1>
+		</header>
+	<div id="l-map"></div>
+	<div id="r-result"></div>
+</body>
+</html>
+<script src="../js/jquery.1.10.2.js"></script>
+<script type="text/javascript">
+	mui.init({
+		swipeBack:true, //启用右滑关闭功能
+		beforeback: function() {
+					//获得列表界面的webview
+					//触发列表界面的自定义事件（refresh）,从而进行数据刷新
+					//mui.fire(list, 'refresh');
+					//返回true，继续页面关闭逻辑
+					return true;
+				},
+	});
+
+	//返回按钮
+	
+	function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+	 mui.plusReady(function() {
+					//关闭等待框
+					plus.nativeUI.closeWaiting();
+					//显示当前页面
+					mui.currentWebview.show();
+				});
+	$(document).ready(function(){
+		var map = new BMap.Map("l-map");
+		map.centerAndZoom(new BMap.Point(getQueryString("ShopLng"), getQueryString("SHopLAT")), 50);
+	    var point = new BMap.Point(getQueryString("ShopLng"), getQueryString("SHopLAT"));
+	    var point1 = new BMap.Point(getQueryString("Alng"), getQueryString("Alat"));
+		var driving = new BMap.DrivingRoute(map, {renderOptions: {map: map, panel: "r-result", autoViewport: true}});
+		driving.search(point, point1);
+		
+	})
+	// 百度地图API功能
+	
+</script>

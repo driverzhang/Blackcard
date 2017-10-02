@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<script src="../js/mui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/home.css" />
+		<link rel="stylesheet" type="text/css" href="../shop_iconfont/iconfont.css" />
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+		<script src="../js/jquery.min.js"></script>
+		<title>我的收藏</title>
+	</head>
+	<style>
+		#AllOrder {
+			width: 100%;
+    		position: absolute;
+			height: 43px;
+		}
+		
+		.productImg {
+			margin-left: 5%;
+			padding-top: 5px;
+			float: left;
+		}
+		
+		.productPJ {
+			width: 100%;
+		}
+		
+		.juli {
+			float: right;
+			margin-top: 15px;
+			margin-right: 5%;
+		}
+		
+		.product {
+			margin-top: 2px;
+		}
+		
+		#delete {
+			line-height: 1.4rem;
+			height: 4.6rem;
+			z-index: 1;
+			width: 100%;
+			margin-top: 2%;
+			text-align: center;
+			background: white;
+			position: fixed; 
+			left: 0%;
+			bottom: 0%;
+			z-index: 666;
+			
+		}
+		
+		#drop {
+			width: 95%;
+			margin-left: 2.5%;
+			border-radius: 10px;
+			position: fixed; 
+			left: 0%;
+			bottom: 5px;
+			z-index: 666;
+		}
+		
+		#editor {
+			position: absolute;
+			top:10px;
+			right: 5%;
+			
+		}
+		.mui-table-view:after{
+			height: 0;
+		}
+	</style>
+
+	<body style="background:#f4f4f4;">
+		<header class="mui-bar mui-bar-nav" style="background: #212123;color: white;">
+			<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<h1 class="mui-title" id="proName" style="color: white;">我的收藏</h1>
+		</header>
+
+			
+		</div>
+		<div id="AllOrder" style="background: white;">
+			<div style="position: fixed;width: 100%;height: 100%;background-color: #CCCCCC;opacity: 0.5;display: none;" id="zz"></div>
+			<ul class="mui-table-view" onclick="$('#zz').toggle();" style="  z-index: 999; margin-top: 1px;" >
+				<li class="mui-table-view-cell mui-collapse" style="background: white;padding: 11px 7px; width: 90%;margin: auto;">
+					<a class="mui-navigate-right" href="javascript:void(0);"  style="width: 100px; font-family: '黑体'; position: relative;">全部订单</a>
+					<div class="mui-collapse-content" >
+						<span style="font-family: '黑体'; color: #CFA972;">全部分类</span>
+						<img src="img/OnSelected.png" style="float: right;width: 25px;height: 25px;margin-top: -4px;"/>
+						<hr/>
+						<span style="font-family: '黑体';">川菜（3）</span>
+						<hr/>
+						<span style="font-family: '黑体';">粤菜（1）</span>
+						<hr/>
+						<span style="font-family: '黑体';">火锅（1）</span>
+
+					</div>
+				</li>
+			</ul>
+			<div style="width: 80px; height: 40px; position: absolute;top:0px;right: 5%; z-index: 999;" onclick="editor() ">
+				<span id="editor" style="font-family: '黑体'; float: right;z-index: 999;" >编辑</span>
+			</div>
+			
+		</div>
+		<div class="particulars" style='margin-top: 45px;'>
+			<div class="product" style="padding: 5px; width: 100%;background: white;height: 85px;">
+				<div class="productImg">
+					<img style="width: 65px;" src="img/baozi.png" />
+				</div>
+				<div>
+					<span style="font-family: '黑体'; width: 50%;padding-top: 5px;">爱上又见面</span>
+					<img class="Noxuanzhong" id="NoOncheck" width="20px" src="img/NoSelected.png" style="float: right; margin-right: 5%; padding-top: 5px; display: none; "onclick="CheckedOn(1)" />
+					<img class="xuanzhong" id="Oncheck" width="20px" src="img/OnSelected.png" style="float: right; margin-right: 5%; padding-top: 5px; display: none;" onclick="CheckedOn(2) " />
+					<div class="productPJ">
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(bad).png" />
+						<img width="12px" src="img/evaluate(bad).png" />
+						<span style="color:#ebaa44;font-size: 12px;"> 3.0</span>
+						<span style="font-size: 12px;"> 月售307笔</span>
+						<div>
+							<p class="juli">1.3km</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="product" style="padding: 5px; width: 100%;background: white;height: 85px;">
+				<div class="productImg">
+					<img style="width: 65px;" src="img/baozi.png" />
+				</div>
+				<div>
+					<span style="font-family: '黑体'; width: 50%;padding-top: 5px;">爱上又见面</span>
+					<img class="Noxuanzhong" width="20px" src="img/NoSelected.png" style="float: right; margin-right: 5%; padding-top: 5px; display: none;" />
+					<div class="productPJ">
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(bad).png" />
+						<img width="12px" src="img/evaluate(bad).png" />
+						<span style="color:#ebaa44;font-size: 12px;"> 3.0</span>
+						<span style="font-size: 12px;"> 月售307笔</span>
+						<div>
+							<p class="juli">1.3km</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="product" style="padding: 5px; width: 100%;background: white;height: 85px;">
+				<div class="productImg">
+					<img style="width: 65px;" src="img/baozi.png" />
+				</div>
+				<div>
+					<span style="font-family: '黑体'; width: 50%;padding-top: 5px;">爱上又见面</span>
+					<img class="Noxuanzhong" width="20px" src="img/NoSelected.png" style="float: right; margin-right: 5%; padding-top: 5px; display: none;" />
+					<div class="productPJ">
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(bad).png" />
+						<img width="12px" src="img/evaluate(bad).png" />
+						<span style="color:#ebaa44;font-size: 12px;"> 3.0</span>
+						<span style="font-size: 12px;"> 月售307笔</span>
+						<div>
+							<p class="juli">1.3km</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="product" style="padding: 5px; width: 100%;background: white;height: 85px;">
+				<div class="productImg">
+					<img style="width: 65px;" src="img/baozi.png" />
+				</div>
+				<div>
+					<span style="font-family: '黑体'; width: 50%;padding-top: 5px;">爱上又见面</span>
+					<img class="Noxuanzhong" width="20px" src="img/NoSelected.png" style="float: right; margin-right: 5%; padding-top: 5px; display: none;" />
+					<div class="productPJ">
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(bad).png" />
+						<img width="12px" src="img/evaluate(bad).png" />
+						<span style="color:#ebaa44;font-size: 12px;"> 3.0</span>
+						<span style="font-size: 12px;"> 月售307笔</span>
+						<div>
+							<p class="juli">1.3km</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="product" style="padding: 5px; width: 100%;background: white;height: 85px;">
+				<div class="productImg">
+					<img style="width: 65px;" src="img/baozi.png" />
+				</div>
+				<div>
+					<span style="font-family: '黑体'; width: 50%;padding-top: 5px;">爱上又见面</span>
+					<img class="Noxuanzhong" width="20px" src="img/NoSelected.png" style="float: right; margin-right: 5%; padding-top: 5px; display: none;" />
+					<div class="productPJ">
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(good).png" />
+						<img width="12px" src="img/evaluate(bad).png" />
+						<img width="12px" src="img/evaluate(bad).png" />
+						<span style="color:#ebaa44;font-size: 12px;"> 3.0</span>
+						<span style="font-size: 12px;"> 月售307笔</span>
+						<div>
+							<p class="juli">1.3km</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<div id="delete" style="display: none;">
+				<input style="background: red; color: white; font-size: 16px;" type="button" name="" id="drop" value="删除" placeholder="" /></input>
+			</div>
+		</div>
+	</body>
+	<script>
+		function editor() {
+			$('.Noxuanzhong').toggle();
+			$("#delete").toggle();
+		}
+		function zhezhao(){
+			$('#zz').toggle();
+		}
+		function CheckedOn(t){
+			if(t==1){
+				document.getElementById("NoOncheck").style.display = "none";
+				document.getElementById("Oncheck").style.display ="block";
+			}else if(t==2){
+				document.getElementById("NoOncheck").style.display = "block";
+				document.getElementById("Oncheck").style.display ="none";
+			}
+				
+		}
+	</script>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>确认订单</title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <style>
+    	.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0} 
+    	.mui-content .confirm_top{
+    		height: 15px;
+    		width: 100%;
+    		background: url("../images/confirm_top.png");
+    		margin-top: 5px;
+    	}
+    	.mui-confirm .mui-table-view{
+    		margin-top: -10px;
+    	}
+    	.mui-confirm .mui-table-view:before,.mui-confirm .mui-table-view-cell:after{		    
+		    background-color: #fff;		    
+    	}
+    	.mui-confirm .mui-table-view-cell{
+    		padding: 5px 15px 10px;
+    	}
+    	.mui-confirm .mui-table-view-cell>a{
+    		font-size: 14px;
+    	}
+    	.mui-table-view-cell .Address,.Address_number{
+    		font-size: 14px;
+    		color:#000;
+    	}
+    	.Address_number{
+    		float: right;
+    		margin-right: 15px;
+    	}
+    	.mui-confirm .mui-table-view{
+    		margin-bottom: 15px;
+    	}
+    	.mui-confirm .mui-table-view .mui-media-object{
+    		max-width: 160px;
+   		    height: 100px;
+   		    padding-top: 5px;
+    	}
+    	.mui-confirm .mui-media-body>p{
+    		margin: 20px 0px 0px 10px;
+    		color: #000;
+    	}
+    	.mui-confirm .mui-media-body .confirm_Price{
+    		color: #f61d4b;
+    		font-size: 24px;
+    	}
+    	.information,.pay{
+    		background: #fff;    		
+    		margin-top: 30px;   		
+    	}
+    	.information>p,.pay .payment{
+    		font-size: 14px;
+    		color: #000;
+    		border-bottom: 1px solid #f5f5f5;
+    		padding: 10px; 
+    	}
+    	.information>p:last-child{
+    		border-bottom: none;
+    	}
+    	.pay{
+    		background: #fff;    		
+    		margin-top: 20px; 
+    	}
+    	.pay .weiixn{
+    		padding: 0px 10px 15px;
+    	}
+    	.pay .payment{
+    		position: relative;
+    		padding-left: 18px;
+    		font-size: 16px;
+    	}
+    	.pay .payment:after{
+    		height: 15px;
+    		width: 4px;
+    		background:#FF5000;
+    		content: '';
+    		position: absolute;
+		    bottom: 13px;
+		    left: 0;
+		    margin-left: 8px;
+		    border-radius: 3px;
+    	}
+    	.pay .weiixn_icon{
+    		display: inline-block;    		
+    		float: left;
+    	}
+    	.pay .weiixn_icon>img{
+    		max-width: 40px;     		
+    	}
+    	.pay .weixin_txt{
+    		display: inline-block;
+    		margin: 13px 0px 0px 10px;
+    		font-size: 18px;
+    		color: #000;
+    	}
+    	.pay .weiixn_ok{
+    		margin-top: 10px;
+    	}
+    	.pay .weiixn_ok>img{
+    		max-width: 30px;
+    	}
+    	.Confirm_pay{
+    		padding-left:10px;
+    		background: #fff;
+    		margin-top: 50px;
+    	}
+    	.Confirm_pay_left{
+    		display: inline-block;
+    		margin-top: 10px;
+    		margin-left: 10px;
+    		
+    	}
+    	.Confirm_pay_right{
+    		padding: 10px 10px;
+    		background:#FF5000;
+    		display: inline-block;
+    		color:#fff;
+    		font-size: 16px;
+    		float: right;
+    	}
+    	.Confirm_pay_Price{
+    		font-size: 18px;
+    		color: #FF5000;
+    		margin-left: 10px;
+    	}
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav all_goods_nav">
+	<a href="" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color:#fff;"></a>
+	<h1 class="mui-title">确认订单</h1>
+	
+</header>
+<div class="mui-content">
+	<div class="mui-confirm">
+		<p class="confirm_top"></p>
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<span class="Address">收件人：霍道凯</span><span class="Address_number">手机号码：18888888888</span>
+			</li>
+		  <li class="mui-table-view-cell">
+		    <a class="mui-navigate-right"> 收货地址：浙江省杭州市  </a>
+		    <p class="Address">江干区下沙路浙江省杭州市江干区下沙路</p>
+		  </li>
+		</ul>
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell mui-media">
+			<a href="#">
+				<img class="mui-media-object mui-pull-left" src="images/apple_phone.png">
+				<div class="mui-media-body">				
+					<p class='mui-ellipsis'>Apple/苹果 iPhone7 32G 全网通4G智能手机</p>
+					<p><span class="confirm_Price">¥6498</span><span class="Address_number">x1</span></p>
+				</div>
+			</a>
+			</li>
+		</ul>
+		<div class="information">
+			<p class="Remarks">备注：请填所需的说明选填所需的说明</p>
+			<p class="freight">运费：<span class="Address_number">+10元</span></p>
+			<p class="integral">积分抵用：<span class="Address_number">-100</span></p>
+		</div>
+		<div class="pay">
+			<p class="payment">支付方式</p>
+			<p class="weiixn"><span class="weiixn_icon"><img src="images/weixin01.jpg" alt="" /></span><span class="weixin_txt">微信支付</span><span class="weiixn_ok Address_number"><img src="images/pay_circular.png" alt="" /></span></p>
+		</div>
+		<div class="Confirm_pay clearfloat">
+			<div class="Confirm_pay_left">合计<span class="Confirm_pay_Price">¥2017</span></div>
+			<div class="Confirm_pay_right">确认支付</div>
+		</div>
+	</div>
+</div>
+	</body>
+<script charset="UTF-8" language="JavaScript" src="../js/jquery.min.js"></script>
+<script charset="UTF-8" language="JavaScript">
+	//返回按钮
+	$('.mui-pull-left').on('tap',function(){
+		history.go(-1);
+	})
+</script>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/Login.css" />
+	</head>
+
+	<body style="background-image: url(img/backgroundImg.png);background-repeat: no-repeat;background-size:100% 100%;margin:0;">
+		<div id="headImg">
+			<img src="img/headPortrait.png" style="height: 100%;width: 100%;">
+		</div>
+		<p id="HKlife" style="color: #abaaaa; font-size: 24px; font-family: " 黑体 ";">黑卡生活</p>
+		<div id="CardNumber">
+			<div style="height: 35px; width: 30px;margin-left: 1%; float: left; ">
+				<img src="img/CardNumber.png" style="height:100%;width: 100%;" />
+			</div>
+
+			<input type="text" id="phoneac" placeholder="请输入您的手机号/卡号" style="width: 78%;border:none; background-color:transparent;color: white; margin: 10px;margin-right: 0;">
+			<hr/ style="width: 100%; height: 100%;border: solid 0.5px #abaaaa; position: relative;top: -8px; width: 90%; margin-left: 5%;">
+		</div>
+
+		<div id="Cardpassword">
+			<div style="height: 35px; width: 30px; float: left;margin-left: 1%;  ">
+				<img src="img/Password.png" style="height:100%;width: 100%;" />
+			</div>
+			<input type="password" id="passwordac" placeholder="初始密码888888" style="width: 78%;border:none; background: none;color: white; ;margin: 10px;margin-right: 0;">
+			<hr/ style="width: 100%; height: 100%;border: solid 0.5px #abaaaa; position: relative;top: -8px; width: 90%; margin-left: 5%;">
+		</div>
+
+		<input id="loginIn" type="button" value="登陆">
+		<div id="ApplicationPassword">
+			<img src="img/OnlineApplication.png" style="width: 25px; height: 25px;" />
+			<span id="zxsq" style="color: #abaaaa;position: relative;top: -0.5rem;margin-right: 8%;font-size: 12px;">在线申请</span>
+			<img src="img/resetPassword.png" style="width: 25px; height: 25px;margin-left: 8%;" />
+			<span id="czpass" style="color: #abaaaa;position: relative; top: -0.5rem;font-size: 12px;">重置密码</span>
+		</div>
+		<div style="text-align: center;">
+			<input type="button" name="" id="visitorGallery" value="游客通道" />
+		</div>
+		<div style="text-align: center;margin-top: 20%;">
+			<p style="color: #abaaaa; font-size: 10px; font-family: "黑体"; ">Copyright © 2017 黑马科技 All Rights Reserved</p>
+		</div>
+
+	</body>
+	<script src="../js/jquery.min.js"></script>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/MD5S.js"></script>
+    <script src="../js/TravelTailorSafeInterface.js"></script>
+    <script type="text/javascript">
+    	window.onload=function(){
+    		bodyResize();
+    		
+    	}
+
+    	document.getElementById("czpass").addEventListener("tap",function(){
+    		mui.openWindow({
+					url:"forget_password.html",
+					id:"forget_password",
+					show:{
+						autoShow:true,//页面loaded事件发生后自动显示，默认为true
+					},
+					waiting:{
+					
+					}
+				});
+    	})
+    	document.getElementById("visitorGallery").addEventListener("tap",function(){
+    		localStorage.setItem("UserId","01");
+    		var loginwebview=mui.currentWebview; 
+    		mui.openWindow({
+					url:"../index.html",
+					id:"index",
+					show:{
+						autoShow:true,//页面loaded事件发生后自动显示，默认为true
+					},
+					waiting:{
+					
+					}
+				});
+				loginwebview.close();
+    	});
+    	document.getElementById("zxsq").addEventListener("tap",function(){
+    		mui.openWindow({
+					url:"../online1.html",
+					id:"online1",
+					show:{
+						autoShow:true,//页面loaded事件发生后自动显示，默认为true
+					},
+					waiting:{
+					
+					}
+				})
+    	});
+    	   mui.plusReady(function () {
+				if(plus.webview.getWebviewById("personage")!=undefined&&plus.webview.getWebviewById("personage")!=null)
+							plus.webview.getWebviewById("personage").close();
+				if(plus.webview.getWebviewById("integral")!=undefined&&plus.webview.getWebviewById("integral")!=null)
+							plus.webview.getWebviewById("integral").close();
+			});
+    	document.getElementById("loginIn").addEventListener("tap",function(){
+    	    var ar = new Array();
+            ar.InterfaceAddress = "api/appLogin";
+            ar.phone = $('#phoneac').val();
+            ar.password = $('#passwordac').val();
+            ar.Handshake_Time = CurentTime('-', false);
+            aes(ar, "endLogin");
+    	});
+    	 function endLogin(rs) {
+            var verData = eval('(' + rs + ')');
+            //debugger;
+            if (verData == undefined) {
+                alert(rs);
+                plus.runtime.restart();
+            }
+            else if (verData.suc) {
+                localStorage.setItem("loginstate", "true");
+                localStorage.setItem("loginPhone", verData.ReturnData.UserPhone);
+                localStorage.setItem("loginPassword", $('#passwordac').val());
+                localStorage.setItem("UserName", verData.ReturnData.UserName);
+                localStorage.setItem("UserId", verData.ReturnData.Id);
+               var loginwebview=mui.currentWebview; 
+		    		mui.openWindow({
+							url:"../index.html",
+							id:"index",
+							show:{
+								autoShow:true,//页面loaded事件发生后自动显示，默认为true
+							},
+							waiting:{
+							
+							}
+				});
+				loginwebview.close();
+            } else {
+                alert(verData.msg);
+            }
+        }
+    </script>
+</html>

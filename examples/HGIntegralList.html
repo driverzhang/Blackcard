@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>黑卡商城-积分换购</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/TouchSlide.1.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/home.css">
+		<link rel="stylesheet" type="text/css" href="../shop_iconfont/iconfont.css">
+		<link href="css/goods.css" rel="stylesheet" />
+
+		<style type="text/css">
+			a{
+				text-decoration: none;
+			}
+			.mui-table-view-cell {
+				padding-right: 45px;
+			}
+			.mui-table-view{
+				max-width: 1000px;
+				margin: auto;
+			}
+			.mui-media-body {
+				padding: 15px 0px 0px 0px;
+				padding-left: 13px;
+			}
+			
+			.mui-pull-left {
+				display: block;
+				max-width: 135px;
+			}
+			.wrap {
+				padding-bottom: 2rem;
+			}
+			
+			#HDDDMin ul li {
+				width: 0.8rem;
+				height: 0.8rem;
+			}
+			
+			.mui-iframe-wrapper {
+				position: relative;
+				height: 78rem;
+				bottom: 0px;
+			}
+			
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			ul li {
+				list-style: none;
+			}
+			
+			.view-mui-1 {
+				color: #f35a1f;
+				font-size: 16px;
+				font-weight: bold;
+				border-top: 1px solid #efefef;
+				border-bottom: 1px solid #efefef;
+			}
+			
+			.item-title-row ul li {
+				margin: 4px 0px;
+			}
+			
+			.mui-tt {
+				width: 90%;
+				height: 60px;
+				margin: 0 auto;
+				padding: 2px 2px;
+			}
+			
+			.mui-tt img {
+				width: 70px;
+				height: 46px;
+				border-right: 1px solid #f1f1f1;
+			}
+			
+			.mui-poster img {
+				float: left;
+			}
+			
+			.mui-slider-item img {
+				height: 50px;
+				width: 100%;
+			}
+			
+			.mui-slider-item img:hover {
+				transition: all ease 10s;
+			}
+			/*小广告轮播*/
+			
+			.mui-banner-z {
+				width: 100%;
+				height: 50px;
+			}
+			@media screen and (min-width:0px) and (max-width:425px) {
+				.mui-banner-z {
+					width: 100%;
+					height: 100px;
+				}
+				.center{
+					max-width:75%;
+				}
+			}
+			@media screen and (min-width:425px) and (max-width:1204px) {
+				.mui-banner-z {
+					width: 100%;
+					height: 100px;
+				}
+				.center{
+					max-width:85%;
+				}
+			}
+			
+			@media screen and (min-width:1204px) and (max-width:1604px) {
+				.mui-banner-z {
+					width: 100%;
+					height: 150px;
+				}
+				.center{
+					max-width:95%;
+				}
+				
+			}
+			
+			@media screen and (min-width:1604px) and (max-width:3400px) {
+				.mui-banner-z {
+					width: 100%;
+					height: 350px;
+				}
+				.center{
+					max-width:95%;
+				}
+			}
+			
+			.mui-text-p {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			/*广告*/
+			/* .right-mui-sapn{background:red;;}*/
+			
+			.mui-jinghuan {
+				border: 1px solid red;
+				color: red;
+				padding: 1px 4px;
+				border-radius: 4px;
+			}
+			
+			.mui-manbody {
+				margin-left: 5px;
+			}
+			
+			.wang {
+				width: 70%;
+				position: relative;
+				left: 4px;
+				margin: 4px 5px;
+				padding: 1px 1px;
+				display: block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			
+			@media only screen and (max-width:310px) {
+				.mui-poster img {
+					display: none;
+				}
+				.right-mui-sapn {
+					width: 100%;
+					margin: 0 auto;
+				}
+			}
+			
+			.listtype {
+				padding: 10px 0 10px 0;
+				border: 1px solid #D8D8D8;
+				background: #FFFFFF;
+			}
+			
+			#segmentedControl {
+				padding: 10px 0 10px 0;
+				border: 1px solid #D8D8D8;
+				background: #FFFFFF;
+			}
+			
+			#segmentedControl .mui-control-item {
+				border: 0px;
+				color: #515151;
+			}
+			
+			#segmentedControl .mui-active {
+				background: #FFFFFF;
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body id="bodyIDALL">
+
+		<header class="mui-bar mui-bar-nav" style="background:#212123;">
+			<div class="top_Out">
+				<div class="right" style="background:none;float:right;"><span class="mui-icon myico myicos iconfont">&#xe60d;</span></div>
+				<div class="right" style="background: none;float:left;color:white">
+					<span class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left"></span>
+				</div>
+			</div>
+			<div class="center" style="border-radius:30px;max-width:73%; margin:0 auto;background:#646464;position:relative;top:-35px;">
+				<div class="mui-input-row">
+					<span class="mui-icon mui-icon-speech" id="mui-icon-speech" style="color: #fff;"></span>
+					<input type="text" id="mui-input-speech" class="mui-input-speech mui-input-clear" style="margin-bottom:none;color:#fff;">
+				</div>
+			</div>
+		</header>
+		<input id="hiddenText" type="text" style="display: none;">
+
+		<div class="wrap">
+		
+			<ul class="mui-table-view mui-grid-view">
+				<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-text-left">
+	
+
+					<span class="" style="font-weight: bolder; padding-left: 6px;color:#cfa973;">积分换购</span>
+				</li>
+			</ul>
+		</div>
+		<script src="../js/jquery.1.10.2.js"></script>
+		<script src="../js/MD5S.js"></script>
+		<script src="../js/TravelTailorSafeInterface.js"></script>
+		<script type="text/javascript">
+			
+				//启用双击监听
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			var CompanyImgsrc = httppp+"/Images/ExpertImg/admin/CompanyImg/";
+
+			var Shopindex = 0;
+			var RealID = getQueryString("type");
+			function getQueryString(name) {
+							var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+							var r = window.location.search.substr(1).match(reg);
+							if(r != null) return unescape(r[2]);
+							return null;
+			}
+			function bindTypedata(){
+					var ar = new Array();
+					var ph = {
+						Collection: [
+							{ F: "remark", O: "%", P: "@@remark", V: RealID },
+						]
+					};
+					ar.Condition = ph;
+					ar.InterfaceAddress = "api/ShopInfo";
+					ar.Name = "YL_Typeinfo";
+					ar.OrderBy = "CreationDate desc";
+					ar.Index = 0;
+					ar.Size = 20;
+					ar.Handshake_Time = CurentTime('-', true);
+					aes(ar, "endToGetType");
+				
+			}
+			
+			function endToGetType(rd){
+			
+				var TData = eval("(" + rd + ")");
+				if(TData == undefined || TData.length == undefined || TData.length == 0) {} else {
+					var vhtml='<div style="margin-bottom: 0.8rem;margin-left: 1rem;cursor:pointer;" id="'+RealID+'">综合排序</div>';
+					for(var i = 0, len = TData.length; i < len; i++) {
+						vhtml+='<div style="margin-bottom: 0.8rem;margin-left: 1rem;cursor:pointer;" id="'+TData[i].Id+'">'+TData[i].TypeName+'</div>';
+					}
+					$('#typeList1').html(vhtml);
+				}
+				
+			}
+				function opinwin(id, ProPhotosId) {
+					mui.openWindow({
+					    url: "../details.html?id=" + id + "&img=" + ProPhotosId,
+					    id: "details",
+					    styles: {
+					        render:'always'
+					    },
+					    
+					    show: {
+					        
+					    },
+					    waiting: {
+					        autoShow: true, //自动显示等待框，默认为true
+					        title: '正在加载...', //等待对话框上显示的提示内容
+					        
+					    }
+					})
+				}
+			mui.plusReady(function() {
+				});
+			function getPeoplePosition() {
+
+			}
+		var isshop=false;
+			function AddShopList() {
+				if(!isshop){
+					isshop=true;
+				setTimeout(function(){
+					resetdata = false;
+					var table = document.body.querySelector('.mui-table-view');
+					var li = document.createElement('li');
+					li.className = 'gclLoding mui-table-view-cell mui-media mui-col-xs-12';
+					var lihtml = '<div style="text-align:center;">' + ishasdata + '</div>';
+					li.innerHTML = lihtml;
+					table.appendChild(li);
+					var ar = new Array();
+					var ph = {
+						Collection: [
+						{ F: "IsIntegral", O: "%", P: "@@IsIntegral", V: 1 },
+                        { F: "XMoney", O: "!=", P: "@@XMoney", V: 0 },
+						]
+					};
+					ar.Condition = ph;
+					ar.InterfaceAddress = "api/ShopInfo";
+					ar.Name = "Yl_ProductInfo";
+					ar.OrderBy = "CreationDate desc";
+					ar.Index = Shopindex;
+                    ar.Size = 5;
+					ar.Handshake_Time = CurentTime('-', true);
+					aes(ar, "endshop");
+				},50);
+				}
+			}
+			var ishasdata = "加载数据中...";
+
+		
+			var resetdata = false;
+
+			function endshop(rd) {
+				var TData = eval("(" + rd + ")");
+				var table = document.body.querySelector('.mui-table-view');
+				var gclloding = document.getElementsByClassName("gclLoding")[0];
+				table.removeChild(gclloding);
+				if(TData == undefined || TData.length == undefined || TData.length == 0) {
+					ishasdata = "没有更多的数据";
+				} else {
+					Shopindex++;
+
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					for(var i = 0, len = TData.length; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = "mui-table-view-cell mui-media mui-col-xs-12";
+						var jfhgli='';
+						jfhgli+='<a href="javascript:void(0);" onclick=opinwin("' + TData[i].Id + '","' + TData[i].ProPhotosId + '")>'
+						jfhgli+='	<img class="mui-media-object"  src="'+CompanyImgsrc+TData[i].InterImg+'_650x320.jpg">'
+						jfhgli+='	<p class="mui-h5 mui-text-left " style="color: #000; font-weight: bolder;">'+TData[i].ProName+'</p>'
+						jfhgli+='	<p class="mui-h5 mui-text-left" style="color: #fd52bb; "><span style="font-weight: bolder; letter-spacing:2px;">'+TData[i].XMoney+'元<s class="O_price" style="margin-left: 5px;color:#888888;    font-weight: normal;">原价'+TData[i].Oldprice+'元</s></span><span style="width:80px;height:20px;float:right;background-image: url(../jggimg/interger-1.png) ;background-size:100% 100%;"><span style="font-size: 10px;float: right;margin-top: 2px;color:white;margin-right: 8px;">+'+TData[i].XIntegral+'积分</span></span></p>			'			
+						jfhgli+='</a>';
+						li.innerHTML = jfhgli;
+
+						table.appendChild(li);
+					}
+				}
+				resetdata = true;
+				isshop=false;
+				plus.nativeUI.closeWaiting(); //关闭等待框
+			}
+	window.onload = function() {
+				var range = 50; //距下边界长度/单位px
+				var elemt = 500; //插入元素高度/单位px
+				var num = 1;
+				var totalheight = 0;
+				$(window).scroll(function() {
+							var srollPos = $(window).scrollTop(); //滚动条距顶部距离(页面超出窗口的高度)
+							
+							totalheight = parseFloat($(window).height()) + parseFloat(srollPos);
+							if(($(document).height() - range) <= totalheight && resetdata) {
+								AddShopList();
+							}
+				});
+		setTimeout(function() {
+				AddShopList();
+		},50);
+	}
+			
+			
+			$('.controlToList').click(function() {
+				$this = $(this);
+				var index = $this.index();
+				$('.mui-control-item').removeClass("mui-active");
+				$this.addClass("mui-active");
+				$('.listtype').eq(index).toggle();
+				$('.listtype').eq(index).siblings(".listtype").css("display", "none");
+			});
+
+			
+			
+		
+
+			
+			var Murl = "";
+			var imgsrc = "http://114.55.252.81:90/Images/ExpertImg/admin/gg/";
+			var uil = sessionStorage.getItem("ShopImg");
+
+			
+			mui.init({
+				swipeBack: true, //启用右滑关闭功能
+				
+				
+
+			});
+
+			///minajax mui ajax 请求
+			///h 请求的页面
+			///id 传参的id
+			function minajax(h, id) {
+				mui.ajax(
+					h, {
+						data: {
+							id: id,
+						},
+
+						dataType: "html",
+						type: "get",
+						success: function(data) {
+							$('#bodyIDALL').html(data);
+						},
+						error: function(xhr) {
+							console.log(xhr)
+						}
+					})
+			}
+		</script>
+
+	</body>
+
+</html>

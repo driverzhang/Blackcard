@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>商家入住</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link type="text/css" href="css/mui.min.css" rel="stylesheet">
+		<style type="text/css">
+			html {
+				font-size: 10px;
+			}
+			
+			body {
+				margin: 0;
+				padding: 0;
+				background: white;
+			}
+			
+			.subbutton {
+				position: fixed;
+				width: 100%;
+				height: 4.5rem;
+				bottom: 0;
+				z-index: 999;
+			}
+			
+			.sectionbody {
+				padding-top: 4.5rem;
+				background: white;
+				width: 100%;
+				height: auto;
+				margin-bottom: 9rem;
+			}
+			
+			.sectiondiv {
+				width: 92%;
+				height: auto;
+				margin: auto;
+				padding-top: 3.8rem;
+			}
+			
+			.section-p1 {
+				margin-left: 1rem;
+				font-size: 2rem;
+				font-family: simhei;
+				color: #6d696a;
+				margin-bottom: 0.6rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--** 导航 -->
+		<header class="mui-bar mui-bar-nav" style="background: #1e1d23;color:white;height: 4.5rem;">
+			<span class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" style="line-height: 2.6rem;font-size: 4rem;"></span>
+			<span class="mui-icon mui-icon-reply mui-pull-right"></span>
+			<h1 class="mui-title" id="proName" style="color: white;font-size: 2.2rem;line-height:4.5rem;font-family:" simHei ";">调查问卷</h1>
+		</header>
+		<section class="sectionbody">
+			<div class="sectiondiv">
+				<p class="section-p1">您的姓名</p>
+				<input type="text" style="width: 100%;height: 100%;text-align:left;background-color:#fff;border:1px solid #9a9798;border-radius:0.8rem;margin-bottom:2.5rem;font-size: 2.2rem;color: #9a9798;font-family: " simhei ";">
+				<p class="section-p1">联系方式</p>
+				<input type="text" style="width: 100%;height: 100%;text-align:left;background-color:#fff;border:1px solid #9a9798;border-radius:0.8rem;margin-bottom:2.5rem;font-size: 2.2rem;color: #9a9798;font-family: " simhei ";">
+				<p class="section-p1">兴趣爱好</p>
+				<input type="text" style="width: 100%;height: 100%;text-align:left;background-color:#fff;border:1px solid #9a9798;border-radius:0.8rem;margin-bottom:2.5rem;font-size: 2.2rem;color: #9a9798;font-family: " simhei ";">
+				<p class="section-p1">期待参加怎样的活动</p>
+				<input type="text" style="width: 100%;height: 100%;text-align:left;background-color:#fff;border:1px solid #9a9798;border-radius:0.8rem;margin-bottom:2.5rem;font-size: 2.2rem;color: #9a9798;font-family: " simhei ";">
+				<p class="section-p1">是否愿意自主发起活动</p>
+				<div style="height: auto;">
+					<div style="float: left;margin-left: 20%;">
+						<img class="Noxuanzhong" id="NoOncheck" width="20px" src="examples/img/NoSelected.png" style=" padding-top: 10px; display: none;" onclick="hiden()" />
+						<img class="Noxuanzhong" id="Oncheck" width="20px" src="examples/img/OnSelected.png" style=" padding-top: 10px;" />
+						<div style="margin-left: 25px; margin-top: -20px;"><span>是</span></div>
+					</div>
+
+					<div style="float: right ; margin-right: 30%; ">
+
+						<img class="Noxuanzhong" id="NoOncheck2" width="20px" src="examples/img/NoSelected.png" style=" padding-top: 10px;" onclick="show()" />
+						<img class="Noxuanzhong" id="Oncheck2" width="20px" src="examples/img/OnSelected.png" style=" padding-top: 10px; display: none;" />
+						<div style=" position: relative;right: -25px; margin-top: -20px;"><span>否</span></div>
+					</div>
+
+				</div>
+
+		</section>
+		<div class="subbutton">
+			<input type="submit" onclick="sub()" style="width: 92%;margin-left:4%;height: 100%;text-align: center;background-color:#cfa972;border:hidden;font-size: 2.2rem;color: white;" value="提 交">
+		</div>
+		<!--<script src="examples/js/jquery-1.8.0.min.js"></script>-->
+		
+		<script type="text/javascript">
+			var no = document.getElementById("NoOncheck");
+			var no2 = document.getElementById("NoOncheck2");
+			var on = document.getElementById("Oncheck");
+			var on2 = document.getElementById("Oncheck2");
+
+			function show() {
+				no2.style.display = "none";
+				on2.style.display = "block";
+				on.style.display = "none";
+				no.style.display = "block";
+			}
+
+			function hiden() {
+				on2.style.display = "none";
+				no2.style.display = "block";
+				on.style.display = "block";
+				no.style.display = "none";
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,476 @@
+#online {
+	background: black;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 22px;
+}
+#M-online{
+	color: white;
+}
+.photo {
+	width: 100%;
+}
+
+.p-1 {
+	float: left;
+	color: #6C6C6C;
+	width: 25%;
+    text-align: center;
+}
+
+.p1 {
+	text-align: center;
+	position: relative;
+	bottom: 8px;
+	font-size: 0.8rem;
+}
+
+
+.hr {
+    position: relative;
+    top: -64px;
+    z-index: -1;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.MSG{
+	position: relative;
+    top: -5px;
+    left: 5%;
+    
+}
+.MSGs{
+	position: relative;
+    top: 5px;
+    left: 5%;
+}
+
+#suijifenpei {
+	position: relative;
+	font-size: 14px;
+	color: #6c6c6c;
+
+	left: 5%;
+	margin-right: 5%;
+}
+#xuanhao {
+	text-align: center;
+	position: relative;
+	left: 5%;
+	
+	top: 4px;
+	background: white;
+	border: solid 1px #cfa972;
+	border-radius: 5px;
+	color: #cfa972;
+
+}
+
+#fenpei {
+	text-align: center;
+	position: relative;
+	left: 5%;
+	top: 4px;
+	background: white;
+	
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	
+}
+#selections{
+	border-bottom:2px solid #e7e7e2;
+}
+#next{
+	color:#cfa972;
+	background: white;
+	border: solid 1px #CFA972;
+	border-radius: 5px;
+	width: 4.5rem;
+	position: absolute;
+	right: 10%;
+}
+.number{
+	float: left;
+	text-align: center;
+	border: solid 1px #ccc;
+	border-radius: 5px;
+	width: 44%;
+	height: 50px;
+
+	font-size: 16px;
+	margin-top: 1rem;
+	margin-left: 5%;
+	color: #323232;
+	
+}
+
+.number1{
+	text-align: center;
+	border: solid 1px #e7e7e2;
+	border-radius: 5px;
+	width: 45%;
+	height: 40px;
+	margin-top: 1rem;
+	margin-right: 5%;
+	color: #AEAEAE;
+	
+}
+
+
+#shuru-like{
+	position: relative;
+
+	border: solid 1px #ccc;
+	border-radius: 5px;
+}
+
+
+#dingzhi {
+	position: relative;
+	left: 5%;
+	top: 8px;
+}
+
+
+#dingzhi-phone {
+	position: relative;
+	left: 5%;
+	top: 8px;
+	font-size: 14px;
+	color: #6C6C6C;
+}
+
+
+#didian {
+	position: relative;
+	left: 5%;
+	top: 10px;
+	color: #CFA972;
+}
+#juti{
+	position: relative;
+	font-size: 14px;
+	color: #6C6C6C;
+}
+#juti li{
+	position: relative;
+	left: 5%;
+}
+
+
+
+#banka{
+	position: relative;
+	left: 5%;
+	font-size: 14px;
+	font-family: "黑体";
+	color: #6C6C6C;
+}
+
+#banli {
+	position: relative;
+	font-size: 13px;
+	top: 10px;
+	left: 5%;
+	color: #6C6C6C;
+}
+
+#botton1 {
+	position: relative;
+	top: -25px;
+	float: right;
+	background-color: #cfa972;
+	color: white;
+	font-size: 14px;
+	border: 1px solid;
+	border-radius: 10px;
+	text-align: center;
+}
+
+#footer {
+	background: #e7e7e2;
+}
+
+
+
+#address {
+	background: black;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 22px;
+}
+#M-address{
+	font-family: "黑体";
+	color: white;
+}
+.MSG{
+	position: relative;
+    top: -5px;
+    left: 5%;
+    
+}
+.jianrumsg{
+	position: relative;
+    left: 5%;
+    margin-top: 0.5rem;
+}
+:-moz-placeholder
+{
+  color: #999999;
+}
+::-webkit-input-placeholder
+{
+   color: #999999;
+}
+
+.Tips{
+	position: relative;
+    left: 5%;
+    font-family: "黑体";
+}
+#jichukafei{
+	margin-left: 10%;
+}
+#shangyibu{
+	color: #d2a971;
+    height: 30px;
+    width: 33%;
+	border: solid 1px #d2a971;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+#tijiao{
+	background:#d2a971;
+	color: white;
+	margin-left: 0.5rem;
+    height: 30px;
+    width: 35%;
+	border: solid 1px #d2a971;
+	border-radius: 10px;
+}
+#person {
+	background: black;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 22px;
+}
+
+#M-person {
+	font-family: "黑体";
+	color: white;
+}
+
+
+.MSG {
+	position: relative;
+	top: -5px;
+	left: 5%;
+}
+
+.Input-text {
+	width: 100%;
+	height: 50px;
+	margin-top: 0.5rem;
+}
+
+#input-name {
+	position: relative;
+	left: 5%;
+	width: 85%;
+	height: 30px;
+	border-radius: 5px;
+	border: solid 1px;
+	color: #C6C4C4;
+}
+
+#input-phone {
+	position: relative;
+	left: 5%;
+	width: 85%;
+	height: 30px;
+	border-radius: 5px;
+	border: solid 1px;
+	color: #C6C4C4;
+}
+
+#input-IDcard {
+	position: relative;
+	left: 5%;
+	width: 85%;
+	height: 30px;
+	border-radius: 5px;
+	border: solid 1px;
+	color: #C6C4C4;
+}
+
+#input-password {
+	position: relative;
+	left: 5%;
+	width: 85%;
+	height: 30px;
+	border-radius: 5px;
+	border: solid 1px;
+	color: #C6C4C4;
+}
+
+#input-password-sure {
+	position: relative;
+	left: 5%;
+	width: 85%;
+	height: 30px;
+	border-radius: 5px;
+	border: solid 1px;
+	color: #C6C4C4;
+}
+
+#banli {
+	position: relative;
+	font-size: 13px;
+	top: 10px;
+	left: 5%;
+	color: #6C6C6C;
+}
+
+#botton1 {
+	position: relative;
+	top: -25px;
+	float: right;
+	background-color: #cfa972;
+	color: white;
+	font-size: 14px;
+	border: 1px solid;
+	border-radius: 10px;
+	text-align: center;
+}
+
+#footer {
+	background: #e7e7e2;
+	position: fixed;
+	z-index: 10;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+#tankuang {
+	display: none;
+	position: absolute;
+	top: 200px;
+	left: 50%;
+	top: 50%;
+	z-index: 3;
+	background: white;
+	transform: translate(-50%, -50%);
+	border-radius: 15px;
+	border: solid 1px whitesmoke;
+}
+
+#shuru {
+	font-size: 15px;
+	font-family: "黑体";
+	position: relative;
+	top: 8px;
+}
+
+#jianru {
+	position: relative;
+	left: 5px;
+	text-align: center;
+	height: 30px;
+}
+
+#tishi {
+	position: relative;
+	left: 5px;
+	font-size: 12px;
+	color: #aeaeae;
+	margin: 1rem;
+}
+
+#jiaoyan {
+	position: relative;
+	left: 23px;
+	border: solid 1px;
+	border-radius: 5px;
+	color: #aeaeae;
+	width: 110px;
+	height: 35px;
+}
+
+#getonce {
+	position: relative;
+	left: 33px;
+	background: #e3b265;
+	color: white;
+	border: solid 1px;
+	border-radius: 5px;
+	height: 35px;
+	width: 100px;
+}
+
+#two-botton {
+	text-align: center;
+	margin-top: -0.7rem;
+}
+
+#colse {
+	width: 100px;
+	color: black;
+	border: solid 1px #aeaeae;
+	border-radius: 5px;
+	height: 35px;
+	background: white;
+	position: relative;
+	left: -10px;
+	top: 5px;
+}
+
+#sure {
+	width: 100px;
+	background: #e3b265;
+	height: 35px;
+	border: solid 1px;
+	border-radius: 5px;
+	position: relative;
+	left: 10px;
+	color: white;
+	top: 5px;
+}
+
+.hengxian {
+	color: #aeaeae;
+}
+
+#over {
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	/*设置背景色透明度,1为完全不透明,IE需要使用filter:alpha(opacity=80);*/
+	filter: alpha(opacity=80);
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: silver;
+}
+::-webkit-input-placeholder {
+font-size: 12px;
+} 
+
+:-moz-placeholder {
+font-size: 12px;
+} 
+
+::-moz-placeholder { 
+font-size: 12px;
+} 
+
+:-ms-input-placeholder {
+font-size: 12px;
+} 

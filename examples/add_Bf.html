@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>添加黑友</title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+	<style>
+		.bar_nav_bg{background: #ff6823!important;box-shadow: 0 1px 6px transparent;}
+    	.bar_nav_bg .mui-title{
+    		color: #fff;
+    		letter-spacing: 1px;
+    		font-size: 14px;
+    	}
+    	.mui-search .mui-placeholder{
+    		font-size: 14px;
+    		
+    	}
+    	.mui-input-row{
+    		margin-top: 5px;
+    	}
+    	.mui_content{
+    		padding: 0px 10px;
+    		line-height: 10px;
+    		text-align: center;
+    	}
+    	.add_bf_line{
+    		display: inline-block;
+    		width: 50px;
+    		height: 1px;
+    		background: #ccc;
+    		
+    	}
+    	.add_bf_text{
+    		font-size: 12px;
+    		margin: 0px 5px;
+    	}
+    	.add_bf_des{
+    		line-height: 18px;
+    		text-align: left!important;
+    		font-size: 12px;
+    	}
+    	.mui-content{
+    		background: #fff;
+    	}
+    	.mui_main input[type=search]{
+    		border: 1px solid #ff6823;
+    		background: #fff;
+    	}
+	</style>
+</head>
+<body style="background: #fff;">
+<header class="mui-bar mui-bar-nav bar_nav_bg">
+	<a href="" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color:#fff;"></a>
+	<h1 class="mui-title">添加黑友</h1>	
+</header>
+<div class="mui-content mui_main">
+	<div class="mui-input-row mui-search">
+		<input type="search" class="mui-input-clear" placeholder="手机号搜索">
+	</div>
+	<div class="mui_content">
+		<p><span class="add_bf_line"></span><span class="add_bf_text">邀请说明</span><span class="add_bf_line"></span></p>
+		<p class="add_bf_des">邀请说明内容邀请说明内容邀请说明内容邀请说明内容邀请说明内容邀请说明内容邀请说明内容邀请说明内容</p>
+	</div>
+
+</div>
+</body>
+<script language="JavaScript" charset="utf-8">
+	//返回按钮
+	$('.mui-pull-left').on('tap',function(){
+		history.go(-1);
+	})
+</script>
+</html>

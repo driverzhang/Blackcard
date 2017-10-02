@@ -1,0 +1,454 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		html {
+			font-size: 10px;
+		}
+		
+		body {
+			background: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
+		
+		p {
+			margin: 0;
+			font-size: 1.4rem;
+		}
+		
+		.main {
+			clear: both;
+			width: 100%;
+			height: auto;
+			padding: 3.8rem 0 4.5rem 0;
+		}
+		
+		.main-list {
+			width: 100%;
+			height: auto;
+			margin-top: 1rem;
+			padding-bottom: 1rem;
+			background: white;
+			overflow: hidden;
+		}
+		
+		.main-list1 {
+			width: 100%;
+			height: 3.8rem;
+			overflow: hidden;
+			margin-left: 0.4rem;
+			margin-top: 1.3rem;
+			margin-bottom: 2.8rem;
+		}
+		
+		.ml1 {
+			float: left;
+			width: 3.8rem;
+			height: 3.8rem;
+			padding: 0.8rem;
+		}
+		
+		.ml2 {
+			float: left;
+			width: 3.8rem;
+			height: 3.8rem;
+			background-size: 100% 100%;
+			border-radius: 3.8rem;
+			overflow: hidden;
+		}
+		
+		.ml3 {
+			float: left;
+			width: auto;
+			height: 3.8rem;
+			overflow: hidden;
+			line-height: 3.8rem;
+			margin-left: 0.5rem;
+		}
+		
+		.main-list2 {
+			width: 100%;
+			height: 6rem;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+			margin-left: 0.5rem;
+			overflow: hidden;
+		}
+		
+		.ml2-1 {
+			float: left;
+			width: 5.5rem;
+			height: 6rem;
+			background-size: 100% 100%;
+		}
+		
+		.ml2-2 {
+			float: left;
+			width: 63%;
+			height: 6rem;
+			overflow: hidden;
+		}
+		
+		.ml2-21 {
+			width: 6rem;
+			height: 2rem;
+			margin-top: 1rem;
+			margin-left: 1rem;
+			border: 0.8px solid #a0a0a0;
+			border-radius: 0.2rem;
+		}
+		
+		.main-listend {
+			width: 100%;
+			height: auto;
+			margin-top: 1rem;
+			background: white;
+			overflow: hidden;
+		}
+		
+		.main-listdp {
+			width: auto;
+			height: auto;
+			margin-left: 4.3rem;
+			margin-right: 0.8rem;
+		}
+		.main-listdd{
+			width: auto;
+			height: auto;
+			text-align: right;
+			margin-left: 4.3rem;
+			margin-right: 0.8rem;
+			overflow: hidden;
+		}
+		
+		.main-bottom {
+			position: fixed;
+			bottom: 0rem;
+			left: 0rem;
+			right: 0rem;
+			width: 100%;
+			height: 4.5rem;
+			background: white;
+		}
+		
+		.main-bottom3 {
+			width: 35%;
+			height: 100%;
+			float: right;
+			background: #cfa972;
+			color: white;
+			font-size: 2rem;
+			text-align: center;
+			line-height: 4.5rem;
+		}
+		
+		.main-bottom1 {
+			float: left;
+			width: 65%;
+			height: 100%;
+		}
+		
+		.main-bottom1l {
+			float: left;
+			width: 35%;
+			height: 100%;
+			line-height: 4.5rem;
+			overflow: hidden;
+		}
+		
+		.main-listc {
+			float: right;
+			width: 65%;
+			height: 100%;
+			overflow: hidden;
+		}
+		
+		.main-bottom1l2 {
+			float: left;
+			width: auto;
+			height: 100%;
+		}
+		
+		input[type="checkbox"] {
+			-webkit-appearance: none;
+			outline: none;
+		}
+		
+		input.check {
+			background: url(img/icon_radio3.png) no-repeat center left;
+			background-size: 100% 100%;
+			height: 1.5rem;
+			width: 1.5rem;
+		}
+		
+		input.check:checked {
+			background: url(img/icon_radio4.png) no-repeat center left;
+			background-size: 1.5rem 1.5rem;
+		}
+		
+		input.goodsCheck:checked {
+			background: url(img/icon_radio4.png) no-repeat center left;
+			background-size: 1.5rem 1.5rem;
+		}
+		
+		input.check:checked {
+			background: url(img/icon_radio4.png) no-repeat center left;
+			background-size: 100% 100%;
+		}
+		
+		.checked {
+			background: url(img/icon_radio4.png) no-repeat left center;
+			background-size: 100% 100%;
+			height: 1.5rem;
+			width: 1.5rem;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: black;">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left mui-action-back" style="color: white;"></a>
+			<h1 class="mui-title" style="color: white;">确认订单</h1>
+			<a class=" mui-pull-right" style="line-height: 44px;"><i class="icon iconfont icon-sousuo-sousuo" style=" font-size: 18px;"></i></a>
+		</header>
+		<div class="main">
+			<div class="main-list">
+				<div class="main-list1">
+					<div class="ml1">
+						<input type="checkbox" class="check goods-check shopCheck"></input>
+					</div>
+					<img class="ml2" src="images/gwclogo.png">
+					<div class="ml3">
+						<p style="font-size: 1.8rem;">陈氏春饼私房菜</p>
+					</div>
+				</div>
+				<div class="main-list2">
+					<div class="ml1" style="margin-top:1.1rem;">
+						<input type="checkbox" class="check goods-check goodsCheck"></input>
+					</div>
+					<div class="ml2-1" style="background-image: url(images/gwcbkimg.png);"></div>
+					<div class="ml2-2">
+						<p>
+							<b style="margin-left: 1rem;font-size: 1.5rem;">酸辣土豆丝</b>
+							<b style="float:right;">¥<span class="qian">33</span >+<span class="jifeng">663</span>积分</b>
+						</p>
+						<div class="ml2-21">
+							<span class="minus" style="float:left;width: 1.48rem;height: 100%;text-align: center;">-</span>
+							<input class="num" type="text" style="float:left;width: 2.8rem;height: 100%;border:hidden;border-radius:0;border-left: 0.8px solid #a0a0a0;border-right: 0.8px solid #a0a0a0;padding: 0;text-align: center;margin: 0;" value="1"></input>
+							<span class="plus" style="float:right;width: 1.48rem;height: 100%;text-align: center;line-height: 2.1rem;">+</span>
+						</div>
+					</div>
+				</div>
+				<div class="main-list2">
+					<div class="ml1" style="margin-top:1.1rem;">
+						<input type="checkbox" class="check goods-check goodsCheck"></input>
+					</div>
+					<div class="ml2-1" style="background-image: url(images/gwcbkimg.png);"></div>
+					<div class="ml2-2">
+						<p>
+							<b style="margin-left: 1rem;font-size: 1.5rem;">酸辣土豆丝</b>
+							<b style="float:right;">¥<span class="qian">33</span >+<span class="jifeng">663</span>积分</b>
+						</p>
+						<div class="ml2-21">
+							<span class="minus" style="float:left;width: 1.48rem;height: 100%;text-align: center;">-</span>
+							<input class="num" type="text" style="float:left;width: 2.8rem;height: 100%;border:hidden;border-radius:0;border-left: 0.8px solid #a0a0a0;border-right: 0.8px solid #a0a0a0;padding: 0;text-align: center;margin: 0;"value="1"/>
+							<span class="plus" style="float:right;width: 1.48rem;height: 100%;text-align: center;line-height: 2.1rem;">+</span>
+						</div>
+					</div>
+				</div>
+				<div class="main-listdp">
+					<p>营业时间：10:00-12:30</p>
+					<p>新疆维吾尔自治区哈萨克自治州伊宁市北京路305号</p>
+				</div>
+				<div class="main-listdd">本店总计：￥<span class="ShopTotal">0.00</span>+<span class="ShopJ">0</span>积分</div>
+			</div>
+
+			<div class="main-list">
+				<div class="main-list1">
+					<div class="ml1">
+						<input type="checkbox" class="check goods-check shopCheck"></input>
+					</div>
+					<img class="ml2" src="images/gwclogo.png">
+					<div class="ml3">
+						<p style="font-size: 1.8rem;">陈氏春饼私房菜</p>
+					</div>
+				</div>
+				<div class="main-list2">
+					<div class="ml1" style="margin-top:1.1rem;">
+						<input type="checkbox" class="check goods-check goodsCheck"></input>
+					</div>
+					<div class="ml2-1" style="background-image: url(images/gwcbkimg.png);"></div>
+					<div class="ml2-2">
+						<p>
+							<b style="margin-left: 1rem;font-size: 1.5rem;">酸辣土豆丝</b>
+							<b style="float:right;">¥<span class="qian">33</span >+<span class="jifeng">663</span>积分</b>
+						</p>
+						<div class="ml2-21">
+							<span class="minus" style="float:left;width: 1.48rem;height: 100%;text-align: center;">-</span>
+							<input class="num" type="text" style="float:left;width: 2.8rem;height: 100%;border:hidden;border-radius:0;border-left: 0.8px solid #a0a0a0;border-right: 0.8px solid #a0a0a0;padding: 0;text-align: center;margin: 0;" value="1"></input>
+							<span class="plus" style="float:right;width: 1.48rem;height: 100%;text-align: center;line-height: 2.1rem;">+</span>
+						</div>
+					</div>
+				</div>
+				<div class="main-list2">
+					<div class="ml1" style="margin-top:1.1rem;">
+						<input type="checkbox" class="check goods-check goodsCheck"></input>
+					</div>
+					<div class="ml2-1" style="background-image: url(images/gwcbkimg.png);"></div>
+					<div class="ml2-2">
+						<p>
+							<b style="margin-left: 1rem;font-size: 1.5rem;">酸辣土豆丝</b>
+							<b style="float:right;">¥<span class="qian">33</span >+<span class="jifeng">663</span>积分</b>
+						</p>
+						<div class="ml2-21">
+							<span class="minus" style="float:left;width: 1.48rem;height: 100%;text-align: center;">-</span>
+							<input class="num" type="text" style="float:left;width: 2.8rem;height: 100%;border:hidden;border-radius:0;border-left: 0.8px solid #a0a0a0;border-right: 0.8px solid #a0a0a0;padding: 0;text-align: center;margin: 0;"value="1"></input>
+							<span class="plus" style="float:right;width: 1.48rem;height: 100%;text-align: center;line-height: 2.1rem;">+</span>
+						</div>
+					</div>
+				</div>
+				<div class="main-listdp">
+					<p>营业时间：10:00-12:30</p>
+					<p>新疆维吾尔自治区哈萨克自治州伊宁市北京路305号</p>
+				</div>
+				<div class="main-listdd">本店总计：￥<span class="ShopTotal">0.00</span>+<span class="ShopJ">0</span>积分</div>
+			</div>
+
+			<div class="main-listend">
+				<p style="margin-top:1rem;margin-left:0.5rem;font-size: 2.5rem;color: #da4c3c;">使用说明</p>
+				<p style="margin-top:1rem;margin-left:0.5rem;font-size: 1.5rem;color: #da4c3c;">1.支付积分享受该产品，现金部分到店支付</p>
+				<p style="margin-top:0.5rem;margin-left:0.5rem;font-size: 1.5rem;color: #da4c3c;">2.积分支付后不可退换</p>
+				<p style="margin-top:0.5rem;margin-left:0.5rem;margin-bottom:1rem;font-size: 1.5rem;color: #da4c3c;">3.积分兑换后有效期一个月</p>
+			</div>
+		</div>
+		<div class="main-bottom">
+			<div class="main-bottom1">
+				<div class="main-bottom1l">
+					<input type="checkbox" class="check goods-check" id="AllCheck" style="margin-top:1.5rem ; margin-left: 1rem;float:left;">
+					<span style="font-size: 1.5rem;margin-left: 0.5rem;">全选</span>
+				</div>
+				<div class="main-listc">
+					<p style="margin: 0;padding: 0; line-height: 4.5rem;text-align: center;color:black;">
+						合计:￥
+						<span id="AllTotal" style="font-size: 1.4rem;color:#cfa972">0.00</span>+
+						<span id="FTotal" style="font-size: 1.4rem;color:#cfa972">0</span>分
+					</p>
+				</div>
+			</div>
+			<div class="main-bottom3">确认支付</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				// 数量减
+				$(".minus").click(function() {
+					var t = $(this).parent().find('.num');
+					t.val(parseInt(t.val()) - 1);
+					if(t.val() <= 1) {
+						//debugger;
+						t.val(1);
+					}
+					TotalPrice();
+				});
+				// 数量加
+				$(".plus").click(function() {
+					var t = $(this).parent().find('.num');
+					t.val(parseInt(t.val()) + 1);
+					//debugger;
+					if(t.val() <= 1) {
+						//debugger;
+						t.val(1);
+					}
+					TotalPrice();
+				});
+				/******------------分割线-----------------******/
+				// 点击商品按钮
+				$(".goodsCheck").click(function() {
+					var goods = $(this).closest(".main-list").find(".goodsCheck"); //获取本店铺的所有商品
+					var goodsC = $(this).closest(".main-list").find(".goodsCheck:checked"); //获取本店铺所有被选中的商品
+					var Shops = $(this).closest(".main-list").find(".shopCheck"); //获取本店铺的全选按钮
+					if(goods.length == goodsC.length) { //如果选中的商品等于所有商品
+						Shops.prop('checked', true); //店铺全选按钮被选中
+						if($(".shopCheck").length == $(".shopCheck:checked").length) { //如果店铺被选中的数量等于所有店铺的数量
+							$("#AllCheck").prop('checked', true); //全选按钮被选中
+							TotalPrice();
+						} else {
+							$("#AllCheck").prop('checked', false); //else全选按钮不被选中 
+							TotalPrice();
+						}
+					} else { //如果选中的商品不等于所有商品
+						Shops.prop('checked', false); //店铺全选按钮不被选中
+						$("#AllCheck").prop('checked', false); //全选按钮也不被选中
+						// 计算
+						TotalPrice();
+						// 计算
+					}
+				});
+				// 点击店铺按钮
+				$(".shopCheck").click(function() {
+					if($(this).prop("checked") == true) { //如果店铺按钮被选中
+						$(this).parents(".main-list").find(".goods-check").prop('checked', true); //店铺内的所有商品按钮也被选中
+						if($(".shopCheck").length == $(".shopCheck:checked").length) { //如果店铺被选中的数量等于所有店铺的数量
+							$("#AllCheck").prop('checked', true); //全选按钮被选中
+							TotalPrice();
+						} else {
+							$("#AllCheck").prop('checked', false); //else全选按钮不被选中
+							TotalPrice();
+						}
+					} else { //如果店铺按钮不被选中
+						$(this).parents(".main-list").find(".goods-check").prop('checked', false); //店铺内的所有商品也不被全选
+						$("#AllCheck").prop('checked', false); //全选按钮也不被选中
+						TotalPrice();
+					}
+				});
+				// 点击全选按钮
+				$("#AllCheck").click(function() {
+					if($(this).prop("checked") == true) { //如果全选按钮被选中
+						$(".goods-check").prop('checked', true); //所有按钮都被选中
+						TotalPrice();
+					} else {
+						$(".goods-check").prop('checked', false); //else所有按钮不全选
+						TotalPrice();
+					}
+					$(".shopCheck").change(); //执行店铺全选的操作
+				});
+
+				function TotalPrice() {
+					var allprice = 0; //总价
+					var allfprice = 0;//总分
+					$(".main-list").each(function() { //循环每个店铺
+						var oprice = 0; //店铺总价
+						var foprice = 0;//店铺总积分
+						$(this).find(".goodsCheck").each(function() { //循环店铺里面的商品
+							if($(this).is(":checked")) { //如果该商品被选中
+								var num = parseInt($(this).parents(".main-list2").find(".num").val()); //得到商品的数量
+								var price = parseFloat($(this).parents(".main-list2").find(".qian").text()); //得到商品的单价
+								var jfeng = parseFloat($(this).parents(".main-list2").find(".jifeng").text());//得到商品的积分
+								var total = price * num; //计算单个商品的总价
+								var alljfeng = jfeng * num;//总积分
+								oprice += total; //计算该店铺的总价
+								foprice += alljfeng; //计算该店铺的总积分
+							}
+							$(this).closest(".main-list").find(".ShopTotal").text(oprice.toFixed(2)); //显示被选中商品的店铺总价
+							$(this).closest(".main-list").find(".ShopJ").text(foprice);
+						});
+						var oneprice = parseFloat($(this).find(".ShopTotal").text()); //得到每个店铺的总价
+						allprice += oneprice; //计算所有店铺的总价
+						var foneprice = parseFloat($(this).find(".ShopJ").text()); //得到每个店铺的总积分
+						allfprice += foneprice;
+					});
+					$("#AllTotal").text(allprice.toFixed(2)); //输出全部总价
+					$("#FTotal").text(allfprice);//输出全部的总分
+				}
+			});
+		</script>
+	</body>
+
+</html>

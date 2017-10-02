@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link type="text/css" href="../css/mui.min.css" rel="stylesheet">
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/TouchSlide.1.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css">
+		<link href="../css/goods.css" rel="stylesheet" />
+		<style>
+				.mui-table-view1{
+					    position: relative;
+					    margin-top: 0;
+					    margin-bottom: 0;
+					    padding-left: 0;
+					    list-style: none;
+					    background-color: #fff;
+				}
+			body {
+				font-family: "微软雅黑";
+				margin: 0px;
+				padding: 0px;
+			}
+			/*头部*/
+			
+			.mui-content {
+				margin: auto;
+			}
+			/*店铺名称*/
+			
+			.mui-page-content {
+				padding: 12px 0px;
+				background: #FFFFFF;
+			}
+			
+			.mui-page-content span {
+				line-height: 40px;
+				font-size: 20px;
+				font-weight: 700;
+				padding-right: 15px;
+				letter-spacing: 4px
+			}
+			
+			.mui-icon-location-filled {
+				color: #008000
+			}
+			/*定位图标*/
+			
+			.mui-icon-phone-filled {
+				color: #ea6516;
+				font-size: 30px;
+			}
+			/*电话图标*/
+			
+			#segmentedControl {
+				border: 1px solid red;
+			}
+			
+			#segmentedControl .mui-control-item {
+				color: red;
+				border-left: 1px solid red;
+			}
+			
+			#segmentedControl .mui-active {
+				color: #fff;
+				background-color: red;
+			}
+			/*优惠套餐响应*/
+			
+			@media all and (max-width:375px) {
+				header .mui-bar,
+				.mui-bar-nav {
+					background: #ff5000;
+					font-weight: 400;
+				}
+				header .mui-title {
+					font-weight: 800;
+					letter-spacing: 4px;
+					color: #FFFFFF;
+				}
+				.pic {
+					margin-right: 10px;
+				}
+				.pic img {
+					width: 90px;
+				}
+				.xq h4 {
+					font-size: 14px;
+					;
+				}
+				.xq h5 {
+					font-size: 12px;
+					padding: 0px;
+					;
+				}
+				.xq p {
+					font-size: 12px;
+					padding-top: 0px;
+					;
+				}
+			}
+			
+			@media all and (min-width:376px) {
+				header .mui-bar,
+				.mui-bar-nav {
+					background: #ff5000;
+					font-weight: 400;
+				}
+				header .mui-title {
+					font-weight: bolder;
+					letter-spacing: 4px;
+					color: #FFFFFF;
+				}
+				.pic {
+					margin-right: 10px;
+				}
+				.pic img {
+					width: 120px;
+				}
+				.xq h4 {
+					font-size: 18px;
+				}
+				.xq h5 {
+					font-size: 16px;
+					padding: 4px 0px;
+				}
+				.xq p {
+					font-size: 16px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #212123;">
+			<button class="mui-btn mui-action-back mui-btn-link mui-btn-nav mui-pull-left">
+		<span class="mui-icon mui-icon-left-nav " style="color: #FFFFFF;"></span>
+	</button>
+			<button class="mui-btn mui-btn-link mui-btn-nav mui-pull-right " style="margin-right: 4px;">
+		<span class="iconfont icon-share01" style="color: #FFFFFF;font-size: 20px;"></span>
+	</button>
+			<button class="mui-btn mui-btn-link mui-btn-nav mui-pull-right " style="margin-right:0px; ;">
+		<span class="iconfont icon-collect" style="color: #FFFFFF; font-size: 20px;;"></span>
+	</button>
+			<h1 class="mui-title" id="ShopName"></h1>
+		</header>
+		<div class="mui-content">
+			<!--轮播图-开始  -->
+			<div class="wrap">
+				<section id="banner">
+					<div id="slideBox" class="slideBox">
+						<div class="bd">
+							<ul id="BoxImg">
+
+							</ul>
+						</div>
+						<div class="hd" style="display: none;">
+							<ul></ul>
+						</div>
+					</div>
+				</section>
+			</div>
+			<!--轮播图-结束 -->
+			<!--店铺名  开始
+        <div class="mui-page-content" style="">
+
+            <img  src="images/tuijian.png" width="110px" height="40px">
+           <span class="mui-media-object mui-pull-left "  style="">肯德基</span>
+        </div>-->
+			<ul class="mui-table-view ">
+				<li class="mui-table-view-cell" style=" color: #000000; ">
+					<b style="letter-spacing:2px;" id="ShopName1"></b>
+					<span class=" mui-pull-right ">
+				  		<span class="iconfont icon-xingji" style="color: #fa952f;"></span>
+					<span class="iconfont icon-xingji" style="color: #fa952f;"></span>
+					<span class="iconfont icon-xingji" style="color: #fa952f;"></span>
+					<span class="iconfont icon-xingji" style="color: #fa952f;"></span>
+					<span class="iconfont icon-xingji" style="color: #fa952f;"></span> <span class="mui-h5">人均：￥40</span>
+					</span>
+					<div class="mui-media-body mui-row" style="margin-top: 10px;">
+						<div class=" mui-col-sm-7 mui-col-xs-7 ">
+							<span class="mui-h5" id="ShopInfo"></span>
+						</div>
+						<div class=" mui-col-sm-5 mui-col-xs-5 mui-text-left mui-text-right">
+							<!--><button class="mui-btn mui-btn-warning" style="display:none;">线下买单</button></-->
+						</div>
+					</div>
+				</li>
+			</ul>
+			<!--店铺地址  开始-->
+			<ul class="mui-table-view ">
+				<li class="mui-table-view-cell" style="font-size: 14px; ">
+					<span class="iconfont icon-dizhi" style=" font-size: 18px; color:#adadad;margin-right: 4px;"></span><span id="address" onclick="MAPdaoh()"></span>
+					<span class="mui-icon mui-icon-phone-filled mui-pull-right mui-text-right " style=" font-size: 20px; "></span>
+					<span class="mui-h5 mui-pull-right" style="padding-right:12px;  " id="jl"></span>
+				</li>
+			</ul>
+
+			<ul class="mui-table-view1">
+				<li class="mui-table-view-cell mui-media">
+					<div class="mui-media-body" style=" font-size: 14px;">
+						<span class="iconfont icon-shouzhi" style="font-size: 18px; color: #ff5000; "></span>
+						<b>优惠产品</b>
+					</div>
+				</li>
+			
+			
+			</ul>
+			
+</div>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DQm1huuHqW6SHaYpEnrVMtE4fDmDrxVH"></script>
+<script src="../js/MD5S.js"></script>
+<script src="../js/TravelTailorSafeInterface.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+var Shopindex = 0;
+var ShopLng="";
+var SHopLAT="";
+var Alng="";
+var Alat="";
+var RealID = getQueryString("id")==undefined?webview.Id:getQueryString("id");
+var uil = "";
+var CompanyImgsrc = "http://app.fuyou.sc.cn/Images/ExpertImg/admin/CompanyImg/";
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+					}
+			mui.init({
+				swipeBack:true ,//启用右滑关闭功能
+				beforeback: function() {
+							//获得列表界面的webview
+							//触发列表界面的自定义事件（refresh）,从而进行数据刷新
+							//mui.fire(list, 'refresh');
+							//返回true，继续页面关闭逻辑
+							return true;
+						},
+			});
+			var slider = mui("#slider");
+			slider.slider({
+				interval: 5000
+			});
+			
+			
+			function AddShopList() {
+				resetdata = false;
+
+				var table = document.body.querySelector('.mui-table-view1');
+				var li = document.createElement('li');
+				li.className = 'gclLoding mui-table-view-cell mui-media';
+				var lihtml = '<div style="text-align:center;">' + ishasdata + '</div>';
+				li.innerHTML = lihtml;
+				table.appendChild(li);
+				var ar = new Array();
+				var ph = {
+					Collection: []
+				};
+				ar.Condition = ph;
+				ar.InterfaceAddress = "api/ShopInfo";
+				ar.Name = "Yl_ProductInfo";
+				ar.OrderBy = "CreationDate desc";
+				ar.Index = 0 + Shopindex;
+				ar.Size = 8;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar, "endshop");
+			}
+			var ishasdata = "加载数据中...";
+			var resetdata = false;
+
+			function endshop(rd) {
+				var TData = eval("(" + rd + ")");
+				var table = document.body.querySelector('.mui-table-view1');
+				var gclloding = document.getElementsByClassName("gclLoding")[0];
+				table.removeChild(gclloding);
+				if(TData == undefined || TData.length == undefined || TData.length == 0) {
+					ishasdata = "没有更多的数据";
+				} else {
+					Shopindex++;
+
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					for(var i = 0, len = TData.length; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell mui-media mui-media-icon';
+					
+				var lihtml = '<a style="margin-right:-50px; " class="mui-navigate-right"  onclick=opinwin("' + TData[i].Id + '","' + TData[i].ProPhotosId + '")>';
+				lihtml += '<div class="mui-media-body mui-row"><div class=" mui-pull-left " style="margin-right: 8px;">';
+				lihtml += '<img src="' + CompanyImgsrc + TData[i].Id + '_80x80.jpg" width="90px">';
+				lihtml += '</div><div class="mui-text-left"><h4 style="font-size: 16px;">' + TData[i].ProName+'</h4>';
+				lihtml += '<h5 style=" ">' + TData[i].ProDisInfo + '</h5>';
+				lihtml += '<p class="jiage" style="font-size:12px;"><span class="jiage_color">' + TData[i].proprice + '</span><s>原' + TData[i].Oldprice + '</s></p></div>';
+				
+					
+						li.innerHTML = lihtml;
+
+						table.appendChild(li);
+					}
+				}
+				resetdata = true;
+				
+					//关闭等待框
+					plus.nativeUI.closeWaiting();
+			}
+			//返回按钮
+			
+	///img轮播
+			function opinwin(id, ProPhotosId) {
+				console.log(id);
+				mui.openWindow({
+					url: "details.html?id=" + id + "&img=" + ProPhotosId,createNew:true,
+					id: "shopDetails",
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						duration: 700,
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true  
+						title: '正在加载...', //等待对话框上显示的提示内容  
+
+					}
+				})
+			}
+			function BindImg() {
+				if(uil == "" || uil == null || uil == undefined) {
+					var ph = {
+						Collection: [
+							{ F: "KeyId", O: "%", P: "@@KeyId", V: RealID },
+							
+						]
+					};
+					var ar = new Array();
+					ar.Condition = ph;
+					ar.InterfaceAddress = "api/ShopInfo";
+					ar.Name = "YL_Imgs";
+					ar.OrderBy = "CreationDate desc";
+					ar.Index = 0;
+					ar.Size = 3;
+					ar.Handshake_Time = CurentTime('-', true);
+
+					aes(ar, "endImg");
+				} else {
+					$('#BoxImg').html(uil);
+					TouchSlide({
+						slideCell: "#slideBox",
+						titCell: ".hd ul",
+						mainCell: ".bd ul",
+						effect: "leftLoop",
+						delayTime: "1100",
+						interTime: "3000",
+						autoPage: true,
+						autoPlay: true
+					});
+					
+
+				}
+				
+			}
+			function endImg(rd) {
+				uil = "";
+				var TData = eval("(" + rd + ")");
+				for(var i = 0; i < TData.length; i++) {
+						uil += '<li>';
+						uil += '<a href="' + TData[i].Href + ';"><img src="' + CompanyImgsrc + TData[i].Id + '_750x360.jpg" width="100%" alt=""></a>';
+						uil += '</li>';
+				}
+				$('#BoxImg').html(uil);
+				
+				TouchSlide({
+					slideCell: "#slideBox",
+					titCell: ".hd ul",
+					mainCell: ".bd ul",
+					effect: "leftLoop",
+					delayTime: "1100",
+					interTime: "3000",
+					autoPage: true,
+					autoPlay: true
+				});
+				TouchSlide({
+					slideCell: "#slideBox1",
+					titCell: ".hd ul",
+					mainCell: ".bd ul",
+					effect: "leftLoop",
+					delayTime: "1100",
+					interTime: "3000",
+					autoPage: true,
+					autoPlay: true
+				});
+
+				$('#activityHd ul').attr("style", "display: none;")
+			}
+			 mui.plusReady(function() {
+					//显示当前页面
+					mui.currentWebview.show();
+				});
+		///img轮播结束
+		$(document).ready(function(){
+			AddShopList();
+			 BindProData();
+			 BindImg();
+			
+		})
+
+
+function MAPdaoh(){
+		if(ShopLng==""||SHopLAT==""||Alng==""||Alat==""){alert("正在获取您的位置，请稍后再试!");}
+		else{
+			mui.openWindow({
+					url: "MapDaoH.html?ShopLng="+ShopLng+"&SHopLAT="+SHopLAT+"&Alat="+Alat+"&Alng="+Alng+"",
+					id: "MapDaoH",createNew:true,
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true   
+						duration: 900,
+					},
+					
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true  
+						title: '正在加载...', //等待对话框上显示的提示内容  
+
+					}
+				})
+		
+		}
+	}
+			function getPeoplePosition() {
+				var vhtml = '<div id="allmap"  style="display:none;"></div>';
+				$("body").append(vhtml);
+				var map = new BMap.Map("allmap");
+				var point = new BMap.Point(104.65423, 28.7696748);
+				map.centerAndZoom(point, 51);
+				var geolocation = new BMap.Geolocation();
+				geolocation.getCurrentPosition(function(r) {
+					if(this.getStatus() == BMAP_STATUS_SUCCESS) {
+						Alng=r.point.lng;
+						Alat=r.point.lat;
+						 sessionStorage.setItem("lng",r.point.lng);
+						 sessionStorage.setItem("lat",r.point.lat);
+						var pointA = new BMap.Point(r.point.lng,r.point.lat);
+						var pointB = new BMap.Point(ShopLng,SHopLAT);
+						var jl = map.getDistance(pointA,pointB).toFixed(2);
+						var jlstring="";
+						if(jl/1000>1){
+							var jlaa=Math.round(parseFloat(jl/1000)*100)/100;
+							jlstring=jlaa+"km";
+						}else{
+							jlstring=jl+"m";
+						}
+						$("#jl").html(jlstring);
+						Alng=r.point.lng;
+						Alat=r.point.lat;
+						
+					} else {
+						alert('failed' + this.getStatus());
+					}
+				}, { enableHighAccuracy: true })
+			}
+			function BindProData() {
+				var ar = new Array();
+				var ph = {
+					Collection: [
+						{ F: "Id", O: "=", P: "@@Id", V: RealID },
+					]
+				};
+				ar.Condition = ph;
+				ar.InterfaceAddress = "api/ShopInfo";
+				ar.Name = "YL_Stop";
+				ar.OrderBy = "CreationDate desc";
+				ar.Index = 0;
+				ar.Size = 1;
+				ar.Handshake_Time = CurentTime('-', true);
+				aes(ar, "endBindPro");
+
+			}
+			var phone="";
+			$('.mui-icon-phone-filled').click(function(){
+						plus.device.dial(phone, true );
+						return false;
+					})
+			function endBindPro(rd) {
+				var TData = eval("(" + rd + ")");
+				if(TData == undefined || TData.length == undefined || TData.length == 0) {} else {
+					$('#ShopName').html(TData[0].StopName);
+					$('#ShopName1').html(TData[0].StopName);
+					$('#ShopInfo').html(TData[0].Introduction==""?"该商铺暂无介绍":TData[0].Introduction);
+					$('#address').html(TData[0].MerAddress==""?"该商铺暂无详细地址":TData[0].MerAddress);
+					ShopLng=TData[0].LONG;
+					SHopLAT=TData[0].Dismension;
+					phone=TData[0].ShopPhone;
+					getPeoplePosition();
+				}
+					
+					
+			}
+
+
+</script>
+</body>
+
+</html>
